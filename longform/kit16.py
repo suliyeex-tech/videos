@@ -8,7 +8,7 @@ import cairo, json, math, os, random, subprocess, sys
 
 W, H, FPS = 1920, 1080, 30
 LEAD, TAIL = 0.35, 0.55
-GAP = float(os.environ.get("LF_GAP", "0.18"))  # pause between lines; an episode can set GAP = ... (read by lf.py)
+GAP = float(os.environ.get("LF_GAP", "0.12"))  # pause between lines; an episode can set GAP = ... (read by lf.py)
 HERE = os.path.dirname(os.path.abspath(__file__))
 FONT = "Inter"
 FACES = {"bold": "Inter Bold", "semibold": "Inter SemiBold", "medium": "Inter Medium", "black": "Inter Black"}

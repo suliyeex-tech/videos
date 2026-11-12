@@ -15,7 +15,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/tts')
-VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5)); SPEED = 0.88   # same narrator as the Shorts
+VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5)); SPEED = 0.8   # same narrator as the Shorts; ~165 wpm like the references
 EP_PATH = os.path.abspath(sys.argv[1]); MODE = sys.argv[2]
 
 def literal(name):
@@ -106,20 +106,22 @@ def music_and_voice(k):
             p = int((sc['start'] + st) * SR); voice[p:p + len(x)] += x[:N - p]; i += 1
     voice = voice / max(1e-9, np.abs(voice).max()) * 0.89
     t = np.arange(N) / SR
-    beat = 60 / 100; eighth = beat / 2
-    chords = [[261.63, 329.63, 392.0], [196.0, 246.94, 293.66], [220.0, 261.63, 329.63], [174.61, 220.0, 261.63]]
-    m = np.zeros(N); L = int(0.35 * SR); envl = np.exp(-np.arange(L) / SR * 9); pat = [0, 1, 2, 1, 0, 2, 1, 2]
-    for kk in range(int(tot / eighth) + 1):
-        ch = chords[(kk // 16) % 4]; f = ch[pat[kk % 8]]; s0 = int(kk * eighth * SR)
+    # dark, quiet ambient bed (references: music ~26 dB under the voice): low drone + slow swells + soft pulse
+    rng = np.random.default_rng(3)
+    roots = [55.0, 49.0, 58.27, 43.65]                      # A1 G1 Bb1 F1, 16 s each
+    m = np.zeros(N)
+    for kk in range(int(tot / 16) + 2):
+        s0 = int(kk * 16 * SR); e = min(N, s0 + int(18 * SR))
         if s0 >= N: break
-        tt = np.arange(L) / SR; seg = (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt)) * envl * 0.18
-        e = min(N, s0 + L); m[s0:e] += seg[:e - s0]
-        if kk % 4 == 0:
-            Lb = int(beat * 2 * SR); tb = np.arange(Lb) / SR; sb = np.sin(2 * np.pi * ch[0] / 2 * tb) * np.exp(-tb * 2.5) * 0.22
-            e = min(N, s0 + Lb); m[s0:e] += sb[:e - s0]
+        tt = np.arange(e - s0) / SR; f = roots[kk % 4]
+        envd = np.minimum(1, tt / 3) * np.clip((18 - tt) / 3, 0, 1)
+        m[s0:e] += envd * (np.sin(2 * np.pi * f * tt) + 0.5 * np.sin(2 * np.pi * f * 1.5 * tt + 1) + 0.25 * np.sin(2 * np.pi * f * 2.01 * tt))
+    pulse = 0.5 + 0.5 * np.sin(2 * np.pi * t * (90 / 60) / 2) ** 8   # heartbeat-ish pulse
+    noise = np.convolve(rng.standard_normal(N), np.ones(400) / 400, mode='same')
+    m = m * (0.7 + 0.3 * pulse) + 0.6 * noise / (np.abs(noise).max() + 1e-9)
     m /= np.abs(m).max()
     ev = np.convolve(np.abs(voice), np.ones(int(0.3 * SR)) / (0.3 * SR), mode='same')
-    mix = voice + m * 0.2 * (1 - 0.6 * np.clip(ev / 0.05, 0, 1)) * np.minimum(1, t / 1.5) * np.clip((tot - t) / 3, 0, 1)
+    mix = voice + m * 0.06 * (1 - 0.4 * np.clip(ev / 0.05, 0, 1)) * np.minimum(1, t / 1.5) * np.clip((tot - t) / 3, 0, 1)
     out = (np.stack([np.clip(mix, -1, 1)] * 2, 1) * 32767).astype(np.int16)
     w = wave.open(f'{WD}/mix.wav', 'w'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(out.tobytes()); w.close()
 
