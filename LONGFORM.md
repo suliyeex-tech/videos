@@ -57,8 +57,8 @@ Look at the thumbnail PNG before publishing.
 ```
 cd /home/claude/videos && git pull --rebase && git add longform/episodes out/<SLUG>.mp4 out/<SLUG>.png && git commit -m "Long-form: <topic>" && git push
 ```
-URLs: `https://cdn.jsdelivr.net/gh/suliyeex-tech/videos@<commit-sha>/out/<SLUG>.mp4` (and `.png`).
-Check both with `curl -sI` (video/mp4, image/png). If the push is rejected, pull --rebase and push again (the Shorts
+URLs: `https://raw.githubusercontent.com/suliyeex-tech/videos/<commit-sha>/out/<SLUG>.mp4` (and `.png`).
+Check both with `curl -sI` (HTTP 200). Do NOT use jsDelivr `@sha` URLs: Zernio encodes the `@` and the upload fails with a 400. If the push is rejected, pull --rebase and push again (the Shorts
 task pushes to the same repo).
 
 ## 6. Publish with Zernio (20:30 Madrid = 19:30Z in winter, 18:30Z in summer)

@@ -48,8 +48,8 @@ python3 run.py ../episodes/<file>.py all     # renders and mixes (-14 LUFS); out
 
 ## 5. Host
 - `git add episodes out/<new files> && git commit && git push`
-- The public URL is `https://cdn.jsdelivr.net/gh/suliyeex-tech/videos@<commit-sha>/out/<slug>.mp4`.
-- Always use the commit SHA, not `main`, because jsDelivr caches branch URLs.
+- The public URL is `https://raw.githubusercontent.com/suliyeex-tech/videos/<commit-sha>/out/<slug>.mp4`.
+- Always use the commit SHA, not `main`. Do NOT use jsDelivr (`...@sha` URLs): Zernio encodes the `@` as `%40` and the upload fails with "Failed to fetch video source: 400".
 
 ## 6. Publish: 1 video per hour, 18:00Z to 22:00Z (19:00 to 23:00 Madrid)
 - **Socialync** is the first choice. It posts to Instagram, YouTube and TikTok in one call.
