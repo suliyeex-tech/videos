@@ -5,10 +5,36 @@ The channel posts ANY kind of AI-made content that is going viral right now. It 
 characters and memes, "what happens if…" science, rankings, true stories retold, animated explainers, funny AI
 scenarios…). Everything in English.
 
-## Voice and pacing (owner feedback 2026-11-12: slow/flat voices and loud cheerful music were rejected)
-Fast, cheerful, bright, expressive male narrator. Kokoro blend 40% am_puck + 30% am_eric + 30% am_fenrir at speed
-1.05 = ~215 words per minute (~125 Hz; the owner asked for faster and happier than the 190-wpm puck+fenrir version), with presence EQ + compression in the mix and loudness normalised to -14 LUFS (all automatic in the
-engines). The deep am_onyx blend at 167 wpm was rejected as "boring, flat and slow" — do not go back to it.
+## Voice and pacing (owner feedback 2026-11-12)
+The voice is chosen EVERY DAY to match the style of the most viral AI videos you researched (Shorts and long-form),
+not fixed. For each viral reference, note the narrator: gender, pitch (deep / medium / high), energy (calm documentary,
+hyped, cheerful storyteller, creepy whisper…), and pace. Then pick the closest Kokoro voice or blend below and set it
+in the episode file (`VOICE = [["am_puck", 0.4], ["am_eric", 0.3], ["am_fenrir", 0.3]]`, `SPEED = 1.05`).
+Shorts and long-form of the same day may use different voices if their trends differ. Say in the final report which
+voice you picked and which viral video it imitates.
+
+Hard rules from the owner (never break them, whatever the trend):
+- FAST: at least ~200 words per minute (Kokoro speed >= 1.0); the owner rejected 167 and 190 wpm as too slow.
+- CHEERFUL / LIVELY and bright: never flat or sleepy. The deep, slow am_onyx blend was rejected as "boring".
+- Presence EQ, compression and -14 LUFS are applied automatically by the engines.
+
+Default when no clear reference exists (approved by the owner): 40% am_puck + 30% am_eric + 30% am_fenrir, speed 1.05
+(~215 wpm, ~125 Hz).
+
+Kokoro voices measured on the same line (median pitch, intonation variation; higher variation = livelier):
+| voice | pitch | variation | character |
+|---|---|---|---|
+| am_puck | 104 Hz | 0.30 | lively, expressive storyteller |
+| am_fenrir | 129–137 Hz | 0.30 | bright, energetic |
+| am_eric | 155 Hz | 0.24 | upbeat, higher, fast |
+| am_michael | 117 Hz | 0.19 | neutral explainer |
+| am_liam | 128 Hz | 0.25 | casual, younger |
+| am_echo | 108 Hz | 0.26 | smooth, mid-deep |
+| am_onyx | 85 Hz | 0.17 | very deep, flat (only as a small part of a blend, for a "documentary" trend) |
+| bm_george / bm_daniel / bm_lewis | 141 / 123 / 86 Hz | ~0.2 | British |
+| af_* / bf_* | — | — | female voices exist too (e.g. af_heart, af_bella, bf_emma) if the trend uses a female narrator |
+Test a blend in 10 seconds: create one line with kokoro_onnx and check its pitch/pace before rendering everything.
+
 - Almost no dead air: pauses between lines ~0.12 s.
 - Music is a quiet dark bed ~25 dB under the voice. No cheerful melodies.
 - Long-form: 6–9 minutes (1,300–1,900 words at ~215 wpm).

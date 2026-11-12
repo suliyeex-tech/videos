@@ -20,10 +20,11 @@ def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro
     k = Kokoro(f'{TTS_DIR}/kokoro.onnx', f'{TTS_DIR}/voices.bin')
-    style = sum(k.get_voice_style(n) * w for n, w in VOICE_MIX)
+    mix = getattr(EP, 'VOICE', VOICE_MIX); speed = getattr(EP, 'SPEED', SPEED)   # an episode may pick the voice of the day (STYLE.md)
+    style = sum(k.get_voice_style(n) * w for n, w in mix)
     out = []; cur = 0.3; SR = 24000
     for i, (txt, gap) in enumerate(EP.LINES):
-        s, sr = k.create(txt, voice=style, speed=SPEED, lang='en-us')
+        s, sr = k.create(txt, voice=style, speed=speed, lang='en-us')
         idx = np.where(np.abs(s) > 0.01)[0]; s = s[max(0, idx[0] - 400): idx[-1] + 1600]
         sf.write(f'{WD}/vo_{i:02d}.wav', s, SR); d = len(s) / SR
         out.append({'i': i, 'text': txt, 'start': round(cur, 3), 'dur': round(d, 3)}); cur += d + gap

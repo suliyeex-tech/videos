@@ -23,6 +23,7 @@ sh /home/claude/videos/engine/setup.sh
 - Verify every fact with a web search before using it. Put the source in the YouTube description.
 
 ## 3. Write the episodes
+- Set `VOICE` and `SPEED` at the top of the episode to the voice of the day (STYLE.md; fast and cheerful, speed >= 1.0).
 - Copy an existing file from `episodes/`, for example `e03_sinking_car.py`, and name the new one `episodes/YYYYMMDD_eNN_<topic>.py`.
 - Each file defines:
   - `SLUG` (start it with the date),
@@ -41,7 +42,7 @@ sh /home/claude/videos/engine/setup.sh
 ## 4. Render and check
 ```
 cd /home/claude/videos/engine
-python3 run.py ../episodes/<file>.py tts     # voice: 50% am_onyx + 50% am_puck (see STYLE.md)
+python3 run.py ../episodes/<file>.py tts     # voice: set VOICE/SPEED in the episode to match the day's viral style (STYLE.md)
 python3 run.py ../episodes/<file>.py sheet   # contact sheet in /home/claude/work/<slug>/sheet.jpg. LOOK at it and fix overlaps first
 python3 run.py ../episodes/<file>.py all     # renders and mixes (-14 LUFS); output goes to out/<slug>.mp4
 ```

@@ -36,7 +36,7 @@ no fake news. Fiction is fine when it is clearly a story; real facts must be che
   video will do, no channel intro) → body beats with a joke every ~20 s → a "plot twist" → the real-world stakes →
   payoff that answers the hook → one ask ("which would you miss most? comments").
 - Fact-check EVERY real-world number with a web search; keep the sources for the description.
-- Do NOT set `VOICE`, `SPEED` or `GAP`: the defaults are the channel narrator at the right pace (see STYLE.md).
+- Pick the voice of the day as STYLE.md explains and set `VOICE` and `SPEED` in the episode (never slower than speed 1.0). Leave `GAP` at its default.
 
 ## 4. Build the episode
 - Copy `longform/episodes/20261112_everyone_vanished.py` (story style, uses props_story.py) or `longform/episodes/20261115_polar_bears.py` (explainer style) to `longform/episodes/YYYYMMDD_<topic>.py`.
