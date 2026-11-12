@@ -15,7 +15,7 @@ K.HEADER['title'] = EP.TITLE; K.HEADER['info'] = EP.INFO
 
 # ---------------- voice ----------------
 VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5))   # deep warm documentary narrator, matched to the owner's reference videos (~100 Hz)
-SPEED = 0.95
+SPEED = 0.8   # ~165 wpm like the reference videos
 def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro

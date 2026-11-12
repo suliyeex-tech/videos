@@ -3,7 +3,7 @@
 # dark minimal room, simple round-head character, phone close-ups with message chips.
 SLUG = "2026-11-12-ai-makes-one-thing-vanish"
 TITLE = "An AI Makes One Thing Vanish Every Night. You Choose What."
-VOICE = [["am_onyx", 0.5], ["am_puck", 0.5]]
+VOICE = [["am_onyx", 0.5], ["am_puck", 0.5]]  # rejected by the owner: too slow (speed 0.88 + 0.55 s pauses) and music too loud
 SPEED = 0.88
 GAP = 0.55
 SCRIPT = [
