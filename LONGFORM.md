@@ -32,7 +32,7 @@ no fake news. Fiction is fine when it is clearly a story; real facts must be che
 ## 3. Script (use the yt-script method)
 - Write 5 hooks, score them with the hook scorer from the yt-script skill if it is available
   (`python3 /tmp/yt-script/hookscore.py hooks.txt`), keep the best (aim for STRONG, >= 70).
-- 1,000–1,500 words, 50–75 SCRIPT lines, 14–20 scenes (6–9 minutes at 167 wpm): hook (confirm the title, open a question) → turn (say what the
+- 1,200–1,700 words, 60–85 SCRIPT lines, 16–22 scenes (6–9 minutes at ~190 wpm): hook (confirm the title, open a question) → turn (say what the
   video will do, no channel intro) → body beats with a joke every ~20 s → a "plot twist" → the real-world stakes →
   payoff that answers the hook → one ask ("which would you miss most? comments").
 - Fact-check EVERY real-world number with a web search; keep the sources for the description.

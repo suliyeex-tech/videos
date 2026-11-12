@@ -15,7 +15,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/tts')
-VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5)); SPEED = 0.8   # same narrator as the Shorts; ~165 wpm like the references
+VOICE_MIX = (('am_puck', 0.6), ('am_fenrir', 0.4)); SPEED = 0.92   # energetic narrator, ~190 wpm (owner: onyx blend at 167 wpm was 'boring, flat, slow')
 EP_PATH = os.path.abspath(sys.argv[1]); MODE = sys.argv[2]
 
 def literal(name):
@@ -104,7 +104,15 @@ def music_and_voice(k):
             x = (np.frombuffer(raw, dtype=np.int16).astype(float) / 32768) if w.getsampwidth() == 2 else np.frombuffer(raw, dtype=np.float32).astype(float)
             x = np.interp(np.arange(0, len(x), sr / SR), np.arange(len(x)), x)
             p = int((sc['start'] + st) * SR); voice[p:p + len(x)] += x[:N - p]; i += 1
-    voice = voice / max(1e-9, np.abs(voice).max()) * 0.89
+    # make the voice bright and present: high-pass, presence boost, gentle compression
+    from scipy.signal import butter, sosfilt
+    voice = sosfilt(butter(2, 80 / (SR / 2), 'high', output='sos'), voice)
+    pres = sosfilt(butter(2, [2500 / (SR / 2), 6000 / (SR / 2)], 'band', output='sos'), voice)
+    voice = voice + 0.6 * pres
+    envc = np.convolve(np.abs(voice), np.ones(int(0.02 * SR)) / (0.02 * SR), mode='same')
+    thr = np.percentile(envc[envc > 1e-4], 70); gain = np.where(envc > thr, (thr / np.maximum(envc, 1e-9)) ** 0.5, 1.0)
+    voice = voice * gain
+    voice = voice / max(1e-9, np.abs(voice).max()) * 0.95
     t = np.arange(N) / SR
     # dark, quiet ambient bed (references: music ~26 dB under the voice): low drone + slow swells + soft pulse
     rng = np.random.default_rng(3)
@@ -141,7 +149,7 @@ def all_(crf=20):
     out = f'{REPO}/out/{SLUG}.mp4'; os.makedirs(f'{REPO}/out', exist_ok=True)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', f'{WD}/list.txt', '-c', 'copy', f'{WD}/v.mp4'], check=True)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', f'{WD}/v.mp4', '-i', f'{WD}/mix.wav', '-map', '0:v', '-map', '1:a',
-                    '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', out], check=True)
+                    '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', out], check=True)
     size = os.path.getsize(out)
     if size > 19_000_000 and crf < 34:   # jsDelivr serves at most 20 MB per file
         print(f'{size/1e6:.1f} MB > 19 MB, re-encoding smaller'); return all_(crf + 4)

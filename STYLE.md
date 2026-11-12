@@ -5,12 +5,13 @@ The channel posts ANY kind of AI-made content that is going viral right now. It 
 characters and memes, "what happens if…" science, rankings, true stories retold, animated explainers, funny AI
 scenarios…). Everything in English.
 
-## Voice and pacing (the owner rejected a slow, music-heavy version on 2026-11-12)
-The famous, pleasant "AI documentary narrator": deep, warm, calm, male, ~100 Hz. Kokoro blend 50% am_onyx +
-50% am_puck at speed 0.8 = ~167 words per minute (measured; both references are 149–167 wpm).
-- Almost no dead air: pauses between lines ~0.12 s (references: median pause 0.15 s). Never slow, never drawn out.
-- Music is a quiet dark bed ~25 dB under the voice (references: barely audible or none). No cheerful melodies.
-- Long-form: 6–9 minutes (1,000–1,500 words). The reference long-form is 9.5 minutes.
+## Voice and pacing (owner feedback 2026-11-12: slow/flat voices and loud cheerful music were rejected)
+Energetic, bright, expressive male narrator. Kokoro blend 60% am_puck + 40% am_fenrir at speed 0.92 = ~190 words
+per minute, with presence EQ + compression in the mix and loudness normalised to -14 LUFS (all automatic in the
+engines). The deep am_onyx blend at 167 wpm was rejected as "boring, flat and slow" — do not go back to it.
+- Almost no dead air: pauses between lines ~0.12 s.
+- Music is a quiet dark bed ~25 dB under the voice. No cheerful melodies.
+- Long-form: 6–9 minutes (1,200–1,700 words at 190 wpm).
 - Something changes on screen every 2–4 seconds; a joke or a twist every ~20 seconds.
 
 ## The two reference formats (both very popular)
