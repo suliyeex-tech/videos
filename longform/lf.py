@@ -27,15 +27,21 @@ def literal(name):
 
 SLUG = literal('SLUG'); WD = f'/home/claude/work/lf_{SLUG}'; os.makedirs(WD, exist_ok=True)
 os.environ['LF_TIMING'] = f'{WD}/timing.json'
+try: os.environ['LF_GAP'] = str(literal('GAP'))
+except SystemExit: pass
 
 def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro
     k = Kokoro(f'{TTS_DIR}/kokoro.onnx', f'{TTS_DIR}/voices.bin')
-    style = sum(k.get_voice_style(n) * w for n, w in VOICE_MIX)
+    try: mix = literal('VOICE')
+    except SystemExit: mix = VOICE_MIX
+    try: speed = literal('SPEED')
+    except SystemExit: speed = SPEED
+    style = sum(k.get_voice_style(n) * w for n, w in mix)
     out = []
     for i, (sc, txt) in enumerate(literal('SCRIPT')):
-        s, sr = k.create(txt, voice=style, speed=SPEED, lang='en-us')
+        s, sr = k.create(txt, voice=style, speed=speed, lang='en-us')
         idx = np.where(np.abs(s) > 0.01)[0]; s = s[max(0, idx[0] - 400): idx[-1] + 2400]
         sf.write(f'{WD}/vo_{i:02d}.wav', s, sr); out.append([sc, txt, round(len(s) / sr, 3)])
     json.dump(out, open(f'{WD}/timing.json', 'w'), indent=0)
