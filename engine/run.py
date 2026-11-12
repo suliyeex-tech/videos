@@ -14,8 +14,8 @@ EP = load(sys.argv[1]); WD = f'/home/claude/work/{EP.SLUG}'; os.makedirs(WD, exi
 K.HEADER['title'] = EP.TITLE; K.HEADER['info'] = EP.INFO
 
 # ---------------- voice ----------------
-VOICE_MIX = (('am_puck', 0.6), ('am_fenrir', 0.4))   # energetic narrator chosen by the owner (see STYLE.md)
-SPEED = 0.92   # ~190 wpm
+VOICE_MIX = (('am_puck', 0.4), ('am_eric', 0.3), ('am_fenrir', 0.3))   # owner: faster and more cheerful (see STYLE.md)
+SPEED = 1.05   # ~215 wpm
 def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro

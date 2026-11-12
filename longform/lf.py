@@ -15,7 +15,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/tts')
-VOICE_MIX = (('am_puck', 0.6), ('am_fenrir', 0.4)); SPEED = 0.92   # energetic narrator, ~190 wpm (owner: onyx blend at 167 wpm was 'boring, flat, slow')
+VOICE_MIX = (('am_puck', 0.4), ('am_eric', 0.3), ('am_fenrir', 0.3)); SPEED = 1.05   # owner: faster and more cheerful (~215 wpm, ~125 Hz)
 EP_PATH = os.path.abspath(sys.argv[1]); MODE = sys.argv[2]
 
 def literal(name):
