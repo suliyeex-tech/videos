@@ -6,7 +6,7 @@
     python3 lf.py <episode.py> frame SCENE T OUT.png
     python3 lf.py <episode.py> all      # render scenes, music, mux, thumbnail -> ../out/<SLUG>.mp4 + ../out/<SLUG>.png
 
-The narrator is the same voice as the Shorts (Kokoro 70% am_michael + 30% am_fenrir).
+The narrator is the same voice as the Shorts (Kokoro 50% am_onyx + 50% am_puck, see STYLE.md).
 Output is kept under 19 MB so jsDelivr (20 MB per file limit) can serve it.
 """
 import ast, json, math, os, subprocess, sys, wave
@@ -15,7 +15,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/tts')
-VOICE_MIX = (('am_michael', 0.7), ('am_fenrir', 0.3)); SPEED = 1.0
+VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5)); SPEED = 0.88   # same narrator as the Shorts
 EP_PATH = os.path.abspath(sys.argv[1]); MODE = sys.argv[2]
 
 def literal(name):

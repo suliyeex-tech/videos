@@ -22,10 +22,12 @@ Real-time view counts are often not public; say "reported" figures only when a s
 Also check the channel's own results with Zernio (`analytics_get_analytics`, `analytics_get_best_time_to_post`) and lean
 into whatever did best.
 
-Then pick ONE topic that rides a current trend but goes further: a "What if X vanished / what if…" question for this
-channel (@ifitvanishedd, English), surprising AND funny, with real science behind it. Never repeat a topic in
-`longform/episodes/` or `episodes/`. No real people, no politics, no medical advice, no copyrighted characters or
-brands (a meme can be *referenced* in words, never redrawn), no fake news.
+Then read STYLE.md and pick ONE topic that rides the strongest current trend but goes further. Any kind of viral
+AI content works (2nd-person mystery story like longform/episodes/20261112_ai_vanish_texts.py, survival "what if",
+"what happens if…" science, funny AI scenarios…), in English, original (never copy another creator's story,
+characters or drawings). Never repeat a topic in `longform/episodes/` or `episodes/`. No real people, no politics,
+no medical advice, no copyrighted characters or brands (a meme can be *referenced* in words, never redrawn),
+no fake news. Fiction is fine when it is clearly a story; real facts must be checked.
 
 ## 3. Script (use the yt-script method)
 - Write 5 hooks, score them with the hook scorer from the yt-script skill if it is available
@@ -33,10 +35,11 @@ brands (a meme can be *referenced* in words, never redrawn), no fake news.
 - 650–900 words, 30–45 SCRIPT lines, 8–11 scenes: hook (confirm the title, open a question) → turn (say what the
   video will do, no channel intro) → body beats with a joke every ~20 s → a "plot twist" → the real-world stakes →
   payoff that answers the hook → one ask ("which would you miss most? comments").
-- Fact-check EVERY number with a web search; keep the sources for the description.
+- Fact-check EVERY real-world number with a web search; keep the sources for the description.
+- Set `VOICE`, `SPEED` and `GAP` like the example only if you need to; the defaults are the channel narrator.
 
 ## 4. Build the episode
-- Copy `longform/episodes/20261115_polar_bears.py` to `longform/episodes/YYYYMMDD_<topic>.py`.
+- Copy `longform/episodes/20261112_ai_vanish_texts.py` (story style) or `longform/episodes/20261115_polar_bears.py` (explainer style) to `longform/episodes/YYYYMMDD_<topic>.py`.
 - Set `SLUG` (start with the date), `TITLE`, `SCRIPT` ([scene, line] pairs), `SUBS` (spoken words → digits for captions),
   write one draw function per scene in `DRAW`, and `THUMB(c)` (big 3-line title left, one bold illustration right,
   max 4 words per line, high contrast). Drawing helpers live in `longform/kit16.py` (text, label_chip, chat_bubble,

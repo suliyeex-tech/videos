@@ -14,8 +14,8 @@ EP = load(sys.argv[1]); WD = f'/home/claude/work/{EP.SLUG}'; os.makedirs(WD, exi
 K.HEADER['title'] = EP.TITLE; K.HEADER['info'] = EP.INFO
 
 # ---------------- voice ----------------
-VOICE_MIX = (('am_michael', 0.7), ('am_fenrir', 0.3))   # closest blend to the reference TikTok narrator
-SPEED = 1.08
+VOICE_MIX = (('am_onyx', 0.5), ('am_puck', 0.5))   # deep warm documentary narrator, matched to the owner's reference videos (~100 Hz)
+SPEED = 0.95
 def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro

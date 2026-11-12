@@ -10,8 +10,11 @@ sh /home/claude/videos/engine/setup.sh
 
 ## 2. Research (last 24 h)
 - Search the web for the most viral AI-made and animated videos of the last 24 hours on TikTok, YouTube Shorts and Instagram Reels. Note their topics, hooks and format.
-- Pick **5 new topics** in this channel's style. Never repeat a topic that already has a file in `episodes/`.
-- The format is a cartoon "what if" survival story. It always has:
+- Read STYLE.md. Pick **5 new topics**, each riding a different trend of the day: any kind of viral AI content
+  (survival "what if" stories, 2nd-person mystery stories, AI characters, science "what happens if", funny AI
+  scenarios…), all in English. Never repeat a topic that already has a file in `episodes/` or `longform/episodes/`.
+- When the trend is a survival "what if" story, use the cartoon format below; otherwise adapt the episode
+  (it does not need every element, but it always needs a hook in the first 2 seconds and a payoff or cliffhanger):
   - a named character with an age and a place,
   - a "THE RULE" card,
   - a "STUPID MISTAKE" beat,
@@ -38,7 +41,7 @@ sh /home/claude/videos/engine/setup.sh
 ## 4. Render and check
 ```
 cd /home/claude/videos/engine
-python3 run.py ../episodes/<file>.py tts     # voice: 70% am_michael + 30% am_fenrir (closest to the reference TikTok narrator)
+python3 run.py ../episodes/<file>.py tts     # voice: 50% am_onyx + 50% am_puck (see STYLE.md)
 python3 run.py ../episodes/<file>.py sheet   # contact sheet in /home/claude/work/<slug>/sheet.jpg. LOOK at it and fix overlaps first
 python3 run.py ../episodes/<file>.py all     # renders and mixes (-14 LUFS); output goes to out/<slug>.mp4
 ```
