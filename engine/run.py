@@ -5,7 +5,7 @@ import numpy as np, cv2
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import kit as K
 from kit import W, H, FPS
-TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/vid/tts')
+TTS_DIR = os.environ.get('TTS_DIR') or next((d for d in ('/home/claude/tts', '/home/claude/vid/tts') if os.path.exists(f'{d}/kokoro.onnx')), '/home/claude/tts')
 REPO = os.path.dirname(HERE)
 
 def load(path):
