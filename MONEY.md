@@ -27,8 +27,14 @@ Channels made of templated AI videos get refused for ads. So:
   The same file goes to Reels and YouTube Shorts (both accept up to 3 min).
 - Use "Part 1 / Part 2" series to earn follows.
 
-## Learn from data (every run)
-- Read LEARNINGS.md (written by the weekly report) and lean into the formats/topics that retain and convert best; drop the worst.
+## Improve EVERY day (owner: "hay que ir mejorando todos los días, muy importante")
+- Every run (shorts A/B, long A/B) starts with a 5-minute DAILY REVIEW: mcp__Zernio__analytics_get_analytics for the last
+  3 days (sort by views, all platforms) and compare with LEARNINGS.md. Append 1–3 dated lines under "## Daily notes" in
+  LEARNINGS.md (what won, what flopped, one change you are making today), git pull --rebase, commit, push.
+- Then apply it: copy the hook/title pattern, genre, length and slot of the top videos; never repeat what flopped twice.
+- Each run must change at least ONE thing vs the previous run on purpose (hook style, title formula, thumbnail, length,
+  pacing, music, voice) and note it in Daily notes, so we learn what moves the numbers.
+- The weekly report (Sunday) condenses the Daily notes into the rules at the top of LEARNINGS.md.
 
 ## Daily schedule (Madrid time; English audience is mostly US/UK, US Eastern = Madrid − 6 h)
 - Shorts run A (starts 06:33): slots 13:00, 15:00, 17:00 and 01:00 (next day, = 19:00 New York prime time).
