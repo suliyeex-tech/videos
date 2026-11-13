@@ -2,6 +2,14 @@
 
 This is the routine the scheduled task follows every day. The account owner asked for it to run without any input from them.
 
+## 0. FIRST: duplicate guard + new rules (owner, 2026-11-13)
+- Before anything else call `mcp__Zernio__call_tool` name `posts_list_posts` with `{"status": "scheduled", "limit": 50}`.
+  If 5 or more posts are already scheduled between 18:00 Madrid today and midnight, today's shorts are already done:
+  do NOT make more; send the owner one line in Spanish saying so, and stop.
+- Read **FORMATS.md**: 5 COMPLETELY DIFFERENT formats per day (neon, stick POV, chat story, cinema, cartoon, or new ones),
+  mix of interesting / funny / suspense, funny influencer-style names, cheerful FAST voice (`VOICE='hype'`), and the
+  DOPAMINE rules. Copy the matching `episodes/20261113_*.py` for each format. The old "same cartoon every time" style is retired.
+
 ## 1. Setup (fresh session)
 ```
 git clone https://github.com/suliyeex-tech/videos /home/claude/videos   # or git pull if it is already there
