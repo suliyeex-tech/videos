@@ -2,6 +2,15 @@
 
 Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.
 
+
+## CHANNEL NAME IS NOT THE CONTENT (owner 2026-11-13, overrides everything)
+- The owner is renaming the channels to something totally different and funny. The content is "a bit of everything":
+  never shape topics, titles, hooks or captions around "What if it vanished" or any channel name.
+- "What if..." is just ONE of many title formulas; use it only when it is the best hook for that video.
+- Never say or show the channel name in videos, captions, titles or descriptions (it may change again). Say "follow for Part 2",
+  "full story on the channel", etc. Account IDs in Zernio stay the same after a rename; usernames/handles may change, ignore them.
+- Playlist names stay generic by genre; the "What If It Vanished? | ..." prefix will be renamed by the owner.
+
 ## Targets (check progress weekly)
 - YouTube Partner Program, lower tier (fan funding): 500 subs + 3 public uploads in 90 days + (3,000 watch hours in 12 months OR 3M Shorts views in 90 days).
 - YouTube Partner Program, full (ads): 1,000 subs + (4,000 watch hours in 12 months OR 10M Shorts views in 90 days).
