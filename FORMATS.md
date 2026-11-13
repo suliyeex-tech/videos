@@ -1,4 +1,4 @@
-# Shorts formats: 5 different videos every day (owner feedback 2026-11-13)
+# Shorts formats: 3 different videos every day (see MONEY.md, it overrides counts here)
 
 The owner said the videos were "all the same, same drawings, same people". From now on:
 
