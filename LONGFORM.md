@@ -1,4 +1,4 @@
-# Daily long-form YouTube video (16:9, 6–9 min), published 18:00 Madrid (12:00 New York)
+# Daily long-form YouTube videos (16:9, 6–9 min): 2 per day (18:00 and 21:00 Madrid). MONEY.md (genres, voices, series, topic claiming) overrides this file.
 
 ## OWNER FEEDBACK 2026-11-13 (evening) — overrides anything below
 - **Same themes as the Shorts.** The long video uses the same kinds of stories and formats as FORMATS.md, just longer:
