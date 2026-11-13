@@ -1,4 +1,4 @@
-# Daily "What If" shorts: 4 videos, all 61-80 s (19:00, 20:00, 22:00, 23:00 Madrid). READ MONEY.md FIRST, it overrides this file.
+# Daily "What If" shorts: 2 runs x 4 shorts, all 61-80 s. READ MONEY.md FIRST (schedule, genres, voices, series), it overrides this file.
 
 This is the routine the scheduled task follows every day. The account owner asked for it to run without any input from them.
 
