@@ -7,6 +7,8 @@ def hp(x, f, o=2): b, a = butter(o, f / (SR / 2), 'high'); return lfilter(b, a, 
 def env(n, a=0.005, d=0.3):
     t = np.arange(n) / SR; return np.minimum(t / a, 1) * np.exp(-t / d)
 
+def _as_list(v): return list(v) if isinstance(v, (list, tuple)) else [v]   # a single time is fine too
+
 def build(WD, L, TOTAL, cuts, sfx, mood):
     N = int(SR * (TOTAL + 0.2)); t = np.arange(N) / SR; rng = np.random.default_rng(11)
     def put(buf, x, at, g=1.0):
@@ -106,11 +108,11 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     def riser(d=1.6):
         n = int(d * SR); tt = np.linspace(0, 1, n); return lp(rng.standard_normal(n), 3000) * tt ** 3 * 0.6 + np.sin(2 * np.pi * np.cumsum(200 + 900 * tt ** 2) / SR) * tt ** 2 * 0.15
     for c in cuts[1:]: put(fx, whoosh(), c - 0.33, 0.35)
-    for c in sfx.get('boom', []): put(fx, boom(), c, 0.8)
-    for c in sfx.get('ding', []): put(fx, ding(), c, 0.3)
-    for c in sfx.get('snap', []): put(fx, snap(), c, 0.8)
-    for c in sfx.get('splash', []): put(fx, splash(), c, 0.6)
-    for c in sfx.get('pop', []): put(fx, ding(880, 0.25), c, 0.25)
+    for c in _as_list(sfx.get('boom', [])): put(fx, boom(), c, 0.8)
+    for c in _as_list(sfx.get('ding', [])): put(fx, ding(), c, 0.3)
+    for c in _as_list(sfx.get('snap', [])): put(fx, snap(), c, 0.8)
+    for c in _as_list(sfx.get('splash', [])): put(fx, splash(), c, 0.6)
+    for c in _as_list(sfx.get('pop', [])): put(fx, ding(880, 0.25), c, 0.25)
     def tick():
         n = int(0.06 * SR); tt = np.arange(n) / SR; return np.sin(2 * np.pi * 1800 * tt) * env(n, 0.0005, 0.012) + hp(rng.standard_normal(n), 4000) * env(n, 0.0005, 0.005) * 0.5
     def notif():
@@ -120,11 +122,11 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
         out = np.zeros(int(d * SR)); k = 0
         while k < len(out) - 800: out[k:k + 800] += hp(rng.standard_normal(800), 2500) * env(800, 0.0003, 0.004); k += int(rng.uniform(0.06, 0.13) * SR)
         return out
-    for c in sfx.get('tick', []): put(fx, tick(), c, 0.35)
-    for c in sfx.get('notif', []): put(fx, notif(), c, 0.45)
-    for c in sfx.get('typing', []): put(fx, typing(), c, 0.3)
-    for c in sfx.get('whoosh', []): put(fx, whoosh(0.4), c - 0.3, 0.5)
-    for c in sfx.get('riser', []): put(fx, riser(), c - 1.6, 0.45)
+    for c in _as_list(sfx.get('tick', [])): put(fx, tick(), c, 0.35)
+    for c in _as_list(sfx.get('notif', [])): put(fx, notif(), c, 0.45)
+    for c in _as_list(sfx.get('typing', [])): put(fx, typing(), c, 0.3)
+    for c in _as_list(sfx.get('whoosh', [])): put(fx, whoosh(0.4), c - 0.3, 0.5)
+    for c in _as_list(sfx.get('riser', [])): put(fx, riser(), c - 1.6, 0.45)
     if mistake is not None: put(fx, scratch(), mistake - 0.05, 0.9); put(fx, boom(1.8, 34), mistake + 0.05, 0.6)
     for a_, b_ in sfx.get('heart', []):
         at = a_

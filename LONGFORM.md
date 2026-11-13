@@ -65,7 +65,13 @@ task pushes to the same repo).
 `mcp__Zernio__call_tool` name `posts_create_post`:
 - `media_items`: `[{type:"video", url:<mp4 URL>, mimeType:"video/mp4", thumbnail:<png URL>}]`
 - `platforms`: `[{platform:"youtube", accountId:"6af5fcdd2fd432bb239b9515", customContent:<description>,
-  platformSpecificData:{title:<title, max 100 chars, no #shorts>, madeWithAi:true}}]`
+  platformSpecificData:{title:<title, max 100 chars, no #shorts>, madeWithAi:true}},
+  {platform:"tiktok", accountId:"6af5fc430c1b54f421bc4837", customContent:<1-line hook + 4-6 hashtags incl. #fyp, e.g. "7 days to build a bunker #survival #story #fyp">}]`
+  plus `tiktok_settings` {privacyLevel:"PUBLIC_TO_EVERYONE", allowComment:true, allowDuet:true, allowStitch:true,
+  commercialContentType:"none", contentPreviewConfirmed:true, expressConsentGiven:true, videoMadeWithAi:true}.
+  WHY TikTok too (owner reference, 2026-11-13): @mr.survival4 posts the full 9.5-min horizontal story on TikTok
+  ("7 Days To build a bunker", 5.9M views, 981K likes). Long horizontal stories work there. TikTok accepts up to 10 min:
+  if the video is longer or TikTok rejects it, keep YouTube only and say so in the report.
 - `tags`: 8–12 keywords, `scheduled_for`: the slot in UTC, `timezone`: "Europe/Madrid".
 - Description: 2-line summary with the hook, chapter timestamps (0:00 …, from the scene start times printed by
   `python3 -c "import os,sys;os.environ['LF_TIMING']='/home/claude/work/lf_<SLUG>/timing.json';sys.path.insert(0,'.');import kit16 as k;[print(n,k.SCENES[n]['start']) for n in k.ORDER]"`),
