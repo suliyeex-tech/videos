@@ -11,7 +11,7 @@ Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.
 
 ## Biggest risk: YouTube "inauthentic / mass-produced / repetitive content"
 Channels made of templated AI videos get refused for ads. So:
-- **Quality over volume: 3 shorts per day, not 5.** Each one a distinct idea with its own angle, joke and twist; never a template clone with swapped words.
+- **Quality over volume: 4 shorts per day (owner decision 2026-11-13), all 61–80 s.** Each one a distinct idea with its own angle, joke and twist; never a template clone with swapped words.
 - Every video needs a clear point of view (an opinion, a surprising comparison, a joke only this channel makes), not a read-aloud of facts.
 - Recurring named series ("What if it vanished?", "If X happens while you're at Y", "Chat stories") so the channel has a recognizable identity.
 - Mark realistic synthetic media as AI (madeWithAi / videoMadeWithAi true). Never misleading, never fake news.
@@ -22,8 +22,9 @@ Channels made of templated AI videos get refused for ads. So:
 - Same themes as the long-form so a Short viewer wants the long one.
 
 ## TikTok >60 s
-- One of the 3 daily shorts is 61–80 s (a story/series format: chat story, POV, cartoon survival), so it counts for Creator Rewards later.
-  The same file goes to Reels and YouTube Shorts (both accept it).
+- ALL daily shorts are 61–80 s (verify with ffprobe), so they count for TikTok Creator Rewards. Pick story-shaped ideas that
+  can hold 60+ s (chat stories, POV, cartoon survival, countdowns, tier lists); retention beats length, so no filler.
+  The same file goes to Reels and YouTube Shorts (both accept up to 3 min).
 - Use "Part 1 / Part 2" series to earn follows.
 
 ## Learn from data (every run)
