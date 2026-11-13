@@ -1,4 +1,26 @@
-# Daily long-form YouTube video (16:9, 6–9 min), published 20:30 Madrid
+# Daily long-form YouTube video (16:9, 6–9 min), published 18:00 Madrid (12:00 New York)
+
+## OWNER FEEDBACK 2026-11-13 (evening) — overrides anything below
+- **Same themes as the Shorts.** The long video uses the same kinds of stories and formats as FORMATS.md, just longer:
+  "If X happens while you're at Y" cartoon survival with a funny influencer-named character (Tyler Trailmix, 24, ski
+  instructor…), "What if X disappeared / everyone did Y for 5 seconds?" science sims, funny chat/influencer stories,
+  stick-figure POV suspense with A/B choices, neon "why your brain…" psychology. Pick the one whose YouTube trend is
+  hottest today. Never reuse a topic the Shorts used.
+- **Based on viral AI videos ON YOUTUBE.** Research = AI-made / AI-animated videos that went viral on YouTube (long-form
+  and Shorts) in the last 24–72 h: search YouTube trending, "AI animated story", "what if" channels, news about viral AI
+  YouTube videos. Note title formula, hook, voice, style, length, views. Ride the strongest one and go further.
+- **Grab attention instantly**: the first line is the hook (scored, >= 72), something visible happens in the first
+  2 seconds, a new visual every 1.5–3 s (pop-in labels, counters, zoom punches, character reactions), a joke or twist
+  every 10–15 s, open loops ("but that's not even the worst part…"), mini-cliffhangers before each chapter, and a
+  question at the end.
+- **Voice = the Shorts' cheerful fast voice**: `VOICE = [["am_echo", 0.5], ["am_puck", 0.5]]`, `SPEED = 1.2`
+  (~240 wpm, measured). Never slower. Word count therefore 1,500–2,200 (75–110 SCRIPT lines) for 6–9 min.
+- **Upload time = when it gets the most views.** Default 18:00 Madrid = 12:00 New York (Buffer's 1.8M-video study:
+  midday/late-morning local time is the peak, the channel's audience is English-speaking, mostly US; publishing
+  12:00 ET gets indexed before the US afternoon/evening peak and catches Europe's evening). Each run, also call
+  `mcp__Zernio__analytics_get_best_time_to_post` for account 6af5fcdd2fd432bb239b9515: once a slot has >= 3 posts and
+  clearly better engagement, use that slot instead (it is in UTC) and say so in the report.
+
 
 The scheduled task follows this every day. The owner asked for it to run on its own, every day, without asking them.
 It runs alongside the 5 daily Shorts (DAILY.md). Never reuse a Shorts topic from the same day.
@@ -32,7 +54,7 @@ no fake news. Fiction is fine when it is clearly a story; real facts must be che
 ## 3. Script (use the yt-script method)
 - Write 5 hooks, score them with the hook scorer from the yt-script skill if it is available
   (`python3 /tmp/yt-script/hookscore.py hooks.txt`), keep the best (aim for STRONG, >= 70).
-- 1,300–1,900 words, 65–95 SCRIPT lines, 18–24 scenes (6–9 minutes at ~215 wpm): hook (confirm the title, open a question) → turn (say what the
+- 1,500–2,200 words, 75–110 SCRIPT lines, 18–26 scenes (6–9 minutes at ~240 wpm): hook (confirm the title, open a question) → turn (say what the
   video will do, no channel intro) → body beats with a joke every ~20 s → a "plot twist" → the real-world stakes →
   payoff that answers the hook → one ask ("which would you miss most? comments").
 - Fact-check EVERY real-world number with a web search; keep the sources for the description.
@@ -61,7 +83,7 @@ URLs: `https://raw.githubusercontent.com/suliyeex-tech/videos/<commit-sha>/out/<
 Check both with `curl -sI` (HTTP 200). Do NOT use jsDelivr `@sha` URLs: Zernio encodes the `@` and the upload fails with a 400. If the push is rejected, pull --rebase and push again (the Shorts
 task pushes to the same repo).
 
-## 6. Publish with Zernio (20:30 Madrid = 19:30Z in winter, 18:30Z in summer)
+## 6. Publish with Zernio (18:00 Madrid = 17:00Z in winter, 16:00Z in summer; see the owner feedback at the top)
 `mcp__Zernio__call_tool` name `posts_create_post`:
 - `media_items`: `[{type:"video", url:<mp4 URL>, mimeType:"video/mp4", thumbnail:<png URL>}]`
 - `platforms`: `[{platform:"youtube", accountId:"6af5fcdd2fd432bb239b9515", customContent:<description>,

@@ -40,7 +40,7 @@ Test a blend in 10 seconds: create one line with kokoro_onnx and check its pitch
 
 - Almost no dead air: pauses between lines ~0.12 s.
 - Music is a quiet dark bed ~25 dB under the voice. No cheerful melodies.
-- Long-form: 6–9 minutes (1,300–1,900 words at ~215 wpm).
+- Long-form: 6–9 minutes, same themes and the same cheerful fast voice as the Shorts (am_echo+am_puck, speed 1.2, ~240 wpm, 1,500–2,200 words). See LONGFORM.md.
 - Something changes on screen every 2–4 seconds; a joke or a twist every ~20 seconds.
 
 ## The two reference formats (both very popular)

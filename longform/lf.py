@@ -15,7 +15,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 TTS_DIR = os.environ.get('TTS_DIR', '/home/claude/tts')
-VOICE_MIX = (('am_puck', 0.4), ('am_eric', 0.3), ('am_fenrir', 0.3)); SPEED = 1.05   # owner: faster and more cheerful (~215 wpm, ~125 Hz)
+VOICE_MIX = (('am_echo', 0.5), ('am_puck', 0.5)); SPEED = 1.2   # owner 2026-11-13: same cheerful fast voice as the Shorts (~240 wpm)
 EP_PATH = os.path.abspath(sys.argv[1]); MODE = sys.argv[2]
 
 def literal(name):
