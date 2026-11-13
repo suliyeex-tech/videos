@@ -61,3 +61,23 @@ Use a different voice than the previous slot when possible.
 ## Topic claiming (4 tasks run each day)
 - Right after choosing topics, append them to TOPICS.md (date, task, topic), git pull --rebase, commit, push. Never pick a
   topic already in TOPICS.md, episodes/ or longform/episodes/.
+
+## YouTube playlists (created 2026-11-13) — put EVERY new YouTube upload in one
+Pass platformSpecificData.playlistId in posts_create_post (or posts_update_post_metadata playlist_id after publishing):
+- PLZAdnXuDrMpg  "What If It Vanished? | Science What-Ifs"  (science, space, psychology, tech, history, animals)
+- PLfKTN3t7rM-g  "Would You Survive? | Survival What-Ifs"   (survival, "if you were...", deadly-mistake)
+- PLDFFSLtQWAZo  "3 AM Stories | Creepy POV & Mysteries"     (horror, mystery, POV suspense, 2nd-person stories)
+- PLSI0CBh67sig  "Influencer Chaos | Funny Chat Stories"     (funny, chat stories, influencer characters)
+Create a new playlist (connect_create_youtube_playlist, public) only for a new genre with 3+ videos, and add it here.
+Long-form descriptions: first line = hook; add "▶ More: <playlist name>" and the chapters. Short descriptions mention the
+related long video by title when one exists.
+
+## Engagement (every run, 5 min)
+- mcp__Zernio__comments_list_inbox_comments for the last 3 days: reply to every new genuine comment (max 20 per run) in
+  English, short, friendly, in the channel's voice, ideally with a question back or a "Part 2 is coming" when true.
+  Never spam, never argue, never reply to hateful comments (hide them if the tool allows).
+- Pinned-comment style CTA in captions: ask a specific A/B question ("Comment A or B"), not "like and subscribe".
+
+## Duplicates
+- NEVER publish the same video twice on one platform. 2026-11-13: duplicates YbAEAV1HI1E and 4_tdCUuq2ao set to private;
+  8_M3WwVgJow still public (owner to make it private in YouTube Studio).
