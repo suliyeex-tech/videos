@@ -10,7 +10,7 @@ sh /home/claude/videos/engine/setup.sh
 
 ## 2. Research (last 24 h)
 - Search the web for the most viral AI-made and animated videos of the last 24 hours on TikTok, YouTube Shorts and Instagram Reels. Note their topics, hooks and format.
-- Read STYLE.md. Pick **5 new topics**, each riding a different trend of the day: any kind of viral AI content
+- Read STYLE.md and **FORMATS.md** (5 different formats per day, funny influencer names, dopamine rules). Pick **5 new topics**, each riding a different trend of the day: any kind of viral AI content
   (survival "what if" stories, 2nd-person mystery stories, AI characters, science "what happens if", funny AI
   scenarios…), all in English. Never repeat a topic that already has a file in `episodes/` or `longform/episodes/`.
 - When the trend is a survival "what if" story, use the cartoon format below; otherwise adapt the episode
@@ -52,14 +52,16 @@ python3 run.py ../episodes/<file>.py all     # renders and mixes (-14 LUFS); out
 - The public URL is `https://raw.githubusercontent.com/suliyeex-tech/videos/<commit-sha>/out/<slug>.mp4`.
 - Always use the commit SHA, not `main`. Do NOT use jsDelivr (`...@sha` URLs): Zernio encodes the `@` as `%40` and the upload fails with "Failed to fetch video source: 400".
 
-## 6. Publish: 1 video per hour, 18:00Z to 22:00Z (19:00 to 23:00 Madrid)
-- **Socialync** is the first choice. It posts to Instagram, YouTube and TikTok in one call.
-  - Run `validate_post`, then `publish_scheduled`.
-  - Settings: `tiktokPrivacyLevel PUBLIC_TO_EVERYONE` and `aiGenerated: true` on every platform.
-  - Per-platform `customCaption`: add `#fyp` on TikTok and `#shorts` plus the sources on YouTube. Add `#reels` to the base caption.
-  - The free plan allows only 5 posts per **month** (it resets on the 1st). If it answers `plan_limit_reached`, fall back to Upload-Post.
-- **Upload-Post** is the fallback. It covers Instagram and YouTube only, because the free plan has no TikTok.
-  - Use `upload_video` with `videoPathOrUrl` set to the jsDelivr URL, `scheduledDate` and `confirmed: true`.
-  - Instagram: user `default`, `instagramMediaType REELS`, `instagramIsAiGenerated`.
-  - YouTube: user `@ifitvanishedd`, `youtubePrivacyStatus public`, `youtubeContainsSyntheticMedia`.
+## 6. Publish with Zernio: 1 video per hour, 18:00Z to 22:00Z (19:00 to 23:00 Madrid)
+- `mcp__Zernio__call_tool` name `posts_create_post`, one post per video:
+  - `media_items: [{type: "video", url: <raw.githubusercontent.com URL with the commit SHA>, mimeType: "video/mp4"}]`
+  - `scheduled_for`: the slot in UTC (winter 18:00Z…22:00Z, summer 17:00Z…21:00Z)
+  - platforms: TikTok `6af5fc430c1b54f421bc4837` (caption + hashtags + #fyp), Instagram `6af5fc55f318bbc43a0fe3d3`
+    (caption + hashtags + #reels), YouTube `6af5fcdd2fd432bb239b9515` (platformSpecificData.title ending in #shorts,
+    caption + sources + hashtags + #shorts)
+  - `tiktok_settings: {privacyLevel: "PUBLIC_TO_EVERYONE", allowComment: true, allowDuet: true, allowStitch: true,
+    commercialContentType: "none", contentPreviewConfirmed: true, expressConsentGiven: true, videoMadeWithAi: true}`
+- Mix the order: interesting, funny, suspense, interesting, funny (never two of the same format back to back).
+- Fallback only if Zernio fails: Upload-Post `upload_video` (Instagram user `default`, YouTube user `@ifitvanishedd`).
+  Never retry a plan-limit refusal and never pay or upgrade anything.
 - Report every video, platform and time to the owner. Say plainly what could not be published and why.

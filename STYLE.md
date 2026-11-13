@@ -1,4 +1,7 @@
-# Channel style (set by the owner on 2026-11-12)
+# Channel style (set by the owner on 2026-11-12; Shorts formats updated 2026-11-13, see FORMATS.md)
+
+SHORTS: read FORMATS.md first. 5 different formats per day, funny influencer-style names, cheerful fast narrator
+(`VOICE='hype'`), dopamine rules. The music bed may follow the format (hype / funny / tension / cinematic) but stays quiet under the voice.
 
 The channel posts ANY kind of AI-made content that is going viral right now. It is no longer limited to
 "what if X vanished": follow the trend of the day (survival "what if" stories, 2nd-person mystery stories, AI-made
