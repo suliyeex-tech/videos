@@ -11,6 +11,9 @@ Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.
   "full story on the channel", etc. Account IDs in Zernio stay the same after a rename; usernames/handles may change, ignore them.
 - Playlist names stay generic by genre; the "What If It Vanished? | ..." prefix will be renamed by the owner.
 
+## Owner's favourite reference videos
+- Read REFERENCES.md every run: at least 1 video per run in the style of one of them (original story and visuals).
+
 ## Targets (check progress weekly)
 - YouTube Partner Program, lower tier (fan funding): 500 subs + 3 public uploads in 90 days + (3,000 watch hours in 12 months OR 3M Shorts views in 90 days).
 - YouTube Partner Program, full (ads): 1,000 subs + (4,000 watch hours in 12 months OR 10M Shorts views in 90 days).
