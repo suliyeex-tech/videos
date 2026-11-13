@@ -1,8 +1,13 @@
-"""Pipeline: python3 run.py <episode.py> [tts|info|still t..|shot i|render|audio|mux|all]
-Output goes to /home/claude/work/<slug>/ and the final mp4 to /home/claude/videos/out/<slug>.mp4"""
+"""Pipeline: python3 run.py <episode.py> [tts|info|still t..|sheet [t..]|render|audio|mux|all]
+Work files go to /home/claude/work/<slug>/ and the final mp4 to <repo>/out/<slug>.mp4
+
+Episode module contract (see FORMATS.md):
+  SLUG, LINES, timeline(ls, dur), optional: TITLE, INFO, CAPS, CAPTION, VOICE, SPEED, MOOD, SFX(ls, dur), NOZOOM, PROGRESS, ZOOM, POST
+  LINES items: (text, gap) | (text, gap, voice_key) | (None, seconds)  -> None = silent beat (no voice), for no-narration formats
+"""
 import sys, os, json, math, random, subprocess, importlib.util
 import numpy as np, cv2
-HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, 'formats'))
 import kit as K
 from kit import W, H, FPS
 TTS_DIR = os.environ.get('TTS_DIR') or next((d for d in ('/home/claude/tts', '/home/claude/vid/tts') if os.path.exists(f'{d}/kokoro.onnx')), '/home/claude/tts')
@@ -11,77 +16,150 @@ REPO = os.path.dirname(HERE)
 def load(path):
     spec = importlib.util.spec_from_file_location('ep', path); ep = importlib.util.module_from_spec(spec); spec.loader.exec_module(ep); return ep
 EP = load(sys.argv[1]); WD = f'/home/claude/work/{EP.SLUG}'; os.makedirs(WD, exist_ok=True)
-K.HEADER['title'] = EP.TITLE; K.HEADER['info'] = EP.INFO
+K.HEADER['title'] = getattr(EP, 'TITLE', ''); K.HEADER['info'] = getattr(EP, 'INFO', '')
 
-# ---------------- voice ----------------
-VOICE_MIX = (('am_michael', 0.7), ('am_fenrir', 0.3))   # closest blend to the reference TikTok narrator
-SPEED = 1.08
+# ---------------- voices ----------------
+# key -> (blend of Kokoro voices, default speed). 'hype' = cheerful + fast (closest to the darkset / viral narrators)
+VOICES = {
+    'default':  ((('am_puck', 0.4), ('am_eric', 0.3), ('am_fenrir', 0.3)), 1.05),   # owner-approved fallback (STYLE.md)
+    'classic':  ((('am_michael', 0.7), ('am_fenrir', 0.3)), 1.08),
+    'hype':     ((('am_echo', 0.5), ('am_puck', 0.5)), 1.25),
+    'suspense': ((('am_adam', 0.6), ('am_michael', 0.4)), 1.08),
+    'guy':      ((('am_puck', 1.0),), 1.22),
+    'bro':      ((('am_liam', 0.6), ('am_puck', 0.4)), 1.25),
+    'girl':     ((('af_sarah', 0.6), ('af_nova', 0.4)), 1.22),
+    'mom':      ((('af_heart', 1.0),), 1.12),
+    'old':      ((('bm_george', 1.0),), 1.05),
+}
 def tts():
     import soundfile as sf
     from kokoro_onnx import Kokoro
     k = Kokoro(f'{TTS_DIR}/kokoro.onnx', f'{TTS_DIR}/voices.bin')
-    style = sum(k.get_voice_style(n) * w for n, w in VOICE_MIX)
+    styles = {}
+    def style(key):
+        if key not in styles: styles[key] = sum(k.get_voice_style(n) * w for n, w in VOICES[key][0])
+        return styles[key]
+    base = getattr(EP, 'VOICE', 'default')
+    if not isinstance(base, str):   # a raw blend list, e.g. [["am_puck", 0.4], ["am_eric", 0.6]]
+        VOICES['_ep'] = (tuple(tuple(x) for x in base), getattr(EP, 'SPEED', None) or 1.05); base = '_ep'
     out = []; cur = 0.3; SR = 24000
-    for i, (txt, gap) in enumerate(EP.LINES):
-        s, sr = k.create(txt, voice=style, speed=SPEED, lang='en-us')
+    for i, item in enumerate(EP.LINES):
+        txt, gap = item[0], item[1]; vk = item[2] if len(item) > 2 else base
+        if txt is None:   # silent beat
+            out.append({'i': i, 'text': None, 'start': round(cur, 3), 'dur': round(gap, 3)}); cur += gap; continue
+        sp = getattr(EP, 'SPEED', None) or VOICES[vk][1]
+        if len(item) > 2: sp = VOICES[vk][1]
+        s, sr = k.create(txt, voice=style(vk), speed=sp, lang='en-us')
         idx = np.where(np.abs(s) > 0.01)[0]; s = s[max(0, idx[0] - 400): idx[-1] + 1600]
         sf.write(f'{WD}/vo_{i:02d}.wav', s, SR); d = len(s) / SR
-        out.append({'i': i, 'text': txt, 'start': round(cur, 3), 'dur': round(d, 3)}); cur += d + gap
-    json.dump({'lines': out, 'total': round(cur, 3)}, open(f'{WD}/vo.json', 'w'), indent=1)
+        out.append({'i': i, 'text': txt, 'start': round(cur, 3), 'dur': round(d, 3), 'voice': vk}); cur += d + gap
+    json.dump({'lines': out, 'total': round(cur + 0.2, 3)}, open(f'{WD}/vo.json', 'w'), indent=1)
     print('tts total', round(cur, 2))
 
 # ---------------- timeline / captions ----------------
 def setup():
-    global L, TOTAL, BOUNDS, CH
+    global L, TOTAL, BOUNDS, CH, LINECAP
     V = json.load(open(f'{WD}/vo.json')); L = V['lines']; TOTAL = V['total']
     ls = lambda i: L[i]['start']; dur = lambda i: L[i]['dur']
     shots = [(round(a * FPS) / FPS, f) for a, f in EP.timeline(ls, dur)]
     END = math.ceil(TOTAL * FPS) / FPS
     BOUNDS = [(a, (shots[i + 1][0] if i + 1 < len(shots) else END), f) for i, (a, f) in enumerate(shots)]
-    CH = []
-    for v, groups in zip(L, EP.CAPS):
+    CH = []; LINECAP = []
+    for v, groups in zip(L, getattr(EP, 'CAPS', [])):
+        if not groups: continue
+        LINECAP.append([v['start'], v['start'] + v['dur'] + 0.25, groups])
         tot = sum(len(g) + 3 for g in groups); t = v['start']
         for g in groups:
             d = v['dur'] * (len(g) + 3) / tot; CH.append([t, t + d, g]); t += d
         CH[-1][1] += 0.22
-def segs(g):
+def segs(g, accent=None):
     out = []; cur = ''; col = K.WHITE
     for c in g:
         if c in '{[':
             if cur: out.append((cur, col)); cur = ''
-            col = K.RED if c == '{' else K.YEL
+            col = accent or (K.RED if c == '{' else K.YEL)
+            if accent is None and c == '{': col = K.RED
         elif c in '}]':
             if cur: out.append((cur, col)); cur = ''
             col = K.WHITE
         else: cur += c
     if cur: out.append((cur, col))
     return out
-def caption(img, t):
+def words_of(sg):
+    """split coloured segments into (word, colour) tokens"""
+    out = []
+    for s_, c in sg:
+        for wd in s_.split(' '):
+            if wd: out.append((wd, c))
+    return out
+
+def cap_pop(img, t, karaoke=False):
     for a, b, g in CH:
         if a <= t < b:
             big = g.startswith('!'); g = g.lstrip('!')
-            sg = segs(g); size = 150 if big else 104
-            k = K.back(K.ramp(t, a, a + 0.1)); sc = 0.8 + 0.2 * k
-            ws = [K.twidth(s_, size, K.ANT, 10) for s_, _ in sg]; tw = sum(ws)
-            if tw * sc > 1000: sc *= 1000 / (tw * sc)
-            y = 1240 if big else 1290
-            x = W / 2 - tw * sc / 2
-            for (s_, c), w in zip(sg, ws): K.text(img, s_, x + w * sc / 2 + 5, y + 7, size, (0, 0, 0), K.ANT, alpha=0.55, scale=sc, stroke=10); x += w * sc
-            x = W / 2 - tw * sc / 2
-            for (s_, c), w in zip(sg, ws): K.text(img, s_, x + w * sc / 2, y, size, (K.RED if big and c == K.WHITE else c), K.ANT, scale=sc, stroke=10, scol=(18, 14, 14)); x += w * sc
+            toks = words_of(segs(g)); size = 150 if big else 104
+            n = len(toks); shown = n if not karaoke else max(1, min(n, int((t - a) / max(0.05, (b - a - 0.22)) * n) + 1))
+            sp = K.twidth(' ', size, K.ANT) * 0.9
+            ws = [K.twidth(w_, size, K.ANT, 10) for w_, _ in toks]; tw = sum(ws) + sp * (n - 1)
+            sc0 = 1.0 if tw < 1000 else 1000 / tw
+            y = 1240 if big else 1290; x = W / 2 - tw * sc0 / 2
+            for j, ((w_, c), w) in enumerate(zip(toks, ws)):
+                if j >= shown: break
+                ta = a + (b - a - 0.22) * j / n if karaoke else a
+                k = K.back(K.ramp(t, ta, ta + 0.12)); sc = sc0 * (0.6 + 0.4 * k) if karaoke else sc0 * (0.8 + 0.2 * K.back(K.ramp(t, a, a + 0.1)))
+                col = (K.RED if big and c == K.WHITE else c)
+                if karaoke and j == shown - 1 and not big and c == K.WHITE: col = K.YEL
+                cx = x + w * sc0 / 2
+                K.text(img, w_, cx + 5, y + 7, size, (0, 0, 0), K.ANT, alpha=0.55, scale=sc, stroke=10)
+                K.text(img, w_, cx, y, size, col, K.ANT, scale=sc, stroke=10, scol=(18, 14, 14)); x += w * sc0 + sp * sc0
             return
+
+def wrap(toks, size, font, maxw):
+    lines = [[]]; wcur = 0; sp = K.twidth(' ', size, font)
+    for w_, c in toks:
+        w = K.twidth(w_, size, font)
+        if lines[-1] and wcur + sp + w > maxw: lines.append([]); wcur = 0
+        lines[-1].append((w_, c, w)); wcur += (sp if wcur else 0) + w
+    return lines, sp
+
+def cap_block(img, t, style):
+    """whole-line captions: 'top' (neon, sentence at the top) or 'serif' (cinematic subtitles)"""
+    for a, b, groups in LINECAP:
+        if a <= t < b:
+            text_ = ' '.join(g.lstrip('!') for g in groups)
+            if style == 'top':
+                toks = words_of(segs(text_, accent=getattr(EP, 'ACCENT', (255, 170, 40)))); size, font, y0, lh = 58, K.INTER_B, getattr(EP, 'TOP_Y', 300), 72
+                toks = [(w_.upper(), c) for w_, c in toks]
+            else:
+                toks = words_of(segs(text_, accent=(200, 225, 245))); size, font, y0, lh = 56, K.SERIF_I, 1330, 74
+            lines, sp = wrap(toks, size, font, 900)
+            al = K.ramp(t, a, a + 0.18) * (1 - K.ramp(t, b - 0.15, b))
+            for li, ln in enumerate(lines):
+                tw = sum(w for _, _, w in ln) + sp * (len(ln) - 1); x = W / 2 - tw / 2; y = y0 + li * lh + (1 - K.eout(K.ramp(t, a, a + 0.2))) * 14
+                for w_, c, w in ln:
+                    if style == 'top' and c != K.WHITE: K.glow(img, x + w / 2, y, int(w * 0.6), tuple(int(v * 0.25) for v in c), 0.6)
+                    K.text(img, w_, x + w / 2 + (3 if style == 'serif' else 0), y + 3, size, (0, 0, 0), font, alpha=0.6 * al)
+                    K.text(img, w_, x + w / 2, y, size, c, font, alpha=al); x += w + sp
+            return
+
 def frame(t):
     for a, b, f in BOUNDS:
         if a <= t < b - 1e-6: break
     tl = t - a; d = b - a
     img = np.zeros((H, W, 3), np.uint8); random.seed(int(t * 30))
     f(img, tl, d)
-    if f not in getattr(EP, 'NOZOOM', ()):
-        z = 1.0 + 0.05 * tl / max(d, 1.5) + (0.05 * (1 - K.eout(K.ramp(tl, 0, 0.18))) if a > 0 else 0)
+    zk = getattr(EP, 'ZOOM', 1.0)
+    if f not in getattr(EP, 'NOZOOM', ()) and zk > 0:
+        z = 1.0 + zk * (0.05 * tl / max(d, 1.5) + (0.07 * (1 - K.eout(K.ramp(tl, 0, 0.16))) if a > 0 else 0))
         M = cv2.getRotationMatrix2D((W / 2, H * 0.5), 0, z); img = cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
-    if a == 0 or f in getattr(EP, 'HEADER_SHOTS', ()): pass
-    K.vignette(img, 0.28)
-    caption(img, t)
+    if getattr(EP, 'VIGNETTE', 0.28): K.vignette(img, getattr(EP, 'VIGNETTE', 0.28))
+    style = getattr(EP, 'CAPTION', 'pop')
+    if style in ('pop', 'karaoke'): cap_pop(img, t, karaoke=(style == 'karaoke'))
+    elif style in ('top', 'serif'): cap_block(img, t, style)
+    if hasattr(EP, 'OVERLAY'): EP.OVERLAY(img, t, TOTAL)
+    if getattr(EP, 'PROGRESS', True):
+        col = getattr(EP, 'PROGRESS_COL', K.YEL); k = min(1, t / TOTAL)
+        img[H - 14:H] = (img[H - 14:H] * 0.4).astype(np.uint8); img[H - 14:H, :int(W * k)] = col
     return img
 
 def render_shot(i):
@@ -105,7 +183,9 @@ def render_all(workers=2):
 
 def audio():
     import audio as A
-    A.build(WD, L, TOTAL, [a for a, b, f in BOUNDS], EP.SFX(lambda i: L[i]['start'], lambda i: L[i]['dur']) if hasattr(EP, 'SFX') else {}, getattr(EP, 'MOOD', {}))
+    sfx = EP.SFX(lambda i: L[i]['start'], lambda i: L[i]['dur']) if hasattr(EP, 'SFX') else {}
+    if getattr(EP, 'TICKS', False) and CH: sfx.setdefault('tick', [a for a, b, g in CH])
+    A.build(WD, L, TOTAL, [a for a, b, f in BOUNDS], sfx, getattr(EP, 'MOOD', {}))
 
 def mux():
     os.makedirs(f'{REPO}/out', exist_ok=True); out = f'{REPO}/out/{EP.SLUG}.mp4'

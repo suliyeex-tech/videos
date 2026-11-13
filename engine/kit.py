@@ -7,6 +7,8 @@ W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 BEB = f'{HERE}/fonts/bebas-neue-latin-400-normal.woff'
 ANT = f'{HERE}/fonts/anton-latin-400-normal.woff'
+INTER_B = f'{HERE}/fonts/inter-bold.otf'; INTER_M = f'{HERE}/fonts/inter-medium.otf'
+SERIF_I = f'{HERE}/fonts/lora-italic.ttf'; POP = f'{HERE}/fonts/poppins-bold.ttf'
 WHITE = (248, 246, 244); RED = (58, 48, 235); YEL = (70, 200, 255); INK = (30, 22, 20); CREAM = (215, 235, 245)
 GREEN = (110, 200, 80); ORANGE = (40, 140, 240); BLUE = (200, 120, 40); SKY = (235, 190, 120); GREY = (150, 150, 155)
 SKINS = [(140, 185, 232), (100, 150, 205), (70, 110, 160), (160, 200, 240)]
@@ -241,3 +243,19 @@ def person(img, L, hx, hy, s=1.0, expr='smile', look=(0, 0), al=15, ar=-15, body
     if wet:
         for (dx, dy) in ((-60, -70), (40, -90), (70, -40)): circ(img, (hx + dx * s, hy + dy * s), 8 * s, (250, 215, 160))
     return hands
+
+# ---------- emoji (Noto Color Emoji, bitmap at 109 px, scaled) ----------
+EMOJI = f'{HERE}/fonts/emoji.ttf'
+_ec = {}
+def emoji(img, ch, cx, cy, size=80, alpha=1.0, rot=0):
+    if alpha <= 0.02 or size < 4: return
+    if ch not in _ec:
+        f = ImageFont.truetype(EMOJI, 109); im = Image.new('RGBA', (160, 160), (0, 0, 0, 0))
+        ImageDraw.Draw(im).text((10, 10), ch, font=f, embedded_color=True)
+        bb = im.getbbox() or (0, 0, 1, 1); im = im.crop(bb); a = np.array(im)
+        _ec[ch] = (a[:, :, 2::-1].astype(np.float32), a[:, :, 3:4].astype(np.float32) / 255)
+    rgb, al = _ec[ch]; sc = size / max(rgb.shape[:2])
+    if rot:
+        h, w = rgb.shape[:2]; M = cv2.getRotationMatrix2D((w / 2, h / 2), rot, 1.0)
+        rgb = cv2.warpAffine(rgb, M, (w, h)); al = cv2.warpAffine(al, M, (w, h))[:, :, None]
+    blit(img, rgb, al, cx, cy, alpha, sc)

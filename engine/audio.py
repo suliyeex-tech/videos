@@ -14,22 +14,28 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
         if i >= N or i + len(x) <= 0: return
         if i < 0: x = x[-i:]; i = 0
         j = min(N, i + len(x)); buf[i:j] += x[:j - i] * g
-    root = mood.get('root', 55.0); bpm = mood.get('bpm', 105); beat = 60 / bpm
+    style = mood.get('style', 'dark')
+    D = {'dark': dict(bpm=105, prog=[0, -4, 3, -2], minor=True, drums=True, arp=True, pad=0.05, piano=False, tick=False, hat16=False),
+         'hype': dict(bpm=140, prog=[0, -4, 3, -2], minor=True, drums=True, arp=True, pad=0.04, piano=False, tick=False, hat16=True),
+         'funny': dict(bpm=120, prog=[0, 5, 7, 5], minor=False, drums=True, arp=True, pad=0.03, piano=False, tick=False, hat16=False),
+         'cinematic': dict(bpm=72, prog=[0, -4, 3, -2], minor=True, drums=False, arp=False, pad=0.07, piano=True, tick=False, hat16=False),
+         'tension': dict(bpm=100, prog=[0, 1, 0, -2], minor=True, drums=True, arp=False, pad=0.06, piano=False, tick=True, hat16=False)}[style]
+    root = mood.get('root', 55.0); bpm = mood.get('bpm', D['bpm']); beat = 60 / bpm
     mistake = sfx.get('mistake'); end = sfx.get('end', TOTAL - 2.5); hook_end = sfx.get('hook_end', 3.0)
     drop = sfx.get('drop', (mistake, mistake + 0.9) if mistake else None)
     # intensity curve 0..1
     inten = np.clip((t - hook_end) / max(1, (end - hook_end)), 0, 1) * 0.5 + 0.5 * (t > hook_end)
     # ---- pad (detuned saws, low-passed) ----
-    prog = mood.get('prog', [0, -4, 3, -2])   # semitones: i VI III VII
+    prog = mood.get('prog', D['prog'])
     bar = beat * 4; pad = np.zeros(N)
     for k in range(int(TOTAL / (bar * 2)) + 2):
         st = k * bar * 2; n = int(bar * 2 * SR); tt = np.arange(n) / SR
         f0 = root * 2 ** (prog[k % len(prog)] / 12)
         x = np.zeros(n)
-        for mul, g in ((1, .5), (1.5, .25), (2, .3), (2.4 if mood.get('minor', True) else 2.5, .18)):
+        for mul, g in ((1, .5), (1.5, .25), (2, .3), (2.4 if D['minor'] else 2.52, .18)):
             for det in (-0.4, 0.4): x += g * (2 * ((f0 * mul * 2 + det) * tt % 1) - 1)
         x = lp(x, 900) * np.minimum(1, np.minimum(tt / 0.3, (bar * 2 - tt) / 0.3))
-        put(pad, x, st, 0.05)
+        put(pad, x, st, D['pad'])
     # ---- sub bass on 8ths, kick, hats ----
     drums = np.zeros(N); bass = np.zeros(N)
     kn = int(0.3 * SR); kt = np.arange(kn) / SR
@@ -40,28 +46,43 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     while b * beat / 2 < TOTAL:
         at = b * beat / 2; k = b // 2
         if drop and drop[0] <= at < drop[1]: b += 1; continue
-        if at < end:
-            if at >= hook_end:
+        if at < end and D['drums']:
+            if D['tick']:
+                if b % 2 == 0: put(drums, hp(rng.standard_normal(int(0.02 * SR)), 3000) * env(int(0.02 * SR), 0.0005, 0.004), at, 0.5)
+                if b % 4 == 0 and at >= hook_end: put(drums, kick, at, 0.55)
+            elif at >= hook_end:
                 if b % 2 == 0: put(drums, kick, at, 0.8)
                 if b % 4 == 2 and at > hook_end + bar: put(drums, clap, at, 0.35)
                 put(drums, hat, at, 0.18 if b % 2 else 0.1)
+                if D['hat16']: put(drums, hat, at + beat / 4, 0.08 + 0.06 * (b % 8 == 7))
+                if style == 'funny' and b % 2 == 1: put(drums, clap * 0.5, at, 0.2)
                 f = root * 2 ** (prog[int(at / (bar * 2)) % len(prog)] / 12)
                 nn = int(beat / 2 * SR); tt = np.arange(nn) / SR
-                put(bass, np.sin(2 * np.pi * f * tt) * env(nn, 0.004, 0.16), at, 0.35)
+                if style == 'funny':
+                    if b % 2 == 0: put(bass, (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt)) * env(nn, 0.002, 0.07), at, 0.45)
+                else: put(bass, np.sin(2 * np.pi * f * tt) * env(nn, 0.004, 0.16 if style != 'hype' else 0.22), at, 0.35 if style != 'hype' else 0.45)
             else:
                 put(drums, hat, at, 0.12)
                 if b % 4 == 0: put(drums, kick, at, 0.35)
         b += 1
     # ---- pluck arp ----
     arp = np.zeros(N); scale = [0, 3, 7, 10, 12, 10, 7, 3]; i = 0; at = hook_end
-    while at < end:
+    while at < end and D['arp']:
         if not (drop and drop[0] <= at < drop[1]):
             f = root * 4 * 2 ** ((prog[int(at / (bar * 2)) % len(prog)] + scale[i % 8]) / 12)
             nn = int(0.25 * SR); tt = np.arange(nn) / SR
             x = (np.sin(2 * np.pi * f * tt) + 0.35 * np.sin(4 * np.pi * f * tt) + 0.1 * np.sin(6 * np.pi * f * tt)) * env(nn, 0.003, 0.08)
             put(arp, x, at, 0.05 + 0.04 * float(at > (hook_end + end) / 2))
         at += beat / 2; i += 1
-    music = pad + bass + drums * 0.9 + arp
+    piano = np.zeros(N)
+    if D['piano']:
+        mel = [0, 3, 7, 12, 10, 7, 3, 5]; at = 0.0; i = 0
+        while at < TOTAL - 1:
+            f = root * 4 * 2 ** ((prog[int(at / (bar * 2)) % len(prog)] + mel[i % 8]) / 12)
+            nn = int(2.2 * SR); tt = np.arange(nn) / SR
+            x = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(4 * np.pi * f * tt) * np.exp(-tt / 0.3) + 0.15 * np.sin(6 * np.pi * f * tt) * np.exp(-tt / 0.15)) * env(nn, 0.004, 0.9)
+            put(piano, x, at, 0.07); at += beat; i += 1
+    music = pad + bass + drums * 0.9 + arp + piano
     music *= (0.7 + 0.3 * inten)
     if drop: g = np.ones(N); g[int(drop[0] * SR):int(drop[1] * SR)] = 0.15; music *= lp(g, 6, 1)
     # ---- sfx ----
@@ -90,6 +111,20 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     for c in sfx.get('snap', []): put(fx, snap(), c, 0.8)
     for c in sfx.get('splash', []): put(fx, splash(), c, 0.6)
     for c in sfx.get('pop', []): put(fx, ding(880, 0.25), c, 0.25)
+    def tick():
+        n = int(0.06 * SR); tt = np.arange(n) / SR; return np.sin(2 * np.pi * 1800 * tt) * env(n, 0.0005, 0.012) + hp(rng.standard_normal(n), 4000) * env(n, 0.0005, 0.005) * 0.5
+    def notif():
+        n = int(0.5 * SR); tt = np.arange(n) / SR; a_ = np.sin(2 * np.pi * 1568 * tt) * env(n, 0.002, 0.08); b2 = np.zeros(n); k = int(0.09 * SR)
+        b2[k:] = np.sin(2 * np.pi * 2093 * tt[:n - k]) * env(n - k, 0.002, 0.12); return a_ + b2
+    def typing(d=0.8):
+        out = np.zeros(int(d * SR)); k = 0
+        while k < len(out) - 800: out[k:k + 800] += hp(rng.standard_normal(800), 2500) * env(800, 0.0003, 0.004); k += int(rng.uniform(0.06, 0.13) * SR)
+        return out
+    for c in sfx.get('tick', []): put(fx, tick(), c, 0.35)
+    for c in sfx.get('notif', []): put(fx, notif(), c, 0.45)
+    for c in sfx.get('typing', []): put(fx, typing(), c, 0.3)
+    for c in sfx.get('whoosh', []): put(fx, whoosh(0.4), c - 0.3, 0.5)
+    for c in sfx.get('riser', []): put(fx, riser(), c - 1.6, 0.45)
     if mistake is not None: put(fx, scratch(), mistake - 0.05, 0.9); put(fx, boom(1.8, 34), mistake + 0.05, 0.6)
     for a_, b_ in sfx.get('heart', []):
         at = a_
@@ -98,6 +133,7 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     # ---- voice: per-line, then broadcast chain in ffmpeg ----
     voice = np.zeros(N)
     for v in L:
+        if v.get('text') is None: continue
         x, sr = sf.read(f"{WD}/vo_{v['i']:02d}.wav"); x = resample_poly(x, 147, 80)
         put(voice, x / (np.max(np.abs(x)) + 1e-9) * 0.8, v['start'])
     sf.write(f'{WD}/vo_raw.wav', voice, SR)
@@ -107,7 +143,8 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     subprocess.check_call(['ffmpeg', '-y', '-loglevel', 'error', '-i', f'{WD}/vo_raw.wav', '-af', chain, '-ar', str(SR), f'{WD}/vo_proc.wav'])
     voice, _ = sf.read(f'{WD}/vo_proc.wav'); voice = voice[:N] if len(voice) >= N else np.pad(voice, (0, N - len(voice)))
     e = lp(np.abs(voice), 7, 1); duck = 1 - 0.55 * np.clip(e / 0.1, 0, 1)
-    bed = music * duck * 0.55 + fx * 0.5
+    has_voice = any(v.get('text') for v in L)
+    bed = music * duck * (0.55 if has_voice else 1.0) + fx * 0.5
     # stereo: widen the bed with a short Haas delay, voice centred
     dl = int(0.012 * SR); bl = bed; br = np.concatenate([np.zeros(dl), bed[:-dl]])
     st = np.stack([voice + bl * 0.95 + br * 0.15, voice + br * 0.95 + bl * 0.15], 1)
