@@ -10,8 +10,11 @@ sh /home/claude/videos/engine/setup.sh
 
 ## 2. Research (last 24 h)
 - Search the web for the most viral AI-made and animated videos of the last 24 hours on TikTok, YouTube Shorts and Instagram Reels. Note their topics, hooks and format.
-- Pick **5 new topics** in this channel's style. Never repeat a topic that already has a file in `episodes/`.
-- The format is a cartoon "what if" survival story. It always has:
+- Read STYLE.md. Pick **5 new topics**, each riding a different trend of the day: any kind of viral AI content
+  (survival "what if" stories, 2nd-person mystery stories, AI characters, science "what happens if", funny AI
+  scenarios…), all in English. Never repeat a topic that already has a file in `episodes/` or `longform/episodes/`.
+- When the trend is a survival "what if" story, use the cartoon format below; otherwise adapt the episode
+  (it does not need every element, but it always needs a hook in the first 2 seconds and a payoff or cliffhanger):
   - a named character with an age and a place,
   - a "THE RULE" card,
   - a "STUPID MISTAKE" beat,
@@ -20,6 +23,7 @@ sh /home/claude/videos/engine/setup.sh
 - Verify every fact with a web search before using it. Put the source in the YouTube description.
 
 ## 3. Write the episodes
+- Set `VOICE` and `SPEED` at the top of the episode to the voice of the day (STYLE.md; fast and cheerful, speed >= 1.0).
 - Copy an existing file from `episodes/`, for example `e03_sinking_car.py`, and name the new one `episodes/YYYYMMDD_eNN_<topic>.py`.
 - Each file defines:
   - `SLUG` (start it with the date),
@@ -38,15 +42,15 @@ sh /home/claude/videos/engine/setup.sh
 ## 4. Render and check
 ```
 cd /home/claude/videos/engine
-python3 run.py ../episodes/<file>.py tts     # voice: 70% am_michael + 30% am_fenrir (closest to the reference TikTok narrator)
+python3 run.py ../episodes/<file>.py tts     # voice: set VOICE/SPEED in the episode to match the day's viral style (STYLE.md)
 python3 run.py ../episodes/<file>.py sheet   # contact sheet in /home/claude/work/<slug>/sheet.jpg. LOOK at it and fix overlaps first
 python3 run.py ../episodes/<file>.py all     # renders and mixes (-14 LUFS); output goes to out/<slug>.mp4
 ```
 
 ## 5. Host
 - `git add episodes out/<new files> && git commit && git push`
-- The public URL is `https://cdn.jsdelivr.net/gh/suliyeex-tech/videos@<commit-sha>/out/<slug>.mp4`.
-- Always use the commit SHA, not `main`, because jsDelivr caches branch URLs.
+- The public URL is `https://raw.githubusercontent.com/suliyeex-tech/videos/<commit-sha>/out/<slug>.mp4`.
+- Always use the commit SHA, not `main`. Do NOT use jsDelivr (`...@sha` URLs): Zernio encodes the `@` as `%40` and the upload fails with "Failed to fetch video source: 400".
 
 ## 6. Publish: 1 video per hour, 18:00Z to 22:00Z (19:00 to 23:00 Madrid)
 - **Socialync** is the first choice. It posts to Instagram, YouTube and TikTok in one call.
