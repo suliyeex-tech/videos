@@ -25,6 +25,9 @@
 The scheduled task follows this every day. The owner asked for it to run on its own, every day, without asking them.
 It runs alongside the 5 daily Shorts (DAILY.md). Never reuse a Shorts topic from the same day.
 
+## Music with an arc (owner reference F "1 MINUTE", 2026-11-14)
+Set in every episode, e.g. `MUSIC_ARC = {"s01": 0.7, "s05": 0.3, "s12": 0.0, "s13": 1.0}` and `MUSIC_MOOD = {"s01": "tense", "s16": "hope"}` (levels hold until the next listed scene; 0 = silence before a reveal). Without it the old flat drone is used. See REFERENCES.md F for the story/colour/shot rules.
+
 ## 1. Setup
 ```
 git clone https://github.com/suliyeex-tech/videos /home/claude/videos   # or: git -C /home/claude/videos pull --rebase

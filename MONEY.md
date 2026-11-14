@@ -45,7 +45,7 @@ grab you in the first seconds. He sent a viral reference he loves (REFERENCES.md
 - Playlist names stay generic by genre; the "What If It Vanished? | ..." prefix will be renamed by the owner.
 
 ## Owner's favourite reference videos
-- 2026-11-14: owner added reference E ("1 MINUTE", Last Soul): QUALITY over quantity of gimmicks — storytelling music that builds, intensity, suspense about what will happen, a message, polished animation. See REFERENCES.md E.
+- 2026-11-14: owner added reference F ("1 MINUTE", Last Soul): QUALITY over quantity of gimmicks — storytelling music that builds, intensity, suspense about what will happen, a message, polished animation. See REFERENCES.md F (full breakdown from the file the owner sent). Long-form must set MUSIC_ARC/MUSIC_MOOD (music with an arc, silence before reveals, peak at the payoff).
 - Read REFERENCES.md every run: at least 1 video per run in the style of one of them (original story and visuals).
 
 ## Targets (check progress weekly)

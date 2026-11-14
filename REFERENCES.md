@@ -44,23 +44,6 @@
 - Its facts look wrong: every "illegal in" claim must be verified with a reliable source or left out.
 - Use for: weird laws, records, "the country where…", food, money facts (map zoom format).
 
-## E. "1 MINUTE - An Animated Short Film" (Last Soul, @lastsoulorigin) — owner favourite, sent 2026-11-14
-- Link: https://youtu.be/NeWlC4bJTMs . Channel About: "Animated short films about the habits we can't seem to break",
-  every film "made shot by shot in code, with AI help" (= the same kind of pipeline as ours, so this quality IS reachable).
-- NOT yet analysed frame by frame: YouTube blocks fetching from the cloud. When the owner sends the file (or screenshots),
-  analyse it like A-D (frames + transcript + music) and replace this note with the real breakdown.
-- What the owner says makes it great (his words, 2026-11-14): the MUSIC (how it sounds and how it keeps you hooked),
-  the animation quality, the "what is going to happen?" tension, the INTENSITY, and the MESSAGE. "Hay que mejorar mucho
-  la calidad de los vídeos y de los shorts."
-- Apply to every long video and short from now on (until the real breakdown replaces this):
-  1. Music is part of the story, not a drone: it builds (quiet → rising → peak at the twist → drop/silence on the reveal),
-     changes with each act, and hits on key cuts. A 0.5–1 s silence right before the biggest reveal.
-  2. One clear question the viewer needs answered ("what happens when the minute ends?") set up in the first 3 s and
-     paid off at the end; escalate stakes every beat (intensity curve, never flat).
-  3. A message/meaning under the story (a habit, a regret, a choice) so the ending lands emotionally, not just a joke.
-  4. Animation polish: fewer, better-drawn shots with motion in every shot (camera push, parallax, lighting changes,
-     character acting), consistent palette and lighting per scene; avoid static slides with chips on top.
-
 ## E. "La vida de Víctor" — Día 2 (owner's favourite, sent 2026-11-14; flat vector interactive series, 50 s, Spanish) ← MAIN STYLE NOW
 - Premise: a nerdy gamer (Víctor, glasses, orange headset, blue hoodie, pimples, green stink lines, flies) has 28 days to
   get noticed by "the prettiest girl on the internet" at her event. The AUDIENCE decides every step by commenting A or B.
@@ -81,3 +64,57 @@
   controls the story (comments = algorithm boost) + daily continuity (people come back for "Day 3").
 - Ours must be ORIGINAL: different character, goal, places and jokes (never a gamer chasing a girl influencer, never the
   names Víctor/Sofi, never its drawings). Do NOT copy its fake vote percentages / fake viewer comments.
+
+## F. "1 MINUTE - An Animated Short Film" (Last Soul, @lastsoulorigin) — owner favourite, analysed 2026-11-14 from the file he sent
+Link: https://youtu.be/NeWlC4bJTMs · 5:00, 16:9, NO narrator. Channel: "animated short films about the habits we can't seem to
+break", made shot by shot in code with AI help (same kind of pipeline as ours, so this quality is reachable).
+What the owner loves: the music and how it keeps you hooked, the animation quality, "what is going to happen?", the intensity, the message.
+
+### Story (structure to learn from, never to copy)
+- 0:00 black card, serif line = the theme ("Big plans feel better than small steps.").
+- Act 1 (0:04–1:00) the BIG PROMISE: shoe store, "I want to start running." "10K. Every day. Starting tomorrow." The clerk sells
+  him shoes; a tiny "14-DAY RETURNS" sign is planted (pays off later). A "10K EVERY DAY" calendar goes on the fridge.
+- Act 2 (1:00–2:40) the FAILURE LOOP: the same shot repeats with a new date each time (alarm 5:30 "RUN 10K" → SNOOZE), one
+  excuse per loop in small orange handwriting ("A little sore." "Busy weekend." "It's Sunday."), red X's fill the calendar.
+  Repetition with variation = the viewer predicts the next snooze and feels it. Low point: alone at the window, "I'm just
+  not a runner." He tries to return the shoes: "Sorry. It's been a month." (setup → payoff). Turn: "Can you run one minute?"
+- Turning point (2:40): rips the calendar, writes "1 MIN" in red. Next 5:30 alarm now says "RUN 1 MIN"; "Maybe tomorrow?" →
+  "It's just one minute." Watch timer 1:00 → 0:59. He runs under one street lamp. "Okay." Black quote card, music almost silent.
+- Act 3 (3:00–4:40) GROWTH MONTAGE: watch stats grow (0.72 km/5 min → 2.94 km/20 min → 5.00 km), seasons change, "Yes!"
+  with arms up; a test (rain, "Weather's awful. Too cold. Tomorrow.") that he now beats (yellow raincoat = first bright
+  colour on him); calendar of green ticks; climbs a green hill over the town in full colour (emotional peak).
+- Ending (4:40): back in the store, full circle: "So you made it to 10K?" "I'm not chasing 10K anymore. Just one minute a
+  day." Title card: "1 MINUTE — Just start. See where it takes you."
+
+### Look
+- Black silhouette characters with only white eyes (emotion = eye/brow shape) and a thin rim light; one coloured object
+  (the sneakers) = the story's object. Soft vignette, depth-of-field blur on foreground shoulders (over-the-shoulder shots),
+  insert close-ups (hand on SNOOZE, watch timer, hands ripping paper), slow camera pushes.
+- COLOUR SCRIPT tells the story: grey/desaturated during failure → warm street lamps when he starts → autumn orange → blue
+  sky + green hill at the peak. Colour = progress.
+- Dialogue is tiny speech text on a soft dark blurred cloud above the head, 2–6 words. No big captions, no chips, no counters.
+
+### Music & sound (measured loudness, 5-s blocks)
+- 0:00–1:00 warm, fuller music ≈ −16 dB (hopeful start); 1:00–2:40 drops ≈ 10 dB to −26/−27 dB (failure, sparse);
+  2:40–2:50 near silence (−35 dB) on the turning point; 3:00–3:50 builds back (−24 → −21 dB); 3:55 silence again on the
+  2nd quote card (−36 dB); 4:05–4:50 the loudest, fullest part (−19/−20 dB) for the hill and the ending.
+- So: the music has an ARC with ~15 dB of range, drops to silence right before each turning point, and peaks at the payoff.
+
+### Why it hooks
+- A universal, relatable problem (everyone has snoozed a goal) + a clear question from 0:10: "will he actually do it?"
+- Loops the viewer can predict, so the moment the loop breaks feels huge. Setups that pay off (14-day returns, the alarm label,
+  the store visit). Very few words, so the visuals and music carry the emotion. A real message at the end.
+
+### How WE use it (close in quality, DIFFERENT in content — owner: "que se acerque pero que no sea igual")
+- Never copy: no running/1-minute/shoe-store story, no silhouette-with-white-eyes design as our character, no quote cards
+  from that film. Take the CRAFT, not the story.
+- Every long video gets: a theme line in the first 3 s, one relatable question, a loop with variation (same shot, new
+  day/attempt), at least 2 setups that pay off, a colour script (palette changes with the story), a full-circle ending.
+- Music: set `MUSIC_ARC` (+ `MUSIC_MOOD`) in long-form episodes (engine: longform/lf.py `story_score`): ~0.3 in sad/loop
+  parts, 0.0 just before a reveal or on a title/quote card, 1.0 at the climax; moods 'dark' / 'tense' / 'hope'.
+  Shorts: change `MOOD` style per act where the engine allows, and leave a 0.5-s silence before the twist.
+- Fewer on-screen chips: max 1 text element per shot besides captions; prefer insert close-ups and camera moves.
+- Try a NEW wordless-ish format ("mini film"): our own characters and topics people already like on the channel
+  (survival choices, creepy POV, everyday struggles like phones/sleep/procrastination), 2–5 words of dialogue per shot,
+  narrator only where needed, music-led. Test it as 1 Short first and compare retention (LEARNINGS.md).
+- Any real quote on screen must be checked for the correct author with a web search.
