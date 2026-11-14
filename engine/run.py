@@ -49,6 +49,7 @@ def tts():
             out.append({'i': i, 'text': None, 'start': round(cur, 3), 'dur': round(gap, 3)}); cur += gap; continue
         sp = getattr(EP, 'SPEED', None) or VOICES[vk][1]
         if len(item) > 2: sp = VOICES[vk][1]
+        sp = getattr(EP, 'VOICE_SPEED', {}).get(vk, sp)   # per-voice speed override (MONEY.md: never below 1.15)
         s, sr = k.create(txt, voice=style(vk), speed=sp, lang='en-us')
         idx = np.where(np.abs(s) > 0.01)[0]; s = s[max(0, idx[0] - 400): idx[-1] + 1600]
         sf.write(f'{WD}/vo_{i:02d}.wav', s, SR); d = len(s) / SR
