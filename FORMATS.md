@@ -32,6 +32,7 @@ Every short must have, on top of a hook in the first 1.5 s:
 | `chat` | text-message story: bubbles, typing dots, reactions, emoji bursts, several voices | comedy, influencer drama | e3_chat_chad_rent |
 | `cinema` | 2.5D mannequins/crowds, silent beats with serif subtitles, giant counters (meanwhile style) | "what if everyone…", big-scale science | e4_cinema_everyone_jumps |
 | `cartoon` | flat 2D cartoon (kit.person), rule card, STUPID MISTAKE beat, live-chat gag | survival "what if" with a funny influencer | e5_cartoon_bear_tent |
+| `quiz` | game-show trivia: purple stage, QUESTION n/5 chip, progress dots, A/B/C buttons, 3-s ring timer (silent beat), green reveal + emoji pop, host chip with a funny name | quiz, animals, records, "can you get 5/5" | 20261114_a4_quiz_animals |
 | `sim3d` | small 3D world rendered in code at a real famous place, HUD (TEMPERATURE 72 °F · PLACE), serif title, countdown "X RETURNS IN 1.77 S · SHOWN 6x SLOWER", serif subtitles (whatif.sim style) | "What if X disappeared for 5 seconds?" science sims | x6_sim3d_friction_demo (template, not published) |
 
 ## Reference videos from the owner (2026-11-13) — study these, never copy their stories or drawings
