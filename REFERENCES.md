@@ -43,3 +43,21 @@
 - The reference wraps it in a phone-filmed laptop "HOLY FIRST UPLOAD 🔥" overlay: do NOT fake that; just use the map list.
 - Its facts look wrong: every "illegal in" claim must be verified with a reliable source or left out.
 - Use for: weird laws, records, "the country where…", food, money facts (map zoom format).
+
+## E. "1 MINUTE - An Animated Short Film" (Last Soul, @lastsoulorigin) — owner favourite, sent 2026-11-14
+- Link: https://youtu.be/NeWlC4bJTMs . Channel About: "Animated short films about the habits we can't seem to break",
+  every film "made shot by shot in code, with AI help" (= the same kind of pipeline as ours, so this quality IS reachable).
+- NOT yet analysed frame by frame: YouTube blocks fetching from the cloud. When the owner sends the file (or screenshots),
+  analyse it like A-D (frames + transcript + music) and replace this note with the real breakdown.
+- What the owner says makes it great (his words, 2026-11-14): the MUSIC (how it sounds and how it keeps you hooked),
+  the animation quality, the "what is going to happen?" tension, the INTENSITY, and the MESSAGE. "Hay que mejorar mucho
+  la calidad de los vídeos y de los shorts."
+- Apply to every long video and short from now on (until the real breakdown replaces this):
+  1. Music is part of the story, not a drone: it builds (quiet → rising → peak at the twist → drop/silence on the reveal),
+     changes with each act, and hits on key cuts. A 0.5–1 s silence right before the biggest reveal.
+  2. One clear question the viewer needs answered ("what happens when the minute ends?") set up in the first 3 s and
+     paid off at the end; escalate stakes every beat (intensity curve, never flat).
+  3. A message/meaning under the story (a habit, a regret, a choice) so the ending lands emotionally, not just a joke.
+  4. Animation polish: fewer, better-drawn shots with motion in every shot (camera push, parallax, lighting changes,
+     character acting), consistent palette and lighting per scene; avoid static slides with chips on top.
+

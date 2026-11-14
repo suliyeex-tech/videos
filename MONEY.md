@@ -12,6 +12,7 @@ Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.
 - Playlist names stay generic by genre; the "What If It Vanished? | ..." prefix will be renamed by the owner.
 
 ## Owner's favourite reference videos
+- 2026-11-14: owner added reference E ("1 MINUTE", Last Soul): QUALITY over quantity of gimmicks — storytelling music that builds, intensity, suspense about what will happen, a message, polished animation. See REFERENCES.md E.
 - Read REFERENCES.md every run: at least 1 video per run in the style of one of them (original story and visuals).
 
 ## Targets (check progress weekly)
