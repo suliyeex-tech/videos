@@ -21,7 +21,7 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
          'hype': dict(bpm=140, prog=[0, -4, 3, -2], minor=True, drums=True, arp=True, pad=0.04, piano=False, tick=False, hat16=True),
          'funny': dict(bpm=120, prog=[0, 5, 7, 5], minor=False, drums=True, arp=True, pad=0.03, piano=False, tick=False, hat16=False),
          'cinematic': dict(bpm=72, prog=[0, -4, 3, -2], minor=True, drums=False, arp=False, pad=0.07, piano=True, tick=False, hat16=False),
-         'tension': dict(bpm=100, prog=[0, 1, 0, -2], minor=True, drums=True, arp=False, pad=0.06, piano=False, tick=True, hat16=False)}[style]
+         'tension': dict(bpm=100, prog=[0, 1, 0, -2], minor=True, drums=True, arp=False, pad=0.06, piano=False, tick=False, hat16=False)}[style]
     root = mood.get('root', 55.0); bpm = mood.get('bpm', D['bpm']); beat = 60 / bpm
     mistake = sfx.get('mistake'); end = sfx.get('end', TOTAL - 2.5); hook_end = sfx.get('hook_end', 3.0)
     drop = sfx.get('drop', (mistake, mistake + 0.9) if mistake else None)
@@ -55,8 +55,7 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
             elif at >= hook_end:
                 if b % 2 == 0: put(drums, kick, at, 0.8)
                 if b % 4 == 2 and at > hook_end + bar: put(drums, clap, at, 0.35)
-                put(drums, hat, at, 0.18 if b % 2 else 0.1)
-                if D['hat16']: put(drums, hat, at + beat / 4, 0.08 + 0.06 * (b % 8 == 7))
+                # hi-hats removed (owner 2026-11-14: no tic-tic in the background)
                 if style == 'funny' and b % 2 == 1: put(drums, clap * 0.5, at, 0.2)
                 f = root * 2 ** (prog[int(at / (bar * 2)) % len(prog)] / 12)
                 nn = int(beat / 2 * SR); tt = np.arange(nn) / SR
@@ -64,7 +63,6 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
                     if b % 2 == 0: put(bass, (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt)) * env(nn, 0.002, 0.07), at, 0.45)
                 else: put(bass, np.sin(2 * np.pi * f * tt) * env(nn, 0.004, 0.16 if style != 'hype' else 0.22), at, 0.35 if style != 'hype' else 0.45)
             else:
-                put(drums, hat, at, 0.12)
                 if b % 4 == 0: put(drums, kick, at, 0.35)
         b += 1
     # ---- pluck arp ----
@@ -122,7 +120,7 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
         out = np.zeros(int(d * SR)); k = 0
         while k < len(out) - 800: out[k:k + 800] += hp(rng.standard_normal(800), 2500) * env(800, 0.0003, 0.004); k += int(rng.uniform(0.06, 0.13) * SR)
         return out
-    for c in _as_list(sfx.get('tick', [])): put(fx, tick(), c, 0.35)
+    # ticks removed (owner 2026-11-14)
     for c in _as_list(sfx.get('notif', [])): put(fx, notif(), c, 0.45)
     for c in _as_list(sfx.get('typing', [])): put(fx, typing(), c, 0.3)
     for c in _as_list(sfx.get('whoosh', [])): put(fx, whoosh(0.4), c - 0.3, 0.5)

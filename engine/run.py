@@ -25,6 +25,8 @@ VOICES = {
     'classic':  ((('am_michael', 0.7), ('am_fenrir', 0.3)), 1.08),
     'hype':     ((('am_echo', 0.5), ('am_puck', 0.5)), 1.25),
     'suspense': ((('am_adam', 0.6), ('am_michael', 0.4)), 1.08),
+    'story':    ((('am_puck', 0.6), ('am_fenrir', 0.4)), 1.3),    # owner 2026-11-14: most expressive male blend, fast (default for stories)
+    'storyuk':  ((('bm_fable', 1.0),), 1.25),                       # most expressive voice measured (British)
     'guy':      ((('am_puck', 1.0),), 1.22),
     'bro':      ((('am_liam', 0.6), ('am_puck', 0.4)), 1.25),
     'girl':     ((('af_sarah', 0.6), ('af_nova', 0.4)), 1.22),
@@ -185,7 +187,7 @@ def render_all(workers=2):
 def audio():
     import audio as A
     sfx = EP.SFX(lambda i: L[i]['start'], lambda i: L[i]['dur']) if hasattr(EP, 'SFX') else {}
-    if getattr(EP, 'TICKS', False) and CH: sfx.setdefault('tick', [a for a, b, g in CH])
+    # owner 2026-11-14: NO tick sounds under captions (TICKS is ignored; never re-enable)
     A.build(WD, L, TOTAL, [a for a, b, f in BOUNDS], sfx, getattr(EP, 'MOOD', {}))
 
 def mux():
