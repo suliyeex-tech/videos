@@ -11,3 +11,4 @@
 | 2026-11-14 | shorts B | What if gravity doubled for 5 seconds? (sim3d · science) — 20:00 |
 | 2026-11-14 | shorts B | The doorway effect: why you forget why you walked into a room (neon · psychology) — 22:00 |
 | 2026-11-14 | shorts B | Weird time zones of the world, map zoom list (new `map` format · geography/records, Part 1) — 23:00 |
+| 2026-11-14 | long B | Last Train 3:12 AM Part 2, full story: you step off (comment vote A) and the station is yours, Livestream Larry, 3 rules (stickfigure 2nd-person horror/mystery, 6–9 min, 18:00) |
