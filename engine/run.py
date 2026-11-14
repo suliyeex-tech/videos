@@ -117,6 +117,21 @@ def cap_pop(img, t, karaoke=False):
                 K.text(img, w_, cx, y, size, col, K.ANT, scale=sc, stroke=10, scol=(18, 14, 14)); x += w * sc0 + sp * sc0
             return
 
+def cap_sub(img, t):
+    """'sub' captions (reference E style, owner 2026-11-14): small white words, 1-3 at a time, lower-middle, thin black outline."""
+    for a, b, g in CH:
+        if a <= t < b:
+            toks = words_of(segs(g.lstrip('!'))); n = len(toks)
+            if not n: return
+            per = 2 if n > 2 else n; k = min(n - 1, int((t - a) / max(0.05, (b - a - 0.1)) * n))
+            st = (k // per) * per; grp = toks[st:st + per]
+            size = 64; sp = K.twidth(' ', size, K.POP) * 0.8
+            ws = [K.twidth(w_, size, K.POP) for w_, _ in grp]; tw = sum(ws) + sp * (len(grp) - 1); x = W / 2 - tw / 2
+            y = getattr(EP, 'SUB_Y', 1180)
+            for (w_, c), w in zip(grp, ws):
+                K.text(img, w_, x + w / 2, y, size, c, K.POP, stroke=7, scol=(10, 10, 10)); x += w + sp
+            return
+
 def wrap(toks, size, font, maxw):
     lines = [[]]; wcur = 0; sp = K.twidth(' ', size, font)
     for w_, c in toks:
@@ -159,6 +174,7 @@ def frame(t):
     style = getattr(EP, 'CAPTION', 'pop')
     if style in ('pop', 'karaoke'): cap_pop(img, t, karaoke=(style == 'karaoke'))
     elif style in ('top', 'serif'): cap_block(img, t, style)
+    elif style == 'sub': cap_sub(img, t)
     if hasattr(EP, 'OVERLAY'): EP.OVERLAY(img, t, TOTAL)
     if getattr(EP, 'PROGRESS', True):
         col = getattr(EP, 'PROGRESS_COL', K.YEL); k = min(1, t / TOTAL)

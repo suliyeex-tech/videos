@@ -3,6 +3,35 @@
 Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.
 
 
+## OWNER FEEDBACK 2026-11-14 (overrides everything below; read REFERENCES.md "E" first)
+The owner said the last shorts are boring: (1) a "tic tic tic" in the background (removed from the engine: caption ticks,
+clock ticks and hi-hats are gone; NEVER add a tick/clock/hi-hat sound again, also not for quiz timers), (2) boring stories
+(e.g. the Chad Gainsworth gym/landlord chat stories get no views), (3) the voice is boring and slow, (4) the videos don't
+grab you in the first seconds. He sent a viral reference he loves (REFERENCES.md E: "La vida de Víctor"). From now on:
+- **STORY FIRST, not facts.** Every short is a story about ONE funny, flawed character with a concrete GOAL and a DEADLINE,
+  said in the first sentence: "This is <Name>. He has 28 days to <goal>." Facts may appear only as jokes inside the story.
+  No lecture/explainer videos (neon psychology lectures, fact lists read aloud, "scientists say..." intros). Chat-story
+  influencer drama (Chad) is retired: no new chat stories; Chad Part 3 is NOT to be made unless his Part 2 beats 1,000 views.
+- **HOOK in 1 s:** first frame = a big close-up of the character in their worst state (visual gag: flies, stink lines,
+  pimples, mess) + the first line names him and his impossible goal. No title cards, no "What if..." intros, no logos.
+- **Interactive series "YOU DECIDE"** (new `vote` format, FORMATS.md) is now the main shorts series: Day N; the viewers'
+  A/B comment choice from the previous part is what happens in this part; stats cards change on screen; ends with
+  "You decide: A ... or B ... Comment and we'll see it tomorrow." Use the REAL comment majority from Zernio
+  (comments_list_inbox_comments); if there are no votes, say "You didn't vote, so <character> chose..." (never invent vote
+  percentages or fake viewer comments: the reference shows fake vote counts, WE DON'T).
+- **Writing:** short sentences (3–10 words), deadpan punchlines every 2–3 sentences ("He still smells bad. But now he smells
+  bad with style."), numbers on screen that move (probability %, kg, days left, money). ~190–220 wpm WITH natural pauses
+  between sentences (gap 0.25–0.4 s), not one breathless run-on.
+- **Voice:** use VOICE='story' (am_puck 60% + am_fenrir 40%, speed 1.3) = the most expressive male blend measured; or
+  'storyuk' (bm_fable, the most expressive voice measured) for variety. Never 'hype' (am_echo is flat), 'suspense' or
+  'classic' for stories. Female narrator: af_heart at 1.25.
+- **Look:** polished flat vector (like E): one character always centred, cosy detailed rooms (night palette purple/blue,
+  fairy lights, desk, posters), small white karaoke subtitles 1–2 words at a time (CAPTION='sub'), ONE stat card at the top
+  that changes every 3–5 s, recurring background gags (a sleeping pet, flies), scene change every 4–6 s.
+- **Music:** light, quiet bed (MOOD style 'funny' or 'cinematic'), no drums ticking; SFX only on real events (pop on
+  stat change, whoosh on scene change, ding on good news, record-scratch on fails).
+- Still 61–80 s for TikTok rewards: a Day episode = recap (5 s) + 4–6 beats + stats + A/B ending.
+
 ## CHANNEL NAME IS NOT THE CONTENT (owner 2026-11-13, overrides everything)
 - The owner is renaming the channels to something totally different and funny. The content is "a bit of everything":
   never shape topics, titles, hooks or captions around "What if it vanished" or any channel name.

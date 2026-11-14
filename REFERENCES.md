@@ -61,3 +61,23 @@
   4. Animation polish: fewer, better-drawn shots with motion in every shot (camera push, parallax, lighting changes,
      character acting), consistent palette and lighting per scene; avoid static slides with chips on top.
 
+## E. "La vida de Víctor" — Día 2 (owner's favourite, sent 2026-11-14; flat vector interactive series, 50 s, Spanish) ← MAIN STYLE NOW
+- Premise: a nerdy gamer (Víctor, glasses, orange headset, blue hoodie, pimples, green stink lines, flies) has 28 days to
+  get noticed by "the prettiest girl on the internet" at her event. The AUDIENCE decides every step by commenting A or B.
+- Structure (≈158 words in 50 s, ~190 wpm, short sentences, natural pauses):
+  0–5 s hook: close-up of the gross character + "This is Víctor. He has 28 days left for Sofi's event, the prettiest girl
+  on the internet." → 5–15 s recap of yesterday's vote ("Yesterday you voted the pimples, and today they're all cured")
+  with a stat card (PIMPLES: 6 → CURED: 0) → result of the new vote → "DAY 2" title card → 4–5 quick comic beats, each
+  with its own top stat card (HOODIES WASHED: 0 · SALESWOMAN BRINGS SIZE M: HUGE! · VÍCTOR WEIGHS 50 KG · TRIES SIZE XS ·
+  outfit icons shirt/trousers/sneakers popping in · HIS SMELL: BAD) → punchline ("He still smells bad, but now he smells
+  bad with style") → the meter that matters ("Chance Sofi notices him: 1% → 4%") → "28 days left" → "YOU DECIDE!" card
+  → A/B card with icons ("A Contact lenses instead of glasses / B Finally takes a shower") → "Comment A or B and we'll see
+  it tomorrow."
+- Look: polished flat vector, warm night palette (navy/purple, fairy lights, neon PLAYER 1 sign), detailed cosy rooms,
+  shop, street; character always centred and big; a sleeping cat on the desk and flies as running gags; small white
+  subtitles (1–2 words) at the lower-middle; rounded dark stat cards with a coloured border at the top.
+- Voice: male, young, warm, expressive storyteller (median ~123 Hz, wide range 83–184 Hz), deadpan comic timing.
+- What makes it work: a character you want to see improve + a clear goal + deadline + numbers that move + the audience
+  controls the story (comments = algorithm boost) + daily continuity (people come back for "Day 3").
+- Ours must be ORIGINAL: different character, goal, places and jokes (never a gamer chasing a girl influencer, never the
+  names Víctor/Sofi, never its drawings). Do NOT copy its fake vote percentages / fake viewer comments.

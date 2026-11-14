@@ -24,6 +24,21 @@ Every short must have, on top of a hook in the first 1.5 s:
 5. A twist or joke every ~8–10 s and a cliffhanger or question at the end ("Part 2", "A or B?", "Comment…").
 6. Progress bar on (except cinematic). Length 25–45 s.
 
+## NEW MAIN FORMAT `vote` — "YOU DECIDE" interactive daily series (reference E, owner 2026-11-14) — build it in engine/formats/vote.py
+- One original flawed character per series with a goal + deadline (examples to pick from, all original: a guy who failed
+  his driving test 6 times and has 30 days to pass it; a woman who has 21 days to run her first half-marathon after living
+  on the sofa; a pizza-delivery guy with 30 days to become employee of the month; a grandma who wants 10k followers in
+  30 days). Funny, kind, never mean about bodies/real people.
+- Each part = "Day N". Beats: hook close-up + goal/deadline line → recap of the vote (REAL comment majority, or "you
+  didn't vote, so he chose...") → DAY N card → 4–6 comic beats in 2–3 places, each with a top stat card that changes
+  (counters that tick up/down with a pop SFX, NOT a tick) → one meter that matters (chance of success %) → "N days left"
+  → "YOU DECIDE!" → A/B card with icons → "Comment A or B, see you tomorrow".
+- Visual kit to build: big centred character (kit.person upgraded: glasses, headset, hoodie, stink lines, flies, blush),
+  cosy rooms (bedroom with desk/fairy lights/pet, shop, street at night, office), top stat card (dark rounded rect, coloured
+  border, small label + big value), DAY N stamp, YOU DECIDE card, A/B option cards (orange A, blue B, circle letter, icon).
+- CAPTION='sub', VOICE='story', MOOD {'style': 'funny'} quiet, no ticks. Track every series in SERIES.md with the current
+  stats so the next Day can continue them.
+
 ## The formats in the engine (engine/formats/*.py; examples in episodes/20261113_*.py)
 | key | look | best for | example |
 |---|---|---|---|

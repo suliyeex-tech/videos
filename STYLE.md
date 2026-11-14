@@ -1,4 +1,7 @@
-# Channel style (set by the owner on 2026-11-12; Shorts formats updated 2026-11-13, see FORMATS.md)
+# Channel style
+
+**2026-11-14 owner update: see MONEY.md "OWNER FEEDBACK 2026-11-14" + REFERENCES.md E. Voice = 'story' (puck+fenrir 1.3) or 'storyuk' (bm_fable); no hype/echo voice; no ticks.**
+ (set by the owner on 2026-11-12; Shorts formats updated 2026-11-13, see FORMATS.md)
 
 SHORTS: read FORMATS.md first. 5 different formats per day, funny influencer-style names, cheerful fast narrator
 (`VOICE='hype'`), dopamine rules. The music bed may follow the format (hype / funny / tension / cinematic) but stays quiet under the voice.
