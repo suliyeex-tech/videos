@@ -13,3 +13,5 @@
 
 ## Daily notes
 - 2026-11-13: baseline set. YouTube Shorts ~9,400 views in 4 days; long-form ~14 views total.
+- 2026-11-14 (shorts A): yesterday's winner = stickpov horror "Last train" (IG 1,304 + YT 1,196 views, 9 comments from the A/B question); bear/cinema-jump ~200–280 per platform. IG avg watch ~10–16 s on 36–40 s videos → hooks must hold past 10 s.
+  Change today: all 4 shorts 63–64 s (first full run >60 s for TikTok rewards), two Part 2s (Chad, Sun), new A/B horror Part 1 (doorbell, same stickpov recipe as the winner), new `quiz` format with 3-s timers (interactive retention test). Compare their retention vs yesterday's 36–40 s shorts.
