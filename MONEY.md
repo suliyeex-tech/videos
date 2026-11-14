@@ -30,6 +30,10 @@ grab you in the first seconds. He sent a viral reference he loves (REFERENCES.md
   that changes every 3–5 s, recurring background gags (a sleeping pet, flies), scene change every 4–6 s.
 - **Music:** light, quiet bed (MOOD style 'funny' or 'cinematic'), no drums ticking; SFX only on real events (pop on
   stat change, whoosh on scene change, ding on good news, record-scratch on fails).
+- **Per run:** at least 1 `vote` episode (shorts A starts the first series and builds engine/formats/vote.py if it does not
+  exist yet; every later run continues it with the next Day). The other slots: character stories with goal + deadline in
+  other formats (cartoon survival, stickpov horror, sim3d with a character, map list told through a character). The
+  '4 different genres/formats' rule still applies to the rest.
 - Still 61–80 s for TikTok rewards: a Day episode = recap (5 s) + 4–6 beats + stats + A/B ending.
 
 ## CHANNEL NAME IS NOT THE CONTENT (owner 2026-11-13, overrides everything)
