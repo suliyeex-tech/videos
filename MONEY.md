@@ -1,3 +1,24 @@
+# OWNER UPDATE 2026-11-15 (overrides everything below where they disagree)
+VOLUME: fewer, much better videos. 2 Shorts/day (21:00 and 23:00 Madrid) on YouTube Shorts + Instagram Reels;
+TikTok gets ONLY the stronger one (1/day). Long-form: 2 per week (Wed + Sat 18:00 Madrid). Do not add volume
+unless the weekly report shows avg views per short rising 2 weeks in a row (then +1/day, max 3 Shorts/day).
+WHY: TikTok stuck at 1-9 views while the same files got 150-1,500 on IG. Causes: a 4-follower account posting
+8 AI videos/day with identical files and captions across platforms (TikTok's 2026 AI-spam/unoriginal filters
+judge the ACCOUNT pattern), low early watch time, synthetic beeps/arpeggio music.
+TIKTOK RULES: 1/day; export a TikTok-only file (different first 2 s hook text/frame + re-encode, never the byte-identical
+IG/YT file); TikTok-only caption, 3-5 niche hashtags, no #fyp/#viral spam; keep videoMadeWithAi true. If TikToks are
+still < 20 views after 5 days, tell the owner to check Settings > Account > Account status in the app.
+SOUND: no beeps, dings, ticks, arpeggios or synthetic "bleep" music (removed from engine/audio.py). Voice first,
+soft bed underneath, few real-sounding SFX (whoosh/boom/splash) only on real story beats.
+TOOLS: build Shorts with HyperFrames / Claude Animation Base / Lemo-Opuscar / Paper Shaders (TOOLS.md). Old Python formats = fallback.
+STYLE REFERENCE (owner liked, REFERENCES.md F): 3D low-poly toy-like ORIGINAL characters in a cosy small-town night scene,
+character-driven funny slice-of-life story, ONE big bold white word on screen at a time (centered, dark shadow), a new
+camera angle every 1-2 s, 70-80 s, punchline at the end.
+QUALITY GATE (every video, before scheduling): (1) hook understood with sound off in 1 s; (2) a story with a character who
+wants something, not a list of facts; (3) new shot every 1-2 s; (4) a payoff/twist in the last 5 s; (5) watch the
+contact sheet + listen to 10 s of audio; if any check fails, fix or drop the video. One great video > three average ones.
+KIDS: kids content never goes on this channel; it belongs only on the owner's kids channel.
+
 # Growth & monetization plan (owner decision 2026-11-13)
 
 Goal: get paid. This file overrides DAILY.md / FORMATS.md where they disagree.

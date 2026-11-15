@@ -82,7 +82,8 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
             nn = int(2.2 * SR); tt = np.arange(nn) / SR
             x = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(4 * np.pi * f * tt) * np.exp(-tt / 0.3) + 0.15 * np.sin(6 * np.pi * f * tt) * np.exp(-tt / 0.15)) * env(nn, 0.004, 0.9)
             put(piano, x, at, 0.07); at += beat; i += 1
-    music = pad + bass + drums * 0.9 + arp + piano
+    # OWNER 2026-11-15: arpeggio/beeps sounded uncomfortable -> soft pad+bass(+light drums) only
+    music = pad + bass + drums * 0.6 + piano * 0.6
     music *= (0.7 + 0.3 * inten)
     if drop: g = np.ones(N); g[int(drop[0] * SR):int(drop[1] * SR)] = 0.15; music *= lp(g, 6, 1)
     # ---- sfx ----
@@ -107,10 +108,9 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
         n = int(d * SR); tt = np.linspace(0, 1, n); return lp(rng.standard_normal(n), 3000) * tt ** 3 * 0.6 + np.sin(2 * np.pi * np.cumsum(200 + 900 * tt ** 2) / SR) * tt ** 2 * 0.15
     for c in cuts[1:]: put(fx, whoosh(), c - 0.33, 0.35)
     for c in _as_list(sfx.get('boom', [])): put(fx, boom(), c, 0.8)
-    for c in _as_list(sfx.get('ding', [])): put(fx, ding(), c, 0.3)
+    # ding/pop/notif/tick beeps removed (owner 2026-11-15)
     for c in _as_list(sfx.get('snap', [])): put(fx, snap(), c, 0.8)
     for c in _as_list(sfx.get('splash', [])): put(fx, splash(), c, 0.6)
-    for c in _as_list(sfx.get('pop', [])): put(fx, ding(880, 0.25), c, 0.25)
     def tick():
         n = int(0.06 * SR); tt = np.arange(n) / SR; return np.sin(2 * np.pi * 1800 * tt) * env(n, 0.0005, 0.012) + hp(rng.standard_normal(n), 4000) * env(n, 0.0005, 0.005) * 0.5
     def notif():
@@ -121,7 +121,6 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
         while k < len(out) - 800: out[k:k + 800] += hp(rng.standard_normal(800), 2500) * env(800, 0.0003, 0.004); k += int(rng.uniform(0.06, 0.13) * SR)
         return out
     # ticks removed (owner 2026-11-14)
-    for c in _as_list(sfx.get('notif', [])): put(fx, notif(), c, 0.45)
     for c in _as_list(sfx.get('typing', [])): put(fx, typing(), c, 0.3)
     for c in _as_list(sfx.get('whoosh', [])): put(fx, whoosh(0.4), c - 0.3, 0.5)
     for c in _as_list(sfx.get('riser', [])): put(fx, riser(), c - 1.6, 0.45)
@@ -144,7 +143,7 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     voice, _ = sf.read(f'{WD}/vo_proc.wav'); voice = voice[:N] if len(voice) >= N else np.pad(voice, (0, N - len(voice)))
     e = lp(np.abs(voice), 7, 1); duck = 1 - 0.55 * np.clip(e / 0.1, 0, 1)
     has_voice = any(v.get('text') for v in L)
-    bed = music * duck * (0.55 if has_voice else 1.0) + fx * 0.5
+    bed = music * duck * (0.35 if has_voice else 0.8) + fx * 0.35
     # stereo: widen the bed with a short Haas delay, voice centred
     dl = int(0.012 * SR); bl = bed; br = np.concatenate([np.zeros(dl), bed[:-dl]])
     st = np.stack([voice + bl * 0.95 + br * 0.15, voice + br * 0.95 + bl * 0.15], 1)

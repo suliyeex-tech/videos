@@ -118,3 +118,7 @@ What the owner loves: the music and how it keeps you hooked, the animation quali
   (survival choices, creepy POV, everyday struggles like phones/sleep/procrastination), 2–5 words of dialogue per shot,
   narrator only where needed, music-led. Test it as 1 Short first and compare retention (LEARNINGS.md).
 - Any real quote on screen must be checked for the correct author with a web search.
+
+
+## F. Owner reference 2026-11-15 (larpniverse-style)
+75 s, 9:16. Low-poly 3D toy characters (blocky bodies, simple faces, hats), night suburb, party lights. Narrated funny story about a neighbour and 'this town'. One word captions (except, parties, goldfish, always, neighbor, tuesdays…), punch word in caps at the end ('HUSS!'). Fast cuts, soft lighting, no beeps. Copy the FEEL and pacing only, never its characters or story.
