@@ -1,23 +1,42 @@
-# Learnings (rules at the top are condensed weekly; every run appends Daily notes)
+# Learnings (rules condensed weekly on Sunday; every run appends Daily notes at the bottom)
 
-## Rules (from data up to 2026-11-13, YouTube views)
-- Best shorts so far: survival "What if / If you..." with a concrete deadly-mistake hook: thin ice 1,919 views (65 s!),
-  Sun vanished 1,562, elevator 1,336, quicksand 1,087, internet vanished 1,053, new dwarf planet 921, oxygen 856.
-  -> Do more: "If X happened, DON'T do this" / "you'd have N seconds" hooks, real-science payoff, survival + space.
-- The 65 s short (thin ice) is the top performer: longer shorts are NOT hurting views. Keep 61–80 s.
-- Weak: Sahara dust (36), Earth stops spinning (15). Abstract science without personal danger flops.
-- Long-form gets almost no views (0–11 each). Fix: titles + thumbnails modelled on the top Shorts' hooks, a strong face/emotion
-  thumbnail, first 30 s = the payoff promise; make long-form the "full story" of the best Shorts (elevator, Sun, thin ice).
-- NEVER upload the same long video more than once (2026-11-12 "Everyone Vanished" went up 4 times: looks like spam).
-- Many shorts said "Follow for Part 2" and no Part 2 exists yet: deliver them (SERIES.md), best performers first.
+## Rules — week 1 (data 2026-11-09 → 11-15, 79 posts, 35.3k views: YT 15.6k, IG 11.5k, TT 8.2k)
+Owner feedback in MONEY.md (story-first, named character, no ticks, 'story' voice) still overrides these.
+- WINNERS (copy these): survival/space "If X happened, DON'T do this" with a deadline (thin ice 1,925 YT; Sun P1 1,554;
+  Elevator P1 1,347; Quicksand P1 1,316; Oxygen P1 1,251), POV horror with an A/B question (Last train IG 1,590 + YT 1,222,
+  the ONLY post with real comments), map/numbered list (Weird time zones IG 1,506 + YT 1,222, 77 s), sim3d spectacle
+  (Gravity doubled IG 1,455, but YT only 352). Psychology wrapped in a named character worked on YT (Doorway/Kylie 1,065).
+- LOSERS (stop): chat stories (Chad P1 54 YT, P2 33 YT), quiz format (Animal quiz 76 YT / 196 IG), pure-fact science
+  without personal danger (Sahara 41, Earth stops spinning 18 YT), stickpov doorbell (78 YT / 157 IG). Don't repeat them.
+- PART 2s LOSE most of Part 1's audience on YouTube (Sun 1,554 → 98; Quicksand 1,316 → 283; Chad 54 → 33). On IG it
+  is mixed (Sun 630 → 1,215, Quicksand 218 → 144). Rules: every Part 2 must work as a standalone video with its own
+  1-second hook (never open on "Part 2:" text or a recap), put "Part 2" only at the END of the title, and make at most
+  1 Part 2 per run. Prefer new Part 1s that reuse a winning hook pattern over sequels.
+- LENGTH: 61–80 s does NOT hurt (YT ≥60 s avg 513 vs <60 s 652 but newer/fewer; IG ≥60 s 566 vs 424). Keep 61–80 s.
+  IG avg watch time ≈ 26 s on the best 63–77 s reels (≈35–40 %): the first 3 s + a reason to stay past 25 s matter most.
+- SLOTS (avg YT+IG views per short by Madrid hour): 21:00 ≈ 820, 23:00 ≈ 820, 20:00 ≈ 620, 15:00 ≈ 655, 19:00 ≈ 530,
+  22:00 ≈ 520, 01:00 ≈ 335, **17:00 ≈ 100, 13:00 ≈ 75 (worst)**. Put the strongest idea of each run at 20–23 h.
+  Weakest ideas never go at 13:00/17:00 (owner decides whether to move those slots, see weekly report).
+- TIKTOK ALERT 2026-11-14: 6 of 7 shorts posted that day have 1–9 views after 24–36 h (same files got 150–1,500 on IG).
+  Before every TikTok post check that the previous day's TikToks are not stuck at <20 views; if they are, note it in
+  Daily notes. Avoid identical captions across platforms on TikTok; keep madeWithAi labels; no reposted/duplicate files.
+- LONG-FORM: 7 videos, ~85 views total, ~0 watch hours. Long-form is the only path to YPP watch hours, so: title =
+  the exact winning Short hook ("If Your Elevator Fell 40 Floors…"), face/emotion thumbnail, first 30 s = payoff promise,
+  6–8 min, and every short of the same topic must say "full story on the channel". Track views/AVD of Thin ice (11-15).
+- COMMENTS come only from explicit A/B questions on horror/POV. Keep the A/B ending on every short.
+- FOLLOWERS: YT 16, TT 4, IG 1 — follows come from survival/space hits. End lines with a concrete reason to follow.
+- OFF-BRAND: a Spanish kids song ("¡Los colores de Tenti!", 2026-11-14 15:00 UTC) appeared on this YouTube channel;
+  it is not from this repo. Never post anything outside these episode files to these accounts.
+
+## Series decisions (week 1)
+- CONTINUE: YOU DECIDE Doug Dashboard (main series, judge after Day 3), Last train Part 3 (long-form), Internet P3.
+- CLOSE after their promised part: Doorbell (make P3 short and final), Weird borders (no P3 unless P2 > 1,000).
+- CLOSED / don't continue: Chad (P2 33 views), Sun, Quicksand, Elevator. Old open Part 1s (Car in lake, Stranded at sea,
+  Oxygen) → only as long-form "full story", not as short Part 2s.
+
+## Volume
+- Avg views per short fell: posts of 11-09/12 ≈ 630 per platform-post vs 11-13/15 ≈ 350 (YT 929 → 356, TT 593 → 128;
+  IG rose 376 → 563). Do NOT add volume until avg views per short recovers. Quality > quantity.
 
 ## Daily notes
-- 2026-11-13: baseline set. YouTube Shorts ~9,400 views in 4 days; long-form ~14 views total.
-- 2026-11-14 (shorts A): yesterday's winner = stickpov horror "Last train" (IG 1,304 + YT 1,196 views, 9 comments from the A/B question); bear/cinema-jump ~200–280 per platform. IG avg watch ~10–16 s on 36–40 s videos → hooks must hold past 10 s.
-  Change today: all 4 shorts 63–64 s (first full run >60 s for TikTok rewards), two Part 2s (Chad, Sun), new A/B horror Part 1 (doorbell, same stickpov recipe as the winner), new `quiz` format with 3-s timers (interactive retention test). Compare their retention vs yesterday's 36–40 s shorts.
-- 2026-11-14 (long A): YT top 3 days = Sun P1 1,572, Elevator P1 1,341, Last train 1,201 (only one with comments: 5, from the A/B ask). Long A made the "full story" of the Elevator short (LEARNINGS rule: long-form = full story of the best Shorts). Change today: thumbnail with the 2 cartoon characters' scared faces + "DON'T DO THIS NEXT" + PART 2 tag (first face/emotion thumbnail), end question as A/B/C comment, 17 chapters. Voice 'guy' (am_puck 1.22).
-- 2026-11-14 (shorts B): 3-day YT top = Sun P1 1,573, Elevator P1 1,341, Quicksand P1 1,255, Last train 1,214 (IG 1,442, skip rate 46%, 13 shares), Internet P1 1,201. Survival/space 'What if' + A/B horror still win; psychology neon (scrolling) only 356. Change today: delivered Quicksand Part 2 (3rd best open Part 1), new `map` format (reference D, geography list with #1-#6 ranks and a 'nobody believes #6' retention hook), sim3d with narration ('hype') for gravity, and a funny-character neon (Kylie Kombucha) to test whether a character story lifts psychology. Lengths 62.5 / 63.4 / 68.7 / ~78 s.
-- 2026-11-14 (long B): YT 3-day top unchanged (Sun 1,573, Elevator 1,341, Quicksand 1,255, Last train 1,214 = only one with comments: A 2, B 1 distinct users). Long B = Last Train Part 2 full story (first long-form horror, first long-form that resolves a comment vote on screen). Change today: voice 'suspense' (am_adam+am_michael 1.18, ~211 wpm) instead of the cheerful long-form voice, a game-like HUD (frozen clock + '60 S LEFT' budget that drops each time a rule is broken) to hold retention, 7:02 length, thumbnail 'DON'T TURN AROUND' + clock. Compare its retention with today's Elevator P2 long (guy voice).
-- 2026-11-14 (owner feedback, live): background tic-tic hated (caption ticks + hi-hats + 'tension' ticks: all removed from engine; today's 6 pending shorts re-mixed and re-uploaded without ticks; Sun P2 had already published). Stories too boring (Chad chat stories = no views), voice boring/slow, weak first seconds. New direction: reference E (interactive 'YOU DECIDE' character series, Day N, moving stat cards, A/B ending), voice 'story', CAPTION='sub'. Voice measurement on one line: pitch variation bm_fable 0.337, am_puck 0.316, am_fenrir 0.302, am_santa 0.30 vs am_echo 0.19, am_adam 0.175, am_michael 0.18 (flat).
-- 2026-11-15 (shorts A): 3-day top = Last train IG 1,589, Sun P1 YT 1,574, **Weird time zones P1 IG 1,502 + YT 1,131 in <1 day** (best fresh Part 1; map format + numbered list), Elevator 1,345, Quicksand 1,316. Doorbell P1 (stickpov horror) and Chad P2 flopped (<300, 0 votes). Change today: built `vote` format (YOU DECIDE Day 1, Doug Dashboard, CAPTION='sub', VOICE='story'), first female narrator in a short (af_heart 1.25, Internet P2), every short now opens on a named character with a goal/deadline (Parcel Pete wraps the map list; Wendy Wifi wraps the internet P2). Compare: does a character wrapper keep the map list's retention?
-- 2026-11-15 (long A): 3-day YT top = Elevator P1 1,347, Quicksand P1 1,316, Oxygen P1 1,251, Last train 1,222, Weird time zones P1 1,152 (78 s!); long-forms still ~0 likes/comments (Elevator P2, Last train P2). No new comments to answer. Long A = "thin ice" full story (best short ever, 1,919) rebuilt story-first: Kyle Koldplunge, 10,000 followers by Day 100 of his ice-bath streak, falls through, 1-10-1 rule with a live "ARMS WORK FOR ~10:00" HUD. Change today: first long-form with VOICE 'story' (puck 0.6 + fenrir 0.4, 1.3, ~224 wpm measured) + GAP 0.28 natural pauses, first long-form with reference F craft (bathtub loop with variation Day 1/37/99, 2 setups that pay off: ice picks "grandma necklace" + "cold is a mindset", colour script dawn→warm, full circle Day 101), 6:40 length, hook scored 91. Compare its retention/CTR with Elevator P2 (guy voice, 7.5 min).
+- 2026-11-15 (weekly): rules above rewritten from week-1 data. Next check: Sunday 2026-11-22.
