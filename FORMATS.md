@@ -24,7 +24,7 @@ Every short must have, on top of a hook in the first 1.5 s:
 5. A twist or joke every ~8–10 s and a cliffhanger or question at the end ("Part 2", "A or B?", "Comment…").
 6. Progress bar on (except cinematic). Length 25–45 s.
 
-## NEW MAIN FORMAT `vote` — "YOU DECIDE" interactive daily series (reference E, owner 2026-11-14) — build it in engine/formats/vote.py
+## NEW MAIN FORMAT `vote` — "YOU DECIDE" interactive daily series (reference E, owner 2026-11-14) — BUILT 2026-11-15 in engine/formats/vote.py (example: episodes/20261115_a2_vote_doug_day1.py)
 - One original flawed character per series with a goal + deadline (examples to pick from, all original: a guy who failed
   his driving test 6 times and has 30 days to pass it; a woman who has 21 days to run her first half-marathon after living
   on the sofa; a pizza-delivery guy with 30 days to become employee of the month; a grandma who wants 10k followers in
