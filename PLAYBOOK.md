@@ -61,3 +61,8 @@ Platforms demonetise look-alike/mass-produced channels, and a clone never stands
   "mocker" beat; the others use a deadline, a mystery, or a POV choice. Never reuse a title formula two days in a row.
 - Channel name everywhere: Oddwick. Never mention or imitate other channels in titles, captions or hashtags.
 - Kids channel: dropped by the owner; ignore it.
+
+## 9. Accounts after the rename (2026-11-15)
+YouTube: Oddwick, @oddwicktales. Instagram: Oddwick, @oddwick.tales. TikTok: photo + bio changed; TikTok locks the nickname
+until after 2026-11-16 and the username (@ifitvanished_) until after 2026-12-09, then they become Oddwick / oddwick.tales.
+Zernio account IDs are unchanged. Never say "What If It Vanished" in new videos, titles or captions.
