@@ -16,3 +16,4 @@
 | 2026-11-15 | shorts A | YOU DECIDE Day 1: new interactive character series (new `vote` format · comedy) — 15:00 |
 | 2026-11-15 | shorts A | Doorbell camera shows YOU Part 2 (stickpov · horror; no votes → default A, open the front door) — 17:00 |
 | 2026-11-15 | shorts A | The Internet vanished Part 2: 3 AM, one screen turns back on (cartoon · tech mystery/survival) — 01:00 (+1) |
+| 2026-11-15 | long A | Thin ice full story: cold-plunge influencer Kyle Koldplunge falls through a frozen lake on Day 100 of his streak, the 1-10-1 rule (cartoon survival · funny, 6–9 min, 21:00) |
