@@ -50,6 +50,7 @@ Every short must have, on top of a hook in the first 1.5 s:
 | `quiz` | game-show trivia: purple stage, QUESTION n/5 chip, progress dots, A/B/C buttons, 3-s ring timer (silent beat), green reveal + emoji pop, host chip with a funny name | quiz, animals, records, "can you get 5/5" | 20261114_a4_quiz_animals |
 | `map` | map zoom list (reference D): Natural Earth world map that flies/zooms between places, glowing highlighted countries, flag pins, #N rank badges, clock chips, date line, series chip | geography, weird laws, records, time zones, borders | 20261114_b4_map_weird_timezones |
 | `sim3d` | small 3D world rendered in code at a real famous place, HUD (TEMPERATURE 72 °F · PLACE), serif title, countdown "X RETURNS IN 1.77 S · SHOWN 6x SLOWER", serif subtitles (whatif.sim style) | "What if X disappeared for 5 seconds?" science sims | x6_sim3d_friction_demo (template, not published) |
+| `gameui` | retro strategy-game UI: wheat-field map, top resource bar (troops/ammo/enemies/%), objective panel, unit selection boxes + cursor, ACHIEVEMENT UNLOCKED toasts, LEVEL/MISSION FAILED/RESPAWN banners, gamer facecam, scanlines | true history or survival told as a game level, gaming-style comedy | 20261115_b3_gameui_emu_war |
 
 ## Reference videos from the owner (2026-11-13) — study these, never copy their stories or drawings
 1. **@whatif.sim** (3D sims, 46.8K followers, 1.3M likes; hits of 3.5M, 2.7M, 2.1M, 1.5M views). Formula:
