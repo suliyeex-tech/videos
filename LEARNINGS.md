@@ -40,3 +40,4 @@ Owner feedback in MONEY.md (story-first, named character, no ticks, 'story' voic
 
 ## Daily notes
 - 2026-11-15 (weekly): rules above rewritten from week-1 data. Next check: Sunday 2026-11-22.
+- 2026-11-15 (shorts B): top of last 3 days = Last train P1 IG 1,602, Gravity doubled IG 1,583, Weird time zones IG 1,511 / YT 1,234, Sun P2 IG 1,231 (but YT low); TikTok still 260–330 max. Changes this run: (1) new `gameui` format (history told as a strategy game: resource bar, achievements, MISSION FAILED) for the Emu War, (2) the strongest survival idea (beach lightning, sim3d) moved to 23:00, (3) Sun P3 tests whether a sequel with a big physics twist ('Earth leaves forever') can hold IG like P2. TikTok captions written differently from IG/YT on all 4.
