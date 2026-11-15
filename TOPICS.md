@@ -12,3 +12,7 @@
 | 2026-11-14 | shorts B | The doorway effect: why you forget why you walked into a room (neon · psychology) — 22:00 |
 | 2026-11-14 | shorts B | Weird time zones of the world, map zoom list (new `map` format · geography/records, Part 1) — 23:00 |
 | 2026-11-14 | long B | Last Train 3:12 AM Part 2, full story: you step off (comment vote A) and the station is yours, Livestream Larry, 3 rules (stickfigure 2nd-person horror/mystery, 6–9 min, 18:00) |
+| 2026-11-15 | shorts A | Weirdest borders on Earth, Weird Time Zones Part 2 (map · geography; Pheasant Island, Baarle, Point Roberts, Bir Tawil, Märket) told through a courier character — 13:00 |
+| 2026-11-15 | shorts A | YOU DECIDE Day 1: new interactive character series (new `vote` format · comedy) — 15:00 |
+| 2026-11-15 | shorts A | Doorbell camera shows YOU Part 2 (stickpov · horror; no votes → default A, open the front door) — 17:00 |
+| 2026-11-15 | shorts A | The Internet vanished Part 2: 3 AM, one screen turns back on (cartoon · tech mystery/survival) — 01:00 (+1) |
