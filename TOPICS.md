@@ -17,3 +17,7 @@
 | 2026-11-15 | shorts A | Doorbell camera shows YOU Part 2 (stickpov · horror; no votes → default A, open the front door) — 17:00 |
 | 2026-11-15 | shorts A | The Internet vanished Part 2: 3 AM, one screen turns back on (cartoon · tech mystery/survival) — 01:00 (+1) |
 | 2026-11-15 | long A | Thin ice full story: cold-plunge influencer Kyle Koldplunge falls through a frozen lake on Day 100 of his streak, the 1-10-1 rule (cartoon survival · funny, 6–9 min, 21:00) |
+| 2026-11-15 | shorts B | Office newbie uses 4 real psychology tricks (Ben Franklin effect, pratfall...) to win over his grumpy desk-neighbour in 5 days (neon · psychology/funny) — 19:00 |
+| 2026-11-15 | shorts B | The Sun vanished Part 3: the Sun comes back after 1 year... and it's too late (cinema · space) — 20:00 |
+| 2026-11-15 | shorts B | The Great Emu War 1932 as a strategy game (new `gameui` format · history/funny) — 22:00 |
+| 2026-11-15 | shorts B | Thunderstorm at the beach: you have 30 seconds, DON'T do this (sim3d · survival, lightning safety) — 23:00 |
