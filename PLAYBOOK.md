@@ -47,3 +47,17 @@ if < 210). Smiling, surprised, sarcastic on the mocker's lines. Same voice every
 ## 7. Description
 YouTube: title (formula above) + #shorts; description = 1 curiosity sentence + question + sources + 3 hashtags.
 Instagram: 1-2 lines + question + 4-5 niche hashtags. TikTok: different wording, 3-5 niche hashtags, no #fyp.
+
+## 8. BE DIFFERENT (owner 2026-11-15 night): Ricks Clips is a craft reference, NOT a template
+Platforms demonetise look-alike/mass-produced channels, and a clone never stands out. What is ONLY ours:
+- HOST: Oddwick, a smirking candle (brand/oddwick_avatar.png). He appears on screen in every video: lights up in the first
+  second, reacts to the story (flame flares on surprises, shrinks when scared), and blows himself out as the last frame.
+- WORLD: every story is "told by candlelight": dusk/night scenes, warm orange light against deep purple (the avatar palette).
+  Our own cast of 2D characters with our own shapes (not round-head bean people); design them once in brand/ and reuse.
+- STORIES: mix 50/50 (a) true little-known stories with a twist and (b) OUR proven winners from LEARNINGS.md: survival
+  "don't do this" with a deadline and second-person POV with an A/B choice. No other channel has that mix.
+- SIGNATURE: the viewer chooses. End on an A/B question shown as two candles; the pinned comment answers it next day.
+- Vary structure: the 6 beats in section 2 are a default, not a mould. At most 1 of the 3 daily videos may use the
+  "mocker" beat; the others use a deadline, a mystery, or a POV choice. Never reuse a title formula two days in a row.
+- Channel name everywhere: Oddwick. Never mention or imitate other channels in titles, captions or hashtags.
+- Kids channel: dropped by the owner; ignore it.
