@@ -1,3 +1,5 @@
+# >>> READ PLAYBOOK.md FIRST (owner 2026-11-15 evening). It overrides this file, incl. volume: 3 Shorts/day (20/21/23 h), TikTok 1/day.
+
 # OWNER UPDATE 2026-11-15 (overrides everything below where they disagree)
 VOLUME: fewer, much better videos. 2 Shorts/day (21:00 and 23:00 Madrid) on YouTube Shorts + Instagram Reels;
 TikTok gets ONLY the stronger one (1/day). Long-form: 2 per week (Wed + Sat 18:00 Madrid). Do not add volume

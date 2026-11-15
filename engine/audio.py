@@ -143,7 +143,8 @@ def build(WD, L, TOTAL, cuts, sfx, mood):
     voice, _ = sf.read(f'{WD}/vo_proc.wav'); voice = voice[:N] if len(voice) >= N else np.pad(voice, (0, N - len(voice)))
     e = lp(np.abs(voice), 7, 1); duck = 1 - 0.55 * np.clip(e / 0.1, 0, 1)
     has_voice = any(v.get('text') for v in L)
-    bed = music * duck * (0.35 if has_voice else 0.8) + fx * 0.35
+    # OWNER 2026-11-15 (2): SFX must be clearly audible (breaks, hits, splashes); music stays under the voice
+    bed = music * duck * (0.35 if has_voice else 0.8) + fx * 1.0
     # stereo: widen the bed with a short Haas delay, voice centred
     dl = int(0.012 * SR); bl = bed; br = np.concatenate([np.zeros(dl), bed[:-dl]])
     st = np.stack([voice + bl * 0.95 + br * 0.15, voice + br * 0.95 + bl * 0.15], 1)
