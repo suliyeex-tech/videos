@@ -22,3 +22,6 @@
 | 2026-11-15 | shorts B | The Great Emu War 1932 as a strategy game (new `gameui` format · history/funny) — 22:00 |
 | 2026-11-15 | shorts B | Thunderstorm at the beach: you have 30 seconds, DON'T do this (sim3d · survival, lightning safety) — 23:00 |
 | 2026-11-15 | long B | Oxygen vanished for 5 seconds, full story + myth-busting the viral version (fact-checker character, science what-if · comedy, 6–9 min, 18:00) |
+| 2026-11-16 | shorts (daily) | Why This Skyscraper Was Fixed at Night: a student's homework finds a NYC tower could fall; secret night welding vs a hurricane (Oddwick · engineering, deadline) — 20:00 |
+| 2026-11-16 | shorts (daily) | The Robber Who Trusted Lemon Juice: lemon-juice "invisible" bank robber → Dunning-Kruger effect (Oddwick · crime/psychology, cocky hero) — 21:00 + TikTok |
+| 2026-11-16 | shorts (daily) | How Garden Slugs Became Gas Alarms: WWI slug gas detectors (Oddwick · animals/history, mocker beat) — 23:00 |
