@@ -1,0 +1,63 @@
+{
+"slug": "2026-11-18-this-horse-fooled-every-scientist",
+"speed": 1.32,
+"lines": [
+{
+"t": "This horse could do maths. Ask him three plus two... and he taps his hoof five times."
+},
+{
+"t": "His owner was a maths teacher. He spent years teaching the horse numbers, words, even the calendar."
+},
+{
+"t": "Crowds came every day to see Clever Hans."
+},
+{
+"t": "A horse? Doing maths? Next you'll tell me he pays taxes.",
+"v": "mock",
+"sp": 1.2,
+"gap": 0.25
+},
+{
+"t": "The teacher just smiled. Ask him yourself."
+},
+{
+"t": "So the experts came. Thirteen of them. A vet, a circus boss, an army officer, and teachers."
+},
+{
+"t": "They looked for strings. Secret signals. Tricks. Nothing."
+},
+{
+"t": "Fine. Then a stranger asks the questions.",
+"v": "mock",
+"sp": 1.2,
+"gap": 0.2
+},
+{
+"t": "The owner left. A stranger asked... and Hans still got it right!"
+},
+{
+"t": "The experts gave up. No trick, they said."
+},
+{
+"t": "Then one young scientist tried something tiny. He asked a question that he did not know the answer to."
+},
+{
+"t": "And Hans kept tapping. Six. Seven. Eight. Nine. He had no idea."
+},
+{
+"t": "You see, when you ask Hans a question, you watch his hoof. As he gets close to the answer, you tense up. When he hits it, your head lifts. Just a tiny bit."
+},
+{
+"t": "Hans saw it every time. That was his signal to stop."
+},
+{
+"t": "When he could see the person, he was right almost nine times out of ten. With blinders on? Almost never."
+},
+{
+"t": "Hans never knew any maths. He was reading the faces of the smartest people in the city. And not one of them noticed."
+},
+{
+"t": "Could Hans read you? A, easily. Or B, no way."
+}
+]
+}
