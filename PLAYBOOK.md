@@ -69,8 +69,9 @@ if < 210). Smiling, surprised, sarcastic on the mocker's lines. Same voice every
 - YouTube Shorts + Instagram Reels: 3/day at 21:00, 23:00, 01:00 Madrid (owner 2026-11-18: audience USA + UK = UK 20/22/00h, NY 15/17/19h).
 - TikTok: 1/day (the best one, 23:00 Madrid, own file + own caption).
 - Hour analysis 2026-11-18 (88 Shorts, 9-16 Nov): the SAME video gets wildly different views per platform (slug IG 1,686 vs YT 44;
-  Sahara TikTok 4,070 vs YT 41), so content + first-hour test matter more than the hour. YouTube did best at 20h and 01h Madrid,
-  Instagram at 21h and 13-15h Madrid (= US morning). TikTok stuck at ~250 views at every hour (only Sahara broke out). Nothing was
+  earth spin IG 1,328 vs YT 17), so content + first-hour test matter more than the hour. YouTube did best at 20h and 01h Madrid,
+  Instagram at 21h and 13-15h Madrid (= US morning). TikTok stuck at ~250 views at every hour.
+  The Sahara TikTok (4,070 views, 2026-11-09) had PAID promotion: never count it as organic or as a model to copy. Nothing was
   ever posted in the Madrid morning, so mornings are untested. Weekly report: keep tracking median views per Madrid hour per platform. Goes to 2/day only after 3 TikToks in a row pass 200 views.
 - Long-form: Wed + Sat 18:00.
 - Raise to 4/day only if avg views per short grows 2 weeks in a row; if a video fails the quality gate, publish fewer that day.
