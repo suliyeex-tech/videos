@@ -28,6 +28,25 @@ Owner sent 3 reference Shorts blowing up right now (2 Spanish "En este pueblo...
 - HOW TO BUILD IT: Blender headless (pip install bpy; see TOOLS.md and engine/blocktown/town_starter.py). Build the town
   and the cast ONCE as a reusable .blend in brand/blocktown/, then animate shots with keyframes. Captions/SFX on top with
   HyperFrames or ffmpeg.
+- MYSTERY VARIANT (owner's 4th reference, 2026-11-18 21:42, "very good, I like it"): 147 s, ~170 wpm, all at NIGHT with
+  strong neon light (one colour per story: pink, purple...). Line 1: "In this town, <eerie thing>, and every kid knows three
+  rules." Then the 3 rules, "every kid who broke them disappeared", "My name is <kid>, and last night I broke all three."
+  Best friend calls in panic, the call cuts off, flashlight, the impossible place, the villain's line, the kid spots the
+  weakness, breaks it, everyone is free... and a last-line twist that it is not over. Captions: ONE word, bold white,
+  keywords yellow, lower-middle. First one made: episodes/blocktown/clock13.json + engine/blocktown/ (Blender kit lib.py).
+- MORE OWNER REFERENCES (2026-11-18 23:17), 3 shapes to rotate (never copy their stories):
+  a) WONDER / TRANSFORMATION (132 s, "In this town, nobody has ever seen colours"): grey world, a kid finds ONE odd thing,
+     touching it spreads it (hand -> hoodie -> friend -> giant tree -> whole street -> city -> sky + rainbow). Third person
+     ("a boy named Mason"), short punchy lines, "Boom!" / "Whoosh!" beats, feel-good ending. Big visual payoff every ~5 s.
+  b) MYSTERY / SURVIVAL (137-149 s, "everyone lives inside <strange place>" or "three rules"): first person, name + best
+     friend, a timed rule (gates open at 6, back before 8), a warning written on a wall, the friend gets trapped, the hero
+     goes back alone, the twist flips the whole premise ("they weren't keeping us in, they were keeping THEM out"),
+     calm last line.
+  c) PARODY / ANTI-CLIMAX (70 s, "In my town, nothing ever happens"): spooky set-ups with boring answers ("Then I heard
+     footsteps... it was the power company"), deadpan, very fast cuts, captions 2-3 words UPPERCASE at the top. Cheap to make.
+  Common to all: 576x1024-style blocky 3D game look, one word (or 2-3) captions, a new shot every 1-3 s, kid hero with a
+  best friend, a town hall/clock tower in shot. One reference (the scuba divers "this is private property") is live-action
+  meme comedy: we cannot film that; keep only its idea of a short absurd escalating argument.
 - English for US + UK viewers, clean language (young audience: no swearing), YouTube madeForKids false.
 - Title: "In This Town, ..." or "While Everyone Was X, I Was Y" (<= 45 chars) + #shorts.
 
