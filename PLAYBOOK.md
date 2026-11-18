@@ -4,6 +4,33 @@ Model channel: Ricks Clips (@RicksClips3000). ~150 videos, 430M+ views, ~10M avg
 ~0.8 Shorts/day (15 Shorts in 19 days = 167M views). Lesson: few, excellent, same recognisable format every time.
 Copy the FORMAT and craft, never its stories, titles, characters or drawings.
 
+## NEW MAIN FORMAT (owner 2026-11-18): "In this town..." blocky-town stories. Overrides §1-§3, §6 hours and §8 world.
+Owner sent 3 reference Shorts blowing up right now (2 Spanish "En este pueblo...", 1 English "In this town..."). Analysed:
+- LINE 1, SECOND 0, ALWAYS: "In this town, <absurd rule or fact about the whole town>" (e.g. a newspaper that prints
+  tomorrow's news; saying a phrase 3 times summons something; everyone parties except me). Never a real-world fact story.
+- Narrator = "I", a kid who is the odd one out in the town, deadpan and fast (~220-235 wpm; Kokoro, measure it).
+- Beats (85-100 s, ~330-380 words; TikTok rewards > 60 s, retention held because a new shot every 1-2 s):
+  1) Rule (0-4 s). 2) Three rapid examples with named townsfolk: "My friend <name>... <name>... even my grandma..." each
+  a 2-3 s gag. 3) "But me..." — the narrator breaks or bends the rule. 4) The town turns on him (sandbags around his house,
+  banned from the festival, laughed at). 5) The BIG TOWN EVENT: the Mayor (sash, top hat, speech in the square) / festival /
+  biggest party of the year. 6) The narrator's weird thing saves the day or flips the rule. 7) Callback twist in the last
+  line (the rule strikes again, one level bigger). Optional last line: "...and if you don't want to miss what happens in
+  this town next, subscribe."
+- SOUND HOOK: one repeated chant/catchphrase/noise (like a "hush hush hush" loop) that returns 4-6 times. Must be OUR OWN,
+  not a meme or a song lyric.
+- PICTURE: blocky toy-like 3D characters (cube heads, block bodies, simple painted faces) in a bright, saturated little town:
+  red-brick clock-tower town hall, main street with traffic light, houses with picket fences, square with stalls. Big face
+  close-ups for reactions, crowd shots of the whole town, the Mayor in every video. Recurring cast + same town = brand;
+  Oddwick the candle can live in a window of the town hall as a cameo. 1-word captions, bold white/yellow, dark outline,
+  centred. "Looks like a game", but NEVER the Roblox name/logo/UI, real Roblox avatars, branded meme characters
+  (e.g. Tung Tung Sahur, Skibidi), or anyone's characters/stories. Design everything ourselves.
+- English only, written for US + UK viewers (US spelling, "Mayor", "candy", "mom"). Clean language (young audience):
+  no swearing, no adult jokes. Not "made for kids" on YouTube (madeForKids false), but nothing unsuitable for teens.
+- Titles: "In This Town, <the rule>" <= 45 chars + #shorts. Caption = the rule + a question ("Would you say it a 3rd time?").
+- HOURS (owner audience = US + UK; old 20/21/23h Madrid slots landed at 11-14h in California and US school hours):
+  YouTube + Instagram 21:00, 23:00, 01:00 Madrid (= UK 20/22/00h, New York 15/17/19h). TikTok: the best one at 23:00 Madrid.
+  Own data (YouTube, NY time): best 17h, then 13-14h and 16h; 01:00 Madrid post (Internet Part 2) got 1,011 YT views.
+
 ## 0. Research first (every run, 5-6 searches, last 24-48 h)
 Most-viewed animated/AI Shorts right now + the newest Ricks Clips titles (search "Ricks Clips shorts", revid.ai/true-story-cartoon-shorts).
 Write in LEARNINGS.md Daily notes: 3 titles + views + what the hook was. Pick topics in the same VEIN, never the same story.
@@ -39,8 +66,8 @@ if < 210). Smiling, surprised, sarcastic on the mocker's lines. Same voice every
 - Listen to the hook, one SFX moment and the payoff before publishing.
 
 ## 6. Volume and hours (max quantity WITHOUT videos eating each other)
-- YouTube Shorts + Instagram Reels: 3/day at 20:00, 21:00, 23:00 Madrid (our best slots: ~620-820 avg views; 13:00/17:00 were ~75-100).
-- TikTok: 1/day (the best one, 21:00, own file + own caption). Goes to 2/day only after 3 TikToks in a row pass 200 views.
+- YouTube Shorts + Instagram Reels: 3/day at 21:00, 23:00, 01:00 Madrid (changed 2026-11-18 for US + UK; see NEW MAIN FORMAT).
+- TikTok: 1/day (the best one, 23:00 Madrid, own file + own caption). Goes to 2/day only after 3 TikToks in a row pass 200 views.
 - Long-form: Wed + Sat 18:00.
 - Raise to 4/day only if avg views per short grows 2 weeks in a row; if a video fails the quality gate, publish fewer that day.
 
