@@ -25,3 +25,6 @@
 | 2026-11-16 | shorts (daily) | Why This Skyscraper Was Fixed at Night: a student's homework finds a NYC tower could fall; secret night welding vs a hurricane (Oddwick · engineering, deadline) — 20:00 |
 | 2026-11-16 | shorts (daily) | The Robber Who Trusted Lemon Juice: lemon-juice "invisible" bank robber → Dunning-Kruger effect (Oddwick · crime/psychology, cocky hero) — 21:00 + TikTok |
 | 2026-11-16 | shorts (daily) | How Garden Slugs Became Gas Alarms: WWI slug gas detectors (Oddwick · animals/history, mocker beat) — 23:00 |
+| 2026-11-18 | shorts (daily) | London's New Bridge Lasted 2 Days: Millennium Bridge wobble, the crowd itself caused it (Oddwick · engineering, mystery) — 20:00 |
+| 2026-11-18 | shorts (daily) | This Horse Fooled Every Scientist: Clever Hans, the horse that "did maths" by reading faces (Oddwick · animals/psychology, mocker beat) — 21:00 + TikTok |
+| 2026-11-18 | shorts (daily) | 133 Days Alone on a Wooden Raft: Poon Lim's survival in the Atlantic (Oddwick · sea/survival, deadline) — 23:00 |
