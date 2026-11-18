@@ -1,0 +1,588 @@
+{
+ "schema_version": "1.0",
+ "created": "2026-11-18T19:20:59",
+ "id": "2026-11-18-why-fire-stations-have-poles",
+ "brief": {
+  "prompt": "Why Fire Stations Have Poles",
+  "kind": "story",
+  "length_s": 61.23,
+  "aspect": "9:16",
+  "fps": 24,
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "audio": {
+   "narration": true,
+   "music": true,
+   "sfx": true,
+   "lip_sync": false,
+   "music_file": null,
+   "language": "en"
+  },
+  "captions": "burned",
+  "deliverables": [
+   "9:16"
+  ],
+  "commercial_use": true,
+  "defaults_used": [
+   "Oddwick: voice, music and SFX are made on CPU (Kokoro + engine/oddwick/mix.py), not on the GPU",
+   "Oddwick host is composited from brand/oddwick_avatar.png, never generated"
+  ]
+ },
+ "target": {
+  "kind": "google_colab",
+  "url": "",
+  "gpu": "T4 (free)",
+  "vram_gb": 16,
+  "budget": {
+   "max_gpu_minutes": 60,
+   "max_credits": 0,
+   "credit_unit": "Google Colab compute units (free tier: 0 paid)",
+   "deadline_minutes": 120
+  }
+ },
+ "tier": "draft",
+ "tier_reason": "free Colab T4 = 16 GB, so draft tier (FLUX.2 Klein 4B stills, LTX at small size)",
+ "caps": {
+  "still_retries": 1,
+  "still_variants": 1,
+  "video_retries": 0,
+  "continuity_regens": 0,
+  "max_renders": 40,
+  "max_gpu_minutes": 60,
+  "pass_mean": 3.0,
+  "pass_min": 2
+ },
+ "gates": {
+  "bible": "auto",
+  "plan": "auto",
+  "spend": "human",
+  "final": "human"
+ },
+ "stages": {
+  "preflight": "pending",
+  "bible": "done",
+  "plan": "done",
+  "stills": "pending",
+  "video": "pending",
+  "continuity": "pending",
+  "audio": "pending",
+  "post": "pending",
+  "assembly": "pending",
+  "critique": "pending",
+  "intake": "done"
+ },
+ "bible": {
+  "path": "episodes/higgsfield/firepole.manifest.json",
+  "logline": "Why Fire Stations Have Poles",
+  "cast": [
+   {
+    "id": "kenyon",
+    "descriptor": "Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "reid",
+    "descriptor": "the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "horse",
+    "descriptor": "a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "mocker",
+    "descriptor": "a lanky smug firefighter from a rival station, pale skin, long thin nose, slicked black hair, green-trimmed grey coat",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "chief",
+    "descriptor": "a stern round fire chief, grey sideburns, white fire helmet, long black coat",
+    "ref_image": null,
+    "seed": null
+   }
+  ],
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "lut": null,
+  "voice": "Oddwick narrator: Kokoro am_puck 60% + am_fenrir 40%, ~220 wpm (CPU)"
+ },
+ "shots": [
+  {
+   "id": "s01",
+   "beat": "hook",
+   "start_s": 0.0,
+   "duration_s": 3.908,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "firehouse upstairs",
+   "narration": "Fire stations have a hole in the floor. And it's all because of hungry horses.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Close-up of a round hole cut in old wooden floorboards with a shiny brass pole going down through it into darkness, glowing warm light coming up from below, empty space on the left for the host.",
+    "seed": 1000
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Slow push-in toward the hole. Warm light flickers up from below. Dust drifts in the light.",
+    "seed": 2000
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s02",
+   "beat": "setup",
+   "start_s": 3.908,
+   "duration_s": 4.884,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow tilt up",
+   "cast": [
+    "horse"
+   ],
+   "location": "firehouse cross-section",
+   "narration": "Back then, horses pulled the fire wagons. Horses slept downstairs. Firefighters slept upstairs.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Cutaway view of a two-storey 1870s brick firehouse at night like a dollhouse: on the ground floor three horses in wooden stalls next to a red horse-drawn fire wagon, on the floor above firefighters asleep in bunk beds under a lantern. a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes.",
+    "seed": 1001
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Camera tilts slowly up from the horses to the sleeping firefighters. A horse flicks its ears; a lantern sways gently.",
+    "seed": 2001
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s03",
+   "beat": "problem",
+   "start_s": 8.792,
+   "duration_s": 5.869,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "horse"
+   ],
+   "location": "firehouse staircase",
+   "narration": "Problem? Firefighters cook. Horses smell food. And horses can climb stairs... but they're terrible at coming back down.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A straight wooden staircase inside a firehouse; the chunky fire horse is halfway up the stairs, nose in the air sniffing, following a ribbon of steam from a pot of stew at the top of the stairs. a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes.",
+    "seed": 1002
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The horse lifts one hoof onto the next step and sniffs the steam, ears up. The steam curls toward its nose.",
+    "seed": 2002
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s04",
+   "beat": "problem",
+   "start_s": 14.661,
+   "duration_s": 4.015,
+   "type": "action",
+   "framing": "low angle",
+   "camera": "slow push-in",
+   "cast": [
+    "horse"
+   ],
+   "location": "firehouse spiral stairs",
+   "narration": "So, the story goes, stations got twisty spiral stairs that horses couldn't climb.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A tight cast-iron spiral staircase twisting up through a hole in a firehouse ceiling; the chunky fire horse stands at the bottom looking up at it, head tilted, confused. a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes.",
+    "seed": 1003
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The horse tilts its head from side to side, then snorts and steps back. Camera drifts slowly around the staircase.",
+    "seed": 2003
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s05",
+   "beat": "problem",
+   "start_s": 18.676,
+   "duration_s": 3.896,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "firehouse spiral stairs",
+   "narration": "Great for stopping horses. Terrible when the fire bell rings in the middle of the night.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Sleepy firefighters in long white nightshirts and boots crammed on a narrow spiral staircase, bumping into each other, one hopping into his trousers, a big brass alarm bell on the wall.",
+    "seed": 1004
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The brass bell shakes. The firefighters jostle and bump down the spiral stairs one slow step at a time.",
+    "seed": 2004
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s06",
+   "beat": "the day",
+   "start_s": 22.572,
+   "duration_s": 5.338,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [
+    "kenyon",
+    "reid"
+   ],
+   "location": "hay loft",
+   "narration": "Then, in Chicago, Captain David Kenyon and a buddy were stacking hay on the third floor when the alarm went off.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A third-floor hay loft in an 1870s firehouse at night lit by a lantern: Captain Kenyon and his buddy stacking hay bales; a long wooden pole runs straight down through a square hatch in the loft floor; a brass alarm bell on the wall. Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons. the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders.",
+    "seed": 1005
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Both men freeze and look up as the bell on the wall starts shaking. Bits of hay float in the lantern light.",
+    "seed": 2005
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s07",
+   "beat": "the slide",
+   "start_s": 27.91,
+   "duration_s": 4.72,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "reid"
+   ],
+   "location": "hay loft hatch",
+   "narration": "His buddy didn't run for the stairs. He grabbed the long wooden pole they used for the hay... and slid.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. The buddy wraps his arms and legs around the long wooden hay pole and drops through the square hatch, hay flying up around him, big grin. the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders.",
+    "seed": 1006
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "He slides straight down the pole and out of frame, hay bursting up into the air behind him.",
+    "seed": 2006
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s08",
+   "beat": "the slide",
+   "start_s": 32.63,
+   "duration_s": 3.083,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [
+    "reid"
+   ],
+   "location": "firehouse ground floor",
+   "narration": "From the third floor to the ground in seconds. He beat everybody.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Ground floor of the firehouse: the buddy already standing next to the red fire wagon and the horses, dusting off his hands, while behind him other firefighters are still winding slowly down a spiral staircase. the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders.",
+    "seed": 1007
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "He dusts off his hands and grins at camera; in the background the others are still shuffling down the spiral stairs.",
+    "seed": 2007
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s09",
+   "beat": "the deal",
+   "start_s": 35.713,
+   "duration_s": 4.71,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "kenyon",
+    "chief"
+   ],
+   "location": "firehouse upstairs",
+   "narration": "Kenyon wanted a pole there for good. The chief said fine, but you pay for every repair yourself.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Captain Kenyon proudly pointing at a freshly sawed round hole in the wooden floor with sawdust around it; the stern fire chief beside him holds up a long paper bill and raises one eyebrow. Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons. a stern round fire chief, grey sideburns, white fire helmet, long black coat.",
+    "seed": 1008
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The chief unrolls the long bill until it hits the floor. Kenyon's smile stays on.",
+    "seed": 2008
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s10",
+   "beat": "mocker",
+   "start_s": 40.423,
+   "duration_s": 2.882,
+   "type": "action",
+   "framing": "big close-up",
+   "camera": "slow push-in",
+   "cast": [
+    "mocker"
+   ],
+   "location": "rival firehouse",
+   "narration": "The other stations laughed. A hole? In the floor? For sliding?",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Big close-up of the smug rival firefighter laughing with his mouth wide open, pointing at the viewer, other firefighters laughing behind him. a lanky smug firefighter from a rival station, pale skin, long thin nose, slicked black hair, green-trimmed grey coat.",
+    "seed": 1009
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "He throws his head back laughing and slaps his knee.",
+    "seed": 2009
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s11",
+   "beat": "payoff",
+   "start_s": 43.305,
+   "duration_s": 2.322,
+   "type": "action",
+   "framing": "wide",
+   "camera": "tracking",
+   "cast": [
+    "kenyon",
+    "horse"
+   ],
+   "location": "night street",
+   "narration": "Until Kenyon's crew kept showing up at fires first.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A red horse-drawn fire wagon racing down a cobblestone street at night toward a glowing burning building, Captain Kenyon standing on the back holding on, sparks in the air. Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons. a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes.",
+    "seed": 1010
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The horses gallop toward the fire; the camera tracks beside the wagon. Sparks drift up into the purple sky.",
+    "seed": 2010
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s12",
+   "beat": "you see",
+   "start_s": 45.627,
+   "duration_s": 4.216,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "firehouse cross-section",
+   "narration": "You see, stairs make you take one step at a time. A pole lets gravity do all the work.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Side-by-side cutaway: on the left a firefighter carefully stepping down a staircase, on the right a firefighter zooming down a pole with motion lines, same height floors.",
+    "seed": 1011
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The pole firefighter drops to the bottom while the stair firefighter is still on the first few steps.",
+    "seed": 2011
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s13",
+   "beat": "spread",
+   "start_s": 49.843,
+   "duration_s": 3.593,
+   "type": "action",
+   "framing": "low angle",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "grand firehouse",
+   "narration": "Soon Boston copied it. Then the whole country. Wood became shiny brass.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A grand old firehouse hall with three gleaming brass poles going up through round holes in a high ceiling, warm light reflecting on the brass.",
+    "seed": 1012
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Slow crane up along a brass pole toward the ceiling hole. The reflections slide along the metal.",
+    "seed": 2012
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s14",
+   "beat": "twist",
+   "start_s": 53.436,
+   "duration_s": 4.293,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "modern fire station",
+   "narration": "And today? Lots of new stations skip the pole, because people kept getting hurt sliding down.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A modern fire station at night: the brass pole is closed off behind a small safety fence, and a firefighter in modern yellow gear walks down a normal staircase beside it.",
+    "seed": 1013
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The firefighter walks down the stairs; the closed-off pole stays still beside him.",
+    "seed": 2013
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s15",
+   "beat": "A/B",
+   "start_s": 57.729,
+   "duration_s": 3.501,
+   "type": "action",
+   "framing": "medium",
+   "camera": "static locked-off",
+   "cast": [],
+   "location": "dark stage",
+   "narration": "So when the bell rings, what are you taking? The pole... or the stairs?",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Two lit candles on a dark purple stage: the left candle stands in front of a small brass pole, the right candle stands in front of a small spiral staircase, empty space in the middle for the host.",
+    "seed": 1014
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Static. Both candle flames flicker gently.",
+    "seed": 2014
+   },
+   "status": "pending"
+  }
+ ],
+ "audio": {
+  "voiceover": {
+   "route": "audio.voice",
+   "status": "done",
+   "params": {
+    "note": "made on CPU with engine/oddwick/voice.py"
+   },
+   "seed": 0
+  }
+ },
+ "post": [],
+ "assembly": {
+  "status": "pending",
+  "xfade": 0,
+  "beats_file": null,
+  "captions": "burned",
+  "exports": [
+   {
+    "aspect": "9:16",
+    "method": "crop",
+    "file": null
+   }
+  ],
+  "output": null
+ },
+ "cost": {
+  "renders": 0,
+  "estimate_gpu_minutes": null,
+  "actual_gpu_minutes": 0,
+  "rates_s_per_render": {},
+  "rates_note": "default rates in direct.py are unverified assumptions"
+ },
+ "log": []
+}

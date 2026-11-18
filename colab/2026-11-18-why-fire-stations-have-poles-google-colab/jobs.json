@@ -1,0 +1,213 @@
+{
+ "v": 1,
+ "manifest_id": "2026-11-18-why-fire-stations-have-poles",
+ "manifest_tier": "draft",
+ "tiers": {
+  "draft": {
+   "min_vram_gb": 16,
+   "jobs": [
+    {
+     "id": "s01_still",
+     "kind": "still",
+     "shot": "s01",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s01_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s02_still",
+     "kind": "still",
+     "shot": "s02",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s02_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s03_still",
+     "kind": "still",
+     "shot": "s03",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s03_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s04_still",
+     "kind": "still",
+     "shot": "s04",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s04_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s05_still",
+     "kind": "still",
+     "shot": "s05",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s05_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s06_still",
+     "kind": "still",
+     "shot": "s06",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s06_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s07_still",
+     "kind": "still",
+     "shot": "s07",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s07_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s08_still",
+     "kind": "still",
+     "shot": "s08",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s08_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s09_still",
+     "kind": "still",
+     "shot": "s09",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s09_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s10_still",
+     "kind": "still",
+     "shot": "s10",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s10_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s11_still",
+     "kind": "still",
+     "shot": "s11",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s11_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s12_still",
+     "kind": "still",
+     "shot": "s12",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s12_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s13_still",
+     "kind": "still",
+     "shot": "s13",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s13_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s14_still",
+     "kind": "still",
+     "shot": "s14",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s14_still.api.json",
+     "files": []
+    },
+    {
+     "id": "s15_still",
+     "kind": "still",
+     "shot": "s15",
+     "route": "still.flux2_4b",
+     "workflow": "workflows/draft/s15_still.api.json",
+     "files": []
+    }
+   ],
+   "models": [
+    "flux-2-klein-4b-fp8.safetensors",
+    "flux2-vae.safetensors",
+    "qwen_3_4b_fp8_mixed.safetensors"
+   ],
+   "notes": [
+    "Oddwick wrapper dropped 16 jobs (video, voiceover); made on CPU instead"
+   ],
+   "estimate": {
+    "gpu": "T4",
+    "tier": "draft",
+    "renders_cap": 49,
+    "gpu_minutes_24gb_class": 39.7,
+    "work_minutes": 99.2,
+    "setup_minutes": 7.2,
+    "download_gb": 10.0,
+    "session_minutes": 109.5,
+    "cu_per_hour": 1.8,
+    "compute_units": 3.28,
+    "assumptions": "rates, GPU speed and CU/hour are unverified placeholders; check the Google Colab Resources panel"
+   }
+  }
+ },
+ "gpu_tiers": {
+  "v": 1,
+  "note": "Google Colab GPUs mapped to video-director tiers. cu_per_hour values are approximate public figures and are UNVERIFIED: Google Colab changes them and shows the live rate in its Resources panel. Override with --cu-per-hour or manifest target.colab.cu_per_hour. speed is a multiplier on the director's per-render seconds (which assume a 24 GB-class GPU); also an unverified assumption.",
+  "gpus": {
+   "T4": {
+    "match": [
+     "T4"
+    ],
+    "vram_gb": 16,
+    "tier": "draft",
+    "cu_per_hour": 1.8,
+    "speed": 2.5,
+    "note": "fp16 only; no bf16/fp8. Draft tier at small sizes; LTX 22B needs GGUF and may still OOM."
+   },
+   "L4": {
+    "match": [
+     "L4"
+    ],
+    "vram_gb": 24,
+    "tier": "standard",
+    "cu_per_hour": 4.8,
+    "speed": 1.2,
+    "note": "24 GB nominal (about 22.5 GiB usable): standard tier; drop to draft if it runs out of memory."
+   },
+   "A100": {
+    "match": [
+     "A100"
+    ],
+    "vram_gb": 40,
+    "tier": "max",
+    "cu_per_hour": 11.8,
+    "speed": 0.5,
+    "note": "40 GB (sometimes 80 GB) runtimes."
+   },
+   "H100": {
+    "match": [
+     "H100"
+    ],
+    "vram_gb": 80,
+    "tier": "max",
+    "cu_per_hour": 18.0,
+    "speed": 0.3,
+    "note": "Availability varies by plan."
+   }
+  },
+  "unknown": {
+   "vram_gb": 0,
+   "tier": "draft",
+   "cu_per_hour": 12.0,
+   "speed": 2.5,
+   "note": "Unknown GPU: price pessimistically."
+  },
+  "session_overhead_minutes": {
+   "bootstrap": 6,
+   "per_gb_download": 0.12,
+   "collect_and_stop_reserve": 3
+  }
+ },
+ "max_session_minutes": 60,
+ "missing_assets": []
+}

@@ -1,0 +1,8 @@
+{
+ "comfyui": {
+  "repo": "https://github.com/comfyanonymous/ComfyUI",
+  "commit": "b5a432157de6b8884f81104cd02926adf4d597e4"
+ },
+ "packs": {},
+ "bundled": []
+}

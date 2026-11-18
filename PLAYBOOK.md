@@ -31,6 +31,10 @@ Owner sent 3 reference Shorts blowing up right now (2 Spanish "En este pueblo...
 - English for US + UK viewers, clean language (young audience: no swearing), YouTube madeForKids false.
 - Title: "In This Town, ..." or "While Everyone Was X, I Was Y" (<= 45 chars) + #shorts.
 
+## AI pictures with open-higgsfield-skills (owner 2026-11-18) — see HIGGSFIELD.md
+Use it from now on, free only. Unattended runs: run `shot-qc` on every Short, pick up any Colab stills the owner already
+rendered (Google Drive) and turn them into a Short on CPU, and prepare ONE Colab-ready episode per run. Never pay for a GPU.
+
 ## 0. Research first (every run, 5-6 searches, last 24-48 h)
 Most-viewed animated/AI Shorts right now + the newest Ricks Clips titles (search "Ricks Clips shorts", revid.ai/true-story-cartoon-shorts).
 Write in LEARNINGS.md Daily notes: 3 titles + views + what the hook was. Pick topics in the same VEIN, never the same story.

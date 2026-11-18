@@ -21,3 +21,10 @@ echo "tools ready in $TL"
 
 # ---- 2026-11-18 owner: Blender (bpy) for the blocky "In this town" format. See TOOLS.md.
 (timeout 400 pip install --break-system-packages -q bpy >/dev/null 2>&1 && echo "bpy ready") || echo "bpy install failed"
+
+# ---- 2026-11-18 owner: open-higgsfield-skills (pinned). See HIGGSFIELD.md.
+HG=$TL/open-higgsfield-skills; HGC=5a1a2d492540d349a2d84d413e4b71f88aa94519
+[ -d "$HG/.git" ] || git clone -q https://github.com/mojomast/open-higgsfield-skills "$HG" || true
+(cd "$HG" && git fetch -q --depth 1 origin $HGC 2>/dev/null; git checkout -q $HGC) || true
+mkdir -p ~/.claude/skills && cp -rn "$HG"/skills/* ~/.claude/skills/ 2>/dev/null || true
+echo "open-higgsfield-skills ready in $HG (export HIGGS=$HG)"
