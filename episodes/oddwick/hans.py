@@ -94,15 +94,15 @@ def shots(lines, total):
     eye = g(ell(0, 0, 300, 240, '#fff', 12) + ell(30, 10, 170, 170, '#3a2418', 8) + ell(30, 10, 80, 80, OUT) + ell(-30, -50, 40, 30, '#fff', extra='opacity=".9"')
             + g(person('rf', 0, 90, .32, coat='#7a5a2a', skin='a', eyes='happy', mouth='smile'), tr='translate(30,0)'), 'eye', 'translate(540,820)')
     a = [fromto('#eye', 0, .5, {'scale': .6, 'transformOrigin': '50% 50%'}, {'scale': 1}, 'back.out(2)'), fromto('#stop', D(13) * .55, .25, {'opacity': 0, 'scale': .3, 'transformOrigin': '50% 50%'}, {'opacity': 1, 'scale': 1}, 'back.out(3)')]
-    S.append(Shot(L(13), L(14), wall('#6a4a3a', 2400) + pool(540, 820, 700, 600) + eye + badge('stop', 540, 1330, 'STOP', '#e05a5a', 130),
+    S.append(Shot(L(13), L(14), wall('#6a4a3a', 2400) + pool(540, 820, 700, 600) + eye + badge('stop', 540, 1500, 'STOP', '#e05a5a', 130),
                   [(0, 1.0, 540, 900), (1.2, 1.45, 570, 840), (D(13), 1.1, 540, 1000)], a))
     # 14 stats: sees the person 9/10, blinders ~never (bars) + Hans in blinders
     bars = (path('M160,1200 L160,500 M160,1200 L960,1200', sw=8, stroke='#f4f4e8') + g(rect(240, -620, 240, 620, '#5fd36a', 10, 7), 'bar1', 'translate(0,1200)') + g(rect(620, -50, 240, 50, '#e05a5a', 10, 7), 'bar2', 'translate(0,1200)')
             + text(360, 1290, 'SEES', 64) + text(740, 1290, 'BLINDERS', 64) + text(360, 540, '9 / 10', 80, '#5fd36a', extra='id="t1" opacity="0"') + text(740, 1110, 'ALMOST 0', 70, '#ff8a5a', extra='id="t2" opacity="0"'))
     a = [fromto('#bar1', .3, .7, {'scaleY': 0, 'transformOrigin': '50% 100%'}, {'scaleY': 1}, 'power3.out'), move('#t1', 1.0, .2, opacity=1),
          fromto('#bar2', D(14) * .6, .4, {'scaleY': 0, 'transformOrigin': '50% 100%'}, {'scaleY': 1}), move('#t2', D(14) * .6 + .3, .2, opacity=1), fromto('#hb', D(14) * .55, .4, {'opacity': 0, 'x': 200}, {'opacity': 1, 'x': 0})]
-    S.append(Shot(L(14), L(15), wall('#2d4a40', 2400) + pool(540, 900, 600, 500) + g(bars, tr='translate(0,-220)') + g(horse('hb', 0, 0, .55, blinders=True, eyes='wide'), 'hbw', 'translate(820,1180)'),
-                  [(0, 1.0, 540, 760), (1.6, 1.3, 360, 600), (D(14) * .6, 1.3, 740, 880), (D(14), 1.1, 640, 950)], a))
+    S.append(Shot(L(14), L(15), wall('#2d4a40', 2400) + pool(540, 900, 600, 500) + g(bars, tr='translate(0,-220)') + g(horse('hb', 0, 0, .55, blinders=True, eyes='wide'), 'hbw', 'translate(760,1580)'),
+                  [(0, 1.0, 540, 700), (D(14) * .5, 1.05, 560, 700), (D(14), 1.0, 540, 740)], a))
     # 15 payoff: Hans never knew maths, he read the smartest people in the city... the mocker gasps (lands on him)
     smart = ''.join(person(f'z{i}', 100 + i * 150, 1300, .6, coat=['#2f4f4a', '#3f5f9f', '#6a4a3a', '#4a3a6a'][i % 4], skin='abcd'[i % 4], glasses=True, mustache=i % 2 == 0, eyes='happy', mouth='smile',
                            extra_acc=tophat(-300) if i % 2 else '') for i in range(6))
