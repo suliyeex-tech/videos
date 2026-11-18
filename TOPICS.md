@@ -28,3 +28,4 @@
 | 2026-11-18 | shorts (daily) | London's New Bridge Lasted 2 Days: Millennium Bridge wobble, the crowd itself caused it (Oddwick · engineering, mystery) — 20:00 |
 | 2026-11-18 | shorts (daily) | This Horse Fooled Every Scientist: Clever Hans, the horse that "did maths" by reading faces (Oddwick · animals/psychology, mocker beat) — 21:00 + TikTok |
 | 2026-11-18 | shorts (daily) | 133 Days Alone on a Wooden Raft: Poon Lim's survival in the Atlantic (Oddwick · sea/survival, deadline) — 23:00 |
+| 2026-11-18 | long B | The Flannan Isles lighthouse keepers who vanished in 1900: the creepy viral version vs the official record (myth-vs-record mystery, Oddwick host + fictional ghost-tour streamer, 6–9 min, 18:00) |
