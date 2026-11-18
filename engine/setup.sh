@@ -18,3 +18,6 @@ done
 (cd "$TL/ClaudeAnimationBase" && timeout 300 npm install --silent >/dev/null 2>&1) || true
 (cd "$TL" && [ -d node_modules/@paper-design/shaders ] || timeout 300 npm i --silent @paper-design/shaders >/dev/null 2>&1) || true
 echo "tools ready in $TL"
+
+# ---- 2026-11-18 owner: Blender (bpy) for the blocky "In this town" format. See TOOLS.md.
+(timeout 400 pip install --break-system-packages -q bpy >/dev/null 2>&1 && echo "bpy ready") || echo "bpy install failed"
