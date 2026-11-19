@@ -29,3 +29,6 @@
 | 2026-11-18 | shorts (daily) | This Horse Fooled Every Scientist: Clever Hans, the horse that "did maths" by reading faces (Oddwick · animals/psychology, mocker beat) — 21:00 + TikTok |
 | 2026-11-18 | shorts (daily) | 133 Days Alone on a Wooden Raft: Poon Lim's survival in the Atlantic (Oddwick · sea/survival, deadline) — 23:00 |
 | 2026-11-18 | long B | The Flannan Isles lighthouse keepers who vanished in 1900: the creepy viral version vs the official record (myth-vs-record mystery, Oddwick host + fictional ghost-tour streamer, 6–9 min, 18:00) |
+| 2026-11-19 | shorts (daily) | Before Alarm Clocks, She Shot Peas at You: London knocker-ups (pea shooter, sixpence a week, the one who spotted a fire) (Oddwick · jobs/history, mystery) — 20:00Z |
+| 2026-11-19 | shorts (daily) | How Bats Burned Down Their Own Base: WWII bat bombs (Project X-Ray), escaped bats set the test airfield on fire (Oddwick · animals/war-engineering, mocker beat) — 22:00Z + TikTok |
+| 2026-11-19 | shorts (daily) | In This Town, Everyone Shouts: Whisper Boy vs the Big Shout Festival, a bear under the stage (Blocktown "In this town" hustle variant, fiction) — 00:00Z (+1) |
