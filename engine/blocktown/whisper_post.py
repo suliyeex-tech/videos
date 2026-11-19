@@ -86,14 +86,14 @@ KEY = {"hush", "shout", "shouting", "whispering", "whisper", "trophy", "golden",
 def ts(x): return f"{int(x // 3600)}:{int(x % 3600 // 60):02d}:{x % 60:05.2f}"
 ass = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\n\n[V4+ Styles]\n"
        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-       "Style: C,DejaVu Sans,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H78000000,1,0,0,0,100,100,0,0,1,8,4,5,40,40,0,1\n\n"
+       "Style: C,DejaVu Sans,128,&H00FFFFFF,&H00FFFFFF,&H00000000,&H78000000,1,0,0,0,100,100,0,0,1,10,5,5,40,40,0,1\n\n"
        "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
 for i, (s0, s1, w) in enumerate(words):
     e = words[i + 1][0] if i + 1 < len(words) and words[i + 1][0] - s1 < 0.35 else s1 + 0.12
     clean = w.strip(".,!?:;\"'…").lower()
     if not clean: continue
     col = "{\\c&H00E6FF&}" if clean in KEY else ""
-    ass += f"Dialogue: 0,{ts(s0)},{ts(max(e, s0 + 0.12))},C,,0,0,0,,{{\\pos(540,1330)\\fscx80\\fscy80\\t(0,70,\\fscx100\\fscy100)}}{col}{clean}\n"
+    ass += f"Dialogue: 0,{ts(s0)},{ts(max(e, s0 + 0.12))},C,,0,0,0,,{{\\pos(540,1330)\\fscx80\\fscy80\\t(0,70,\\fscx100\\fscy100)}}{col}{clean.upper()}\n"
 open(f"{W}/caps.ass", "w").write(ass)
 out = f"{REPO}/out/{SLUG}.mp4"; os.makedirs(f"{REPO}/out", exist_ok=True)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", film, "-i", mixf, "-vf", f"ass={W}/caps.ass", "-map", "0:v", "-map", "1:a",
