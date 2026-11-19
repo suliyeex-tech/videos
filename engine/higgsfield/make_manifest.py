@@ -19,6 +19,9 @@ CAST = {
     "mocker": "a lanky smug firefighter from a rival station, pale skin, long thin nose, slicked black hair, "
               "green-trimmed grey coat",
     "chief": "a stern round fire chief, grey sideburns, white fire helmet, long black coat",
+    "librarian": "the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt",
+    "student": "a skinny hungry student, pale skin, messy red hair, patched green cloak, sly grin",
+    "reader": "a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar",
 }
 
 def main(ep_path, shots_path, out_path):

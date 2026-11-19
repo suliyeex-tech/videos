@@ -106,7 +106,7 @@ def shots(lines, total):
     a = [fromto('#b11a', .3, .4, {'scaleY': 0, 'transformOrigin': '50% 100%'}, {'scaleY': 1}), fromto('#b11b', .9, .9, {'scaleY': 0, 'transformOrigin': '50% 100%'}, {'scaleY': 1}, 'power3.out')] + pop('x10', 1.9)
     fl = ''.join(flame(f'f{k}', 650 + (k % 3) * 70, 420 - (k // 3) * 90, .35) for k in range(6))
     a += [pop(f'f{k}', 1.9 + k * .12)[0] for k in range(6)]
-    S.append(Shot(L(11), L(12), wall('#3a3060', 2400) + pool(540, 900, 600, 500) + bars2('b11', 'NORMAL', 'BATS', 70, 700, 540, 1150) + badge('x10', 540, 1560, 'x10', '#ff8a5a', 110)
+    S.append(Shot(L(11), L(12), wall('#3a3060', 2400) + pool(540, 900, 600, 500) + bars2('b11', 'NORMAL', 'BATS', 70, 640, 540, 980) + badge('x10', 540, 1560, 'x10', '#ff8a5a', 110)
                   + g(fl, tr='translate(0,0)').replace('<g id="f', '<g opacity="0" id="f'),
                   [(0, 1.0, 540, 820), (D(11), 1.08, 560, 760)], a))
     # 12 too slow: CANCELLED stamp + $2,000,000

@@ -123,7 +123,7 @@ def shots(lines, total):
     a += [fromto('#fam', 1.8, .8, {'x': 0, 'opacity': 0}, {'x': -260, 'opacity': 1}, 'power2.out')] + pop('saf', D(14) - .9)
     S.append(Shot(L(14), L(15), terrace(lit=(6,), sleepers=(0, 1, 2, 3, 5, 7)) + flame('fl0', WIN[6][0] - 20, WIN[6][1] + 90, 1.0) + knocker('kn', kx, ky, .9)
                   + ''.join(pea(f'r{k}', tx, ty) for k in range(6)) + g(''.join(g(person(f'fm{i}', 0, 0, .55, coat=['#4f7cc9', '#e05a7a', '#7a8a3a'][i], skin='abcd'[i], hair=[None, 'bob', 'tuft'][i], eyes='wide', mouth='open'), tr=f'translate({i * 120},0)') for i in range(3)), 'fam', 'translate(820,1560)', 'opacity="0"')
-                  + badge('saf', 540, 300, 'EVERYONE OUT', '#5fd36a', 72),
+                  + badge('saf', 540, 470, 'EVERYONE OUT', '#5fd36a', 72),
                   [(0, 1.05, 540, 800), (1.4, 1.15, 640, 900), (D(14), 1.2, 600, 1000)], a))
     # 15 A/B
     S.append(Shot(L(15), total, outro('DEAL', '', 'MY', 'CHANCES'), [(0, 1.0, 540, 950), (total - L(15), 1.12, 540, 1000)], outro_anims()))

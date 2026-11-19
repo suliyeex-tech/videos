@@ -1,0 +1,569 @@
+{
+ "schema_version": "1.0",
+ "created": "2026-11-19T10:25:35",
+ "id": "2026-11-20-why-libraries-shelved-books-backwards",
+ "brief": {
+  "prompt": "Why Libraries Shelved Books Backwards",
+  "kind": "story",
+  "length_s": 60.52,
+  "aspect": "9:16",
+  "fps": 24,
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "audio": {
+   "narration": true,
+   "music": true,
+   "sfx": true,
+   "lip_sync": false,
+   "music_file": null,
+   "language": "en"
+  },
+  "captions": "burned",
+  "deliverables": [
+   "9:16"
+  ],
+  "commercial_use": true,
+  "defaults_used": [
+   "Oddwick: voice, music and SFX are made on CPU (Kokoro + engine/oddwick/mix.py), not on the GPU",
+   "Oddwick host is composited from brand/oddwick_avatar.png, never generated"
+  ]
+ },
+ "target": {
+  "kind": "google_colab",
+  "url": "",
+  "gpu": "T4 (free)",
+  "vram_gb": 16,
+  "budget": {
+   "max_gpu_minutes": 60,
+   "max_credits": 0,
+   "credit_unit": "Google Colab compute units (free tier: 0 paid)",
+   "deadline_minutes": 120
+  }
+ },
+ "tier": "draft",
+ "tier_reason": "free Colab T4 = 16 GB, so draft tier (FLUX.2 Klein 4B stills, LTX at small size)",
+ "caps": {
+  "still_retries": 1,
+  "still_variants": 1,
+  "video_retries": 0,
+  "continuity_regens": 0,
+  "max_renders": 40,
+  "max_gpu_minutes": 60,
+  "pass_mean": 3.0,
+  "pass_min": 2
+ },
+ "gates": {
+  "bible": "auto",
+  "plan": "auto",
+  "spend": "human",
+  "final": "human"
+ },
+ "stages": {
+  "preflight": "pending",
+  "bible": "done",
+  "plan": "done",
+  "stills": "pending",
+  "video": "pending",
+  "continuity": "pending",
+  "audio": "pending",
+  "post": "pending",
+  "assembly": "pending",
+  "critique": "pending",
+  "intake": "done"
+ },
+ "bible": {
+  "path": "episodes/higgsfield/firepole.manifest.json",
+  "logline": "Why Libraries Shelved Books Backwards",
+  "cast": [
+   {
+    "id": "kenyon",
+    "descriptor": "Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "reid",
+    "descriptor": "the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "horse",
+    "descriptor": "a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "mocker",
+    "descriptor": "a lanky smug firefighter from a rival station, pale skin, long thin nose, slicked black hair, green-trimmed grey coat",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "chief",
+    "descriptor": "a stern round fire chief, grey sideburns, white fire helmet, long black coat",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "librarian",
+    "descriptor": "the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "student",
+    "descriptor": "a skinny hungry student, pale skin, messy red hair, patched green cloak, sly grin",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "reader",
+    "descriptor": "a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar",
+    "ref_image": null,
+    "seed": null
+   }
+  ],
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "lut": null,
+  "voice": "Oddwick narrator: Kokoro am_puck 60% + am_fenrir 40%, ~220 wpm (CPU)"
+ },
+ "shots": [
+  {
+   "id": "s01",
+   "beat": "hook",
+   "start_s": 0.0,
+   "duration_s": 6.357,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "old library",
+   "narration": "In old libraries, every book sat on the shelf backwards. Spine to the wall. And nobody thought that was strange.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Close-up of a tall dark oak bookshelf in an old candle-lit library where every thick leather book stands backwards, rough page edges facing out, no spines visible, empty space on the left for the host.",
+    "seed": 1000
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Slow push-in along the shelf. Candlelight flickers on the page edges.",
+    "seed": 2000
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s02",
+   "beat": "setup",
+   "start_s": 6.357,
+   "duration_s": 4.868,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow pan right",
+   "cast": [
+    "librarian"
+   ],
+   "location": "scriptorium",
+   "narration": "Because back then, one book could cost as much as a house. Every page was copied by hand.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A monk-like scribe desk by candlelight: a huge open hand-written book with gold letters, quill pen, ink pot, and next to it a tiny toy-like house on the desk on a balance scale, the scale perfectly level between the book and the house. the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt.",
+    "seed": 1001
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The quill moves slightly; the balance scale wobbles and settles level.",
+    "seed": 2001
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s03",
+   "beat": "problem",
+   "start_s": 11.225,
+   "duration_s": 4.195,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "student"
+   ],
+   "location": "old library",
+   "narration": "And thieves knew it. Even hungry students would slip a book under their coat and sell it.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. In a dim library aisle a skinny student hides a thick leather book under his patched cloak, looking over his shoulder with a sly grin. a skinny hungry student, pale skin, messy red hair, patched green cloak, sly grin.",
+    "seed": 1002
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The student slides the book under his cloak and glances left and right.",
+    "seed": 2002
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s04",
+   "beat": "idea",
+   "start_s": 15.42,
+   "duration_s": 4.145,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "librarian"
+   ],
+   "location": "old library",
+   "narration": "So the librarians came up with a plan. A chain. On every valuable book.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. The old librarian holds up a long heavy iron chain in both hands with a proud smile, rows of books behind him. the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt.",
+    "seed": 1003
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The chain swings gently; the librarian nods once.",
+    "seed": 2003
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s05",
+   "beat": "problem",
+   "start_s": 19.565,
+   "duration_s": 5.309,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "static locked-off",
+   "cast": [],
+   "location": "workbench",
+   "narration": "But a chain on the spine would rip the binding apart. So they bolted it to the front edge of the cover.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Close-up of a big leather book lying on a wooden workbench, an iron clasp riveted to the front edge of its cover with a chain attached, the spine undamaged.",
+    "seed": 1004
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "A small hammer taps the rivet once; sparks of dust.",
+    "seed": 2004
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s06",
+   "beat": "reveal",
+   "start_s": 24.874,
+   "duration_s": 4.047,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow tilt down",
+   "cast": [],
+   "location": "old library",
+   "narration": "And if the chain hangs from the front... the book has to face the wrong way round.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A chained book hanging from a shelf rail, the chain running from the front edge of the cover, so the book faces backwards on the shelf with page edges out, more chained books beside it.",
+    "seed": 1005
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The chains sway a little and clink.",
+    "seed": 2005
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s07",
+   "beat": "explain",
+   "start_s": 28.921,
+   "duration_s": 4.665,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow pan",
+   "cast": [],
+   "location": "cobbled street at night",
+   "narration": "You see, it's like a dog on a leash. The leash goes where the dog's face is, not its tail.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A cheerful cartoon dog on a red leash walking on a cobbled street at night, the leash clearly attached to the collar at the dog's head end, a small glowing book floating next to it as a visual comparison.",
+    "seed": 1006
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The dog trots forward; the leash stays taut from the collar.",
+    "seed": 2006
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s08",
+   "beat": "explain",
+   "start_s": 33.586,
+   "duration_s": 4.532,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "reader"
+   ],
+   "location": "old library",
+   "narration": "So you'd pull the book down, open it right there on a desk, and read it still on its chain.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A young reader sits at a slanted wooden reading desk attached to the bookcase, reading a big open book whose chain runs back to the shelf rail, candle beside her. a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar.",
+    "seed": 1007
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "She turns one page; the chain shifts slightly.",
+    "seed": 2007
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s09",
+   "beat": "escalation",
+   "start_s": 38.118,
+   "duration_s": 2.686,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "slow push-in",
+   "cast": [
+    "librarian"
+   ],
+   "location": "old library",
+   "narration": "Want to take it home? Only the librarian had the key.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Close-up of the librarian's hand holding a big iron key next to a padlock on the shelf rail, his eyebrows raised over his spectacles. the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt.",
+    "seed": 1008
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The key turns slightly in the lock; candlelight glints.",
+    "seed": 2008
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s10",
+   "beat": "turn",
+   "start_s": 40.804,
+   "duration_s": 3.03,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow pan right",
+   "cast": [],
+   "location": "print shop",
+   "narration": "Then printing made books cheap, and the chains slowly came off.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. An old wooden printing press in a workshop by lamplight with stacks of fresh small printed books piling up, a loose iron chain lying on the floor beside them.",
+    "seed": 1009
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The press lever comes down; paper sheets slide onto the stack.",
+    "seed": 2009
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s11",
+   "beat": "fact",
+   "start_s": 43.834,
+   "duration_s": 6.668,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "cathedral library",
+   "narration": "But one cathedral in England still keeps about fifteen hundred books on their chains. The biggest chained library left.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A grand stone cathedral library at night with long oak bookcases full of chained books, hundreds of chains glinting in warm candlelight, a gothic window with moonlight.",
+    "seed": 1010
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Slow push down the aisle; chains glint as the light moves.",
+    "seed": 2010
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s12",
+   "beat": "twist setup",
+   "start_s": 50.502,
+   "duration_s": 3.917,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "georgian library",
+   "narration": "And one library in Dublin had a different idea. They didn't chain the books...",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. An elegant dark-wood library from the 1700s with tall shelves and free books without chains, three small wooden-and-wire alcoves at the end of the room.",
+    "seed": 1011
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Slow push toward the alcoves at the end of the room.",
+    "seed": 2011
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s13",
+   "beat": "payoff",
+   "start_s": 54.419,
+   "duration_s": 1.766,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "reader"
+   ],
+   "location": "georgian library",
+   "narration": "they locked the readers in cages.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. The young reader sits inside a locked wire cage alcove reading a book, the librarian outside turning the key in the cage door, both looking at the camera, comedic. a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar.",
+    "seed": 1012
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The cage door clicks shut; the reader raises an eyebrow.",
+    "seed": 2012
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s14",
+   "beat": "ab",
+   "start_s": 56.185,
+   "duration_s": 4.335,
+   "type": "action",
+   "framing": "wide",
+   "camera": "static locked-off",
+   "cast": [],
+   "location": "dark stage",
+   "narration": "Your library, your rules. A, chain the books. Or B, cage the readers.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Two tall lit candles on a dark purple stage, one wrapped with a small iron chain on the left and one inside a tiny wire cage on the right, warm glow, empty space above each for text.",
+    "seed": 1013
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Both flames flicker gently.",
+    "seed": 2013
+   },
+   "status": "pending"
+  }
+ ],
+ "audio": {
+  "voiceover": {
+   "route": "audio.voice",
+   "status": "done",
+   "params": {
+    "note": "made on CPU with engine/oddwick/voice.py"
+   },
+   "seed": 0
+  }
+ },
+ "post": [],
+ "assembly": {
+  "status": "pending",
+  "xfade": 0,
+  "beats_file": null,
+  "captions": "burned",
+  "exports": [
+   {
+    "aspect": "9:16",
+    "method": "crop",
+    "file": null
+   }
+  ],
+  "output": null
+ },
+ "cost": {
+  "renders": 0,
+  "estimate_gpu_minutes": null,
+  "actual_gpu_minutes": 0,
+  "rates_s_per_render": {},
+  "rates_note": "default rates in direct.py are unverified assumptions"
+ },
+ "log": []
+}
