@@ -99,7 +99,9 @@ def setup(res=(540, 960), samples=14, fps=12):
 class Char:
     """root (empty) -> hips; parts with pivots so we can pose: head, armL, armR, legL, legR. face: eyes, pupils, mouth, brows."""
     def __init__(self, name, skin="#f3c89a", top="#3f6fd8", pants="#c9b48a", hair="#6b3f22", hair_style="spiky",
-                 shoes="#f2f2f2", hood=False, kid=True, extra=None):
+                 shoes="#f2f2f2", hood=False, kid=True, extra=None, cartoon=False, blush=False):
+        """cartoon=True (house style 2026-11-20): big white eyes with black pupils + glints parented to the white (so face()
+        scaling squashes the whole eye), thick dark brows; blush=True adds pink cheeks."""
         s = 0.88 if kid else 1.0
         self.name = name; self.s = s
         self.root = empty(name)
@@ -144,12 +146,23 @@ class Char:
         fy = -0.505 * hs; ez = 0.6 * hs
         blk, wht = mat("eyeblack", "#141414", 0.25), mat("eyewhite", "#ffffff", 0.3, 1.5)
         self.eyes, self.glints = [], []
+        self.cartoon = cartoon; self.EB = (0.15, 0.03, 0.19) if cartoon else (0.085, 0.03, 0.135)
         for sd in (-1, 1):
-            e = sphere(f"{name}_eye{sd}", (0.2 * sd * hs, fy, ez), (0.085 * hs, 0.03, 0.135 * hs), blk, self.neck)
-            g = sphere(f"{name}_glint{sd}", (0.2 * sd * hs + 0.03 * hs, fy - 0.025, ez + 0.05 * hs), (0.028 * hs, 0.012, 0.035 * hs), wht, self.neck, 8)
+            if cartoon:
+                sclera = mat("sclera", "#ffffff", 0.35, 0.25)
+                e = sphere(f"{name}_eye{sd}", (0.22 * sd * hs, fy + 0.005, ez - 0.02 * hs), (0.15 * hs, 0.03, 0.19 * hs), sclera, self.neck)
+                p = sphere(f"{name}_pupil{sd}", (0.06 * sd, -0.75, -0.08), (0.58, 0.9, 0.62), blk, e)
+                g = sphere(f"{name}_glint{sd}", (0.24 * sd + 0.06, -1.5, 0.22), (0.2, 0.5, 0.22), wht, e, 8)
+            else:
+                e = sphere(f"{name}_eye{sd}", (0.2 * sd * hs, fy, ez), (0.085 * hs, 0.03, 0.135 * hs), blk, self.neck)
+                g = sphere(f"{name}_glint{sd}", (0.2 * sd * hs + 0.03 * hs, fy - 0.025, ez + 0.05 * hs), (0.028 * hs, 0.012, 0.035 * hs), wht, self.neck, 8)
             self.eyes.append(e); self.glints.append(g)
+        if blush:
+            for sd in (-1, 1):
+                sphere(f"{name}_blush{sd}", (0.33 * sd * hs, fy - 0.005, 0.33 * hs), (0.1 * hs, 0.02, 0.06 * hs), mat("blush", "#ff7a9a", 0.6, 0.4, "#ff6f91"), self.neck, 10)
         self.mouth = cube(f"{name}_mouth", (0, fy, 0.3 * hs), (0.2 * hs, 0.03, 0.045 * hs), mat("mouth", "#3a1512", 0.5), 0.0, self.neck)
-        self.brows = [cube(f"{name}_brow{sd}", (0.2 * sd * hs, fy, 0.82 * hs), (0.2 * hs, 0.03, 0.05 * hs), mat(f"{name}_brow", hair if hair_style != "bald" else "#555555"), 0.0, self.neck)
+        bw = (0.26 * hs, 0.04, 0.085 * hs) if cartoon else (0.2 * hs, 0.03, 0.05 * hs)
+        self.brows = [cube(f"{name}_brow{sd}", (0.21 * sd * hs, fy - 0.01, 0.84 * hs if cartoon else 0.82 * hs), bw, mat(f"{name}_brow", hair if hair_style != "bald" else "#555555"), 0.0, self.neck)
                       for sd in (-1, 1)]
         self.hs = hs; self._ez = ez
         self.face("neutral")
@@ -174,8 +187,8 @@ class Char:
              "determined": (1, 0.8, 0.18, 0.04, -15, -0.03), "frozen": (1, 1, 0.12, 0.12, 0, 0.04)}[kind]
         ew, eh, mw, mh, brow, by = E
         for sd, e, g, b in zip((-1, 1), self.eyes, self.glints, self.brows):
-            e.scale = (0.085 * hs * ew, 0.03, 0.135 * hs * eh)
-            b.location.z = 0.82 * hs + by * hs; b.rotation_euler = (0, math.radians(brow * sd), 0)
+            e.scale = (self.EB[0] * hs * ew, self.EB[1], self.EB[2] * hs * eh)
+            b.location.z = (0.86 if self.cartoon else 0.82) * hs + by * hs; b.rotation_euler = (0, math.radians(brow * sd), 0)
             if f is not None:
                 e.keyframe_insert("scale", frame=f); b.keyframe_insert("location", frame=f); b.keyframe_insert("rotation_euler", frame=f)
         self.mouth.scale = (mw / 0.2, 1, mh / 0.045)

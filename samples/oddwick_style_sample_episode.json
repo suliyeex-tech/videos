@@ -1,0 +1,92 @@
+{
+ "slug": "sample-oddwick-style-window",
+ "title": "I Have 3 Days to Pay for a Window",
+ "speed": 1.22,
+ "lines": [
+  {
+   "t": "In this town, if you break it, you pay for it. And I just broke the town hall window."
+  },
+  {
+   "t": "With a baseball. During the Mayor's big speech."
+  },
+  {
+   "t": "The Mayor said: one thousand dollars by Saturday. Or you clean the clock tower. Forever."
+  },
+  {
+   "t": "I had three days. And four dollars."
+  },
+  {
+   "t": "Forever is a long time. I'm eleven."
+  },
+  {
+   "t": "Day one. I opened a lemonade stand. Fifty cents a cup."
+  },
+  {
+   "t": "My friend Benny bought one cup. Then he asked for a refund."
+  },
+  {
+   "t": "Day two. I started walking dogs. Six of them."
+  },
+  {
+   "t": "Actually, the dogs walked me. Straight through the bakery."
+  },
+  {
+   "t": "The baker made me pay for six cakes. Now I owed one thousand and sixty dollars."
+  },
+  {
+   "t": "So I sold my grandma's cookies door to door. Grandma ate the whole box first."
+  },
+  {
+   "t": "Day three. Still four dollars. Actually, three. Benny got his refund."
+  },
+  {
+   "t": "Then I saw the poster. Saturday night. The Town Game Show. First prize, one thousand dollars."
+  },
+  {
+   "t": "The whole town showed up. Neon lights. Cameras. And the host was the Mayor."
+  },
+  {
+   "t": "Round one, the baker. Out. Round two, Benny. Out. He asked for a refund."
+  },
+  {
+   "t": "Then it was just me and the champion. Mrs. Pickles. Undefeated for forty years."
+  },
+  {
+   "t": "Last question. For one thousand dollars. The whole town held its breath."
+  },
+  {
+   "t": "How many windows does the town hall have?",
+   "gap": 0.3
+  },
+  {
+   "t": "Mrs. Pickles hit the buzzer. Forty! The crowd went wild."
+  },
+  {
+   "t": "Wrong.",
+   "gap": 0.35
+  },
+  {
+   "t": "I said thirty-nine. Because I know exactly which one is missing."
+  },
+  {
+   "t": "Correct! Confetti. Fireworks. Benny cried."
+  },
+  {
+   "t": "I walked up and handed every dollar straight back to the Mayor. For the window."
+  },
+  {
+   "t": "The Mayor was so happy, he threw his top hat in the air.",
+   "gap": 0.75
+  },
+  {
+   "t": "Right through window number thirty-eight.",
+   "gap": 0.3
+  },
+  {
+   "t": "In this town, if you break it, you pay for it. So now the Mayor owes me a thousand dollars."
+  },
+  {
+   "t": "A or B?"
+  }
+ ]
+}
