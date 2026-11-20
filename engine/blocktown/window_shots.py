@@ -1,6 +1,6 @@
 """Oddwick house-style SAMPLE (owner 2026-11-20): "I Have 3 Days to Pay for a Window".
 Sunny blocky town (day) + neon game-show stage on the town square (night). Cast with big cartoon eyes + blush.
-python3 window_shots.py [sid ...] [--still]   -> /home/claude/work/<slug>/shots/<sid>/####.png (resumable)"""
+python3.13 window_shots.py [sid ...] [--still]   -> /home/claude/work/<slug>/shots/<sid>/####.png (resumable)"""
 import sys, os, json, math, random, time, bpy
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import lib

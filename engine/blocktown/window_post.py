@@ -1,15 +1,16 @@
 """Sound, captions, overlays and assembly for the Oddwick house-style SAMPLE ("I Have 3 Days to Pay for a Window").
 python3.13 window_post.py -> samples/oddwick_style_sample.mp4  (run after window_shots.py)
 Music: Kevin MacLeod (incompetech.com, CC BY 4.0) via github.com/dinglegames/dingle-radio (incompetech itself is blocked
-from the cloud). SFX: CC0 (github.com/wyzowl/sfx-kit, github.com/facebookincubator/Meta-open-sound) + crowd_sfx.py layers.
+from the cloud). SFX: wyzowl/sfx-kit (CC0) + Meta-open-sound corpora/oculus-audio-pack (CC BY 4.0, credit required) + crowd_sfx.py layers.
 House style: 1-word Fredoka Bold yellow captions with a thick black outline at 70% height, money/days counter at the top,
 Oddwick candle (brand/oddwick_avatar.png) lights up in second 1 and blows out on the last frame over the A/B candles."""
 import os, sys, json, subprocess, numpy as np, soundfile as sf
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-sys.path.insert(0, "/home/claude/videos/engine/oddwick")
+REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+sys.path.insert(0, f"{REPO}/engine/oddwick")
 import mix as MX
 
-SLUG = "sample-oddwick-style-window"; W = f"/home/claude/work/{SLUG}"; REPO = "/home/claude/videos"
+SLUG = "sample-oddwick-style-window"; W = f"/home/claude/work/{SLUG}"
 DL = "/home/claude/dl"; KX = f"{DL}/sfx/sounds"; SYN = "/home/claude/work/syn"; FONT = "/root/.fonts/Fredoka-Bold.ttf"
 vo = json.load(open(f"{W}/vo.json")); L = [l["start"] for l in vo["lines"]]; TOTAL = round(vo["total"] + 0.5, 2)
 def meta(name):
@@ -112,7 +113,7 @@ for sid, t0, t1 in timing:
     o = f"{W}/shots/{sid}.mp4"; parts.append(o)
     if os.path.exists(o) and os.path.getmtime(o) > os.path.getmtime(f"{W}/shots/{sid}/done"): continue
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", "15", "-i", f"{W}/shots/{sid}/%04d.png",
-                    "-vf", "scale=1080:1920:flags=lanczos,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", o], check=True)
+                    "-vf", "scale=1080:1920:flags=lanczos,unsharp=5:5:0.7:5:5:0,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", o], check=True)
 open(f"{W}/concat.txt", "w").write("".join(f"file '{p}'\n" for p in parts))
 film = f"{W}/film.mp4"
 if os.environ.get("FAKE_FILM"):
@@ -193,6 +194,6 @@ fc = (f"[1:v]setpts=PTS-STARTPTS[a];[2:v]setpts=PTS-STARTPTS+{t_out:.3f}/TB[b];"
       f"[0:v][a]overlay=0:0:eof_action=pass[v1];[v1][b]overlay=0:0:eof_action=repeat:enable='gte(t,{t_out:.3f})'[v2];[v2]ass={W}/caps.ass[v]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", film, "-framerate", "30", "-i", f"{OV}/in_%03d.png", "-framerate", "30", "-i", f"{OV}/out_%03d.png", "-i", mixf,
                 "-filter_complex", fc, "-map", "[v]", "-map", "3:a", "-t", f"{TOTAL:.2f}", "-r", "30",
-                "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-profile:v", "high",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-pix_fmt", "yuv420p", "-profile:v", "high",
                 "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", outp], check=True)
 print(outp, round(os.path.getsize(outp) / 1e6, 1), "MB")

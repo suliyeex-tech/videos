@@ -60,7 +60,11 @@ Música real de **Kevin MacLeod (incompetech.com), licencia CC BY 4.0** — inco
 
 **Créditos para la descripción:** "Sergio's Magic Dustbin", "Club Seamus", "Le Grand Chase", "Goblin Tinker Soldier Spy", "Hillbilly Swing", "Cloud Dancer" — Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 — http://creativecommons.org/licenses/by/4.0/
 
-SFX (~90 eventos, uno por acción en pantalla): CC0 de github.com/wyzowl/sfx-kit y github.com/facebookincubator/Meta-open-sound (ventana rompiéndose, ladridos, puerta, golpes, monedas, billetes, confeti, fuegos artificiales, eructo de la abuela, estingers orquestales de victoria/derrota, whooshes). Público (vítores, risas, "ooh", aplausos): sintetizado superponiendo 12 voces Kokoro + palmadas CC0 (`engine/blocktown/crowd_sfx.py`), porque OpenGameArt/Freesound están bloqueados. Sin ticks, relojes, hi-hats, pitidos, dings ni arpegios.
+SFX (~90 eventos, uno por acción en pantalla): github.com/wyzowl/sfx-kit (**CC0 1.0**) y github.com/facebookincubator/Meta-open-sound → `corpora/oculus-audio-pack` (**CC BY 4.0, NO CC0: requiere crédito**, ver abajo) (ventana rompiéndose, ladridos, puerta, golpes, monedas, billetes, confeti, fuegos artificiales, eructo de la abuela, estingers orquestales de victoria/derrota, whooshes). Público (vítores, risas, "ooh", aplausos): sintetizado superponiendo 12 voces Kokoro + palmadas CC0 (`engine/blocktown/crowd_sfx.py`), porque OpenGameArt/Freesound están bloqueados. Sin ticks, relojes, hi-hats, pitidos, dings ni arpegios.
+
+**Crédito SFX obligatorio (CC BY 4.0)** — todos los sonidos de Meta-open-sound usados (cristal, ladridos, puertas, pasos, cerámica, eructo, papel, stingers de banjo/orquesta, swooshes) vienen del Oculus Audio Pack, no de las colecciones CC0 del repositorio:
+> "Oculus Audio Pack 01" by Oculus VR, LLC (https://developers.meta.com/vr/downloads/package/oculus-audio-pack-1/), licensed under CC BY 4.0. Files renamed to the UCS naming convention; OGG previews transcoded from the original WAVs.
+
 
 Niveles medidos: **mezcla final −14,0 LUFS integrado**, voz ≈ −14,6 LUFS, **cama musical ≈ −22,5 LUFS**, SFX ≈ −22,4 LUFS, LRA 1,6 LU.
 
