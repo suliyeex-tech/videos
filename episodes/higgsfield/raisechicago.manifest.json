@@ -1,0 +1,585 @@
+{
+ "schema_version": "1.0",
+ "created": "2026-11-20T11:52:04",
+ "id": "2026-11-21-the-city-that-jacked-itself-up",
+ "brief": {
+  "prompt": "The City That Jacked Itself Up",
+  "kind": "story",
+  "length_s": 59.42,
+  "aspect": "9:16",
+  "fps": 24,
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "audio": {
+   "narration": true,
+   "music": true,
+   "sfx": true,
+   "lip_sync": false,
+   "music_file": null,
+   "language": "en"
+  },
+  "captions": "burned",
+  "deliverables": [
+   "9:16"
+  ],
+  "commercial_use": true,
+  "defaults_used": [
+   "Oddwick: voice, music and SFX are made on CPU (Kokoro + engine/oddwick/mix.py), not on the GPU",
+   "Oddwick host is composited from brand/oddwick_avatar.png, never generated"
+  ]
+ },
+ "target": {
+  "kind": "google_colab",
+  "url": "",
+  "gpu": "T4 (free)",
+  "vram_gb": 16,
+  "budget": {
+   "max_gpu_minutes": 60,
+   "max_credits": 0,
+   "credit_unit": "Google Colab compute units (free tier: 0 paid)",
+   "deadline_minutes": 120
+  }
+ },
+ "tier": "draft",
+ "tier_reason": "free Colab T4 = 16 GB, so draft tier (FLUX.2 Klein 4B stills, LTX at small size)",
+ "caps": {
+  "still_retries": 1,
+  "still_variants": 1,
+  "video_retries": 0,
+  "continuity_regens": 0,
+  "max_renders": 40,
+  "max_gpu_minutes": 60,
+  "pass_mean": 3.0,
+  "pass_min": 2
+ },
+ "gates": {
+  "bible": "auto",
+  "plan": "auto",
+  "spend": "human",
+  "final": "human"
+ },
+ "stages": {
+  "preflight": "pending",
+  "bible": "done",
+  "plan": "done",
+  "stills": "pending",
+  "video": "pending",
+  "continuity": "pending",
+  "audio": "pending",
+  "post": "pending",
+  "assembly": "pending",
+  "critique": "pending",
+  "intake": "done"
+ },
+ "bible": {
+  "path": "episodes/higgsfield/firepole.manifest.json",
+  "logline": "The City That Jacked Itself Up",
+  "cast": [
+   {
+    "id": "kenyon",
+    "descriptor": "Captain Kenyon, a tall 1870s fire captain, light skin, square jaw, bushy brown mustache, red leather fire helmet, navy wool coat with two rows of brass buttons",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "reid",
+    "descriptor": "the buddy, a short broad 1870s firefighter, dark brown skin, round cheerful face, short black beard, red flannel shirt with suspenders",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "horse",
+    "descriptor": "a chunky cartoon fire horse, chestnut brown, white blaze on the nose, black mane, big curious eyes",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "mocker",
+    "descriptor": "a lanky smug firefighter from a rival station, pale skin, long thin nose, slicked black hair, green-trimmed grey coat",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "chief",
+    "descriptor": "a stern round fire chief, grey sideburns, white fire helmet, long black coat",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "librarian",
+    "descriptor": "the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "student",
+    "descriptor": "a skinny hungry student, pale skin, messy red hair, patched green cloak, sly grin",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "engineer",
+    "descriptor": "a young 1850s engineer, light skin, clean-shaven, neat dark side-parted hair, brown waistcoat with rolled white shirt sleeves, a pocket watch chain",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "shopkeeper",
+    "descriptor": "a plump cheerful shopkeeper, warm brown skin, bald head, white apron over a striped shirt, red bow tie",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "guest",
+    "descriptor": "a sleepy hotel guest, pale skin, long white nightcap and striped nightshirt, round spectacles",
+    "ref_image": null,
+    "seed": null
+   },
+   {
+    "id": "reader",
+    "descriptor": "a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar",
+    "ref_image": null,
+    "seed": null
+   }
+  ],
+  "style": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark.",
+  "lut": null,
+  "voice": "Oddwick narrator: Kokoro am_puck 60% + am_fenrir 40%, ~220 wpm (CPU)"
+ },
+ "shots": [
+  {
+   "id": "s01",
+   "beat": "hook",
+   "start_s": 0.0,
+   "duration_s": 5.843,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow tilt up",
+   "cast": [
+    "shopkeeper"
+   ],
+   "location": "1850s street",
+   "narration": "A whole street of brick buildings started rising into the air. And the shops inside... stayed open.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A row of three-story brick shop buildings on a muddy 1850s street at dusk, the whole row lifted about one meter above the ground on hundreds of wooden blocks and iron screw jacks, shop windows glowing warm, the shopkeeper waving from an open door with a broom. a plump cheerful shopkeeper, warm brown skin, bald head, white apron over a striped shirt, red bow tie.",
+    "seed": 1000
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The row of buildings rises a tiny bit; lanterns sway; the shopkeeper keeps sweeping.",
+    "seed": 2000
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s02",
+   "beat": "setup",
+   "start_s": 5.843,
+   "duration_s": 4.667,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "lakeside town",
+   "narration": "This was Chicago. A young city built just a few feet above the water of a huge lake.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A young wooden-and-brick 1850s lakeside town seen from the water at dusk, the streets barely above the flat grey lake, small waves almost touching the boardwalks.",
+    "seed": 1001
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Gentle waves lap at the boardwalks; chimney smoke drifts.",
+    "seed": 2001
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s03",
+   "beat": "problem",
+   "start_s": 10.51,
+   "duration_s": 4.042,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "1850s street",
+   "narration": "When it rained, the water had nowhere to go. The streets turned into swamps.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A flooded muddy street in heavy rain, a horse-drawn cart stuck up to its axles, a wooden sign sticking out of the mud, puddles reflecting warm window light.",
+    "seed": 1002
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Rain falls; the cart wheel spins and sinks deeper.",
+    "seed": 2002
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s04",
+   "beat": "idea",
+   "start_s": 14.552,
+   "duration_s": 4.597,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "city hall",
+   "narration": "Digging drains under everything? Way too expensive. So the city picked a crazier plan.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Three serious city officials in top hats around a candle-lit table with a big map of the city; one of them points up at the ceiling with a wild grin.",
+    "seed": 1003
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The officials lean in; the candle flame flickers.",
+    "seed": 2003
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s05",
+   "beat": "plan",
+   "start_s": 19.149,
+   "duration_s": 3.397,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow pan right",
+   "cast": [],
+   "location": "1850s street",
+   "narration": "Lift the entire city up. Four feet. In some places, fourteen.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A cutaway view of a brick building standing on a tall stack of timber blocks, a giant measuring stick beside it showing the building lifted high above the old street level, workers below looking up.",
+    "seed": 1004
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The measuring stick marker slides upward.",
+    "seed": 2004
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s06",
+   "beat": "escalation",
+   "start_s": 22.546,
+   "duration_s": 5.472,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "guest"
+   ],
+   "location": "hotel room",
+   "narration": "One of the fanciest hotels went up inch by inch, for days, while the guests were still sleeping inside.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Inside an elegant 1850s hotel room at night, the sleepy guest snoring in a big four-poster bed, a candle on the nightstand, through the window the street outside is clearly lower than it should be. a sleepy hotel guest, pale skin, long white nightcap and striped nightshirt, round spectacles.",
+    "seed": 1005
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The guest snores; the view in the window slowly drops lower.",
+    "seed": 2005
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s07",
+   "beat": "escalation",
+   "start_s": 28.018,
+   "duration_s": 3.081,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "engineer"
+   ],
+   "location": "1850s street",
+   "narration": "Then a young engineer took on half a block of a busy street.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. The young engineer stands in a busy 1850s street holding rolled-up plans, looking up at half a block of brick shops with a confident smile, crowds and carriages around him. a young 1850s engineer, light skin, clean-shaven, neat dark side-parted hair, brown waistcoat with rolled white shirt sleeves, a pocket watch chain.",
+    "seed": 1006
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The engineer unrolls the plans; people walk past.",
+    "seed": 2006
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s08",
+   "beat": "escalation",
+   "start_s": 31.099,
+   "duration_s": 3.998,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow pan right",
+   "cast": [],
+   "location": "under the buildings",
+   "narration": "He slid six thousand jackscrews under the buildings, and hired six hundred men.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Under a brick building, hundreds of iron screw jacks in neat rows on timber pads, hundreds of workers in caps kneeling beside them with long iron bars, lit by many lanterns.",
+    "seed": 1007
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Lantern light flickers along the endless rows of jacks.",
+    "seed": 2007
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s09",
+   "beat": "explain",
+   "start_s": 35.097,
+   "duration_s": 5.792,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "static locked-off",
+   "cast": [
+    "engineer"
+   ],
+   "location": "under the buildings",
+   "narration": "You see, each man looked after ten jacks. On a signal, every man turned every screw... one notch.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Close-up of the engineer blowing a brass whistle while a worker's hands turn the handle of an iron screw jack with a long bar. a young 1850s engineer, light skin, clean-shaven, neat dark side-parted hair, brown waistcoat with rolled white shirt sleeves, a pocket watch chain.",
+    "seed": 1008
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The bar turns one small notch; the whistle moves to his lips.",
+    "seed": 2008
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s10",
+   "beat": "explain",
+   "start_s": 40.889,
+   "duration_s": 3.985,
+   "type": "action",
+   "framing": "close-up",
+   "camera": "slow tilt up",
+   "cast": [],
+   "location": "under the buildings",
+   "narration": "One notch. A tiny fraction of an inch. Then again. And again. For four days.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Extreme close-up of an iron screw jack under a thick wooden beam, a ruler beside it showing a tiny gap opening between the beam and the old stone foundation.",
+    "seed": 1009
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The tiny gap grows a hair wider.",
+    "seed": 2009
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s11",
+   "beat": "twist",
+   "start_s": 44.874,
+   "duration_s": 2.974,
+   "type": "action",
+   "framing": "medium",
+   "camera": "slow push-in",
+   "cast": [
+    "shopkeeper"
+   ],
+   "location": "shop interior",
+   "narration": "And inside, people kept shopping like nothing was happening.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. Inside a cosy 1850s general store lit by oil lamps, the shopkeeper smiling and handing a paper parcel to a customer, jars and shelves perfectly still, a calm cat on the counter. a plump cheerful shopkeeper, warm brown skin, bald head, white apron over a striped shirt, red bow tie.",
+    "seed": 1010
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The shopkeeper hands over the parcel; the cat's tail flicks.",
+    "seed": 2010
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s12",
+   "beat": "payoff",
+   "start_s": 47.848,
+   "duration_s": 6.145,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow pan left",
+   "cast": [],
+   "location": "1850s street",
+   "narration": "Some houses were even put on logs and rolled to a brand new street. One visitor wrote that in a single day...",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A two-story wooden house sitting on round logs in the middle of a street, pulled by a team of horses, a surprised visitor in a tall hat and a Scottish tartan scarf watching from the boardwalk.",
+    "seed": 1011
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The house rolls forward slowly on the logs; the horses pull.",
+    "seed": 2011
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s13",
+   "beat": "payoff",
+   "start_s": 53.993,
+   "duration_s": 1.194,
+   "type": "action",
+   "framing": "wide",
+   "camera": "slow push-in",
+   "cast": [],
+   "location": "1850s street",
+   "narration": "he met nine of them.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A long parade of several wooden houses on logs rolling down one street at sunset, one after another, the visitor in the tartan scarf counting on his fingers in the foreground.",
+    "seed": 1012
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "The houses roll along in a line; the visitor counts.",
+    "seed": 2012
+   },
+   "status": "pending"
+  },
+  {
+   "id": "s14",
+   "beat": "choice",
+   "start_s": 55.187,
+   "duration_s": 4.233,
+   "type": "action",
+   "framing": "medium",
+   "camera": "static locked-off",
+   "cast": [],
+   "location": "lakeside town",
+   "narration": "Your city is sinking. A, lift the whole city. Or B, move to the hills.",
+   "sfx": null,
+   "chain_from": null,
+   "transition_in": "cut",
+   "still": {
+    "route": "still.flux2_4b",
+    "status": "pending",
+    "prompt": "Flat 2D cartoon illustration with thick dark-purple outlines and simple rounded shapes, characters with simple dot eyes and small expressive mouths, inside a softly lit toon 3D set. Night scene told by candlelight: warm candle-orange light against deep purple and blue shadows. Clean, bold, readable at phone size. Vertical 9:16 composition, subject in the middle third. No text, no letters, no logos, no watermark. A calm night view of a lakeside town with a fork in the road: one path leads up a ramp to a lifted street, the other path leads to green hills, empty space in the middle for two choice candles.",
+    "seed": 1013
+   },
+   "video": {
+    "route": "video.i2v",
+    "status": "pending",
+    "prompt": "Fireflies drift; the water shimmers.",
+    "seed": 2013
+   },
+   "status": "pending"
+  }
+ ],
+ "audio": {
+  "voiceover": {
+   "route": "audio.voice",
+   "status": "done",
+   "params": {
+    "note": "made on CPU with engine/oddwick/voice.py"
+   },
+   "seed": 0
+  }
+ },
+ "post": [],
+ "assembly": {
+  "status": "pending",
+  "xfade": 0,
+  "beats_file": null,
+  "captions": "burned",
+  "exports": [
+   {
+    "aspect": "9:16",
+    "method": "crop",
+    "file": null
+   }
+  ],
+  "output": null
+ },
+ "cost": {
+  "renders": 0,
+  "estimate_gpu_minutes": null,
+  "actual_gpu_minutes": 0,
+  "rates_s_per_render": {},
+  "rates_note": "default rates in direct.py are unverified assumptions"
+ },
+ "log": []
+}

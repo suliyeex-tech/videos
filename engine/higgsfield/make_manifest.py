@@ -21,6 +21,9 @@ CAST = {
     "chief": "a stern round fire chief, grey sideburns, white fire helmet, long black coat",
     "librarian": "the old librarian, a thin bald man with round spectacles, long grey beard, dark brown monk-like robe, a big iron key on his belt",
     "student": "a skinny hungry student, pale skin, messy red hair, patched green cloak, sly grin",
+    "engineer": "a young 1850s engineer, light skin, clean-shaven, neat dark side-parted hair, brown waistcoat with rolled white shirt sleeves, a pocket watch chain",
+    "shopkeeper": "a plump cheerful shopkeeper, warm brown skin, bald head, white apron over a striped shirt, red bow tie",
+    "guest": "a sleepy hotel guest, pale skin, long white nightcap and striped nightshirt, round spectacles",
     "reader": "a young reader, brown skin, curly black hair in a bun, mustard-yellow dress with a white collar",
 }
 

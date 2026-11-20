@@ -1,0 +1,54 @@
+{
+ "v": 1,
+ "files": {
+  "qwen_3_4b_fp8_mixed.safetensors": {
+   "dir": "text_encoders",
+   "skills": [
+    "flux3-klein-stills"
+   ],
+   "loaders": [
+    "CLIPLoader.clip_name"
+   ],
+   "license": "apache-2.0 (Qwen3-4B; confirm on the model card)",
+   "repo": "Comfy-Org/z_image_turbo",
+   "path": "split_files/text_encoders/qwen_3_4b_fp8_mixed.safetensors",
+   "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+   "bytes": 5631994051,
+   "gated": false,
+   "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/6fc90a3b1b653e935a0d175e260736de25b84df5/split_files/text_encoders/qwen_3_4b_fp8_mixed.safetensors"
+  },
+  "flux2-vae.safetensors": {
+   "dir": "vae",
+   "skills": [
+    "flux3-klein-stills",
+    "relighting"
+   ],
+   "loaders": [
+    "VAELoader.vae_name"
+   ],
+   "license": "apache-2.0 (from the Hugging Face model card; confirm before commercial use)",
+   "repo": "Comfy-Org/Flux-2-Klein-4B",
+   "path": "split_files/vae/flux2-vae.safetensors",
+   "revision": "5b3abca5c0dc1ecd4eaf3340868d09063fc1c965",
+   "bytes": 336211292,
+   "gated": false,
+   "url": "https://huggingface.co/Comfy-Org/Flux-2-Klein-4B/resolve/5b3abca5c0dc1ecd4eaf3340868d09063fc1c965/split_files/vae/flux2-vae.safetensors"
+  },
+  "flux-2-klein-4b-fp8.safetensors": {
+   "dir": "diffusion_models",
+   "skills": [
+    "flux3-klein-stills"
+   ],
+   "loaders": [
+    "UNETLoader.unet_name"
+   ],
+   "license": "apache-2.0 (from the Hugging Face model card; confirm before commercial use)",
+   "repo": "black-forest-labs/FLUX.2-klein-4b-fp8",
+   "path": "flux-2-klein-4b-fp8.safetensors",
+   "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+   "bytes": 4070624520,
+   "gated": false,
+   "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4b-fp8/resolve/5b4408e59397a4a37ccb46afe426d8ed86379441/flux-2-klein-4b-fp8.safetensors"
+  }
+ }
+}
