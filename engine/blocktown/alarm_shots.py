@@ -165,7 +165,7 @@ def j15(N):   # the town laughs (wide crowd)
     mood("day"); scr("prize", "green"); crowd_street(14, "happy", 15.5, -12, 1.8, 180)
     for i, c in enumerate(crowd[:14]): cheer(c, 1 + i % 3, N, i)
     mayor.place((-4.6, 25.2, 1.4), 15); mayor.face("happy"); mayor.talk(1, N, 0.18, 2)
-    cam_move(cam, tgt, 1, N, (-3, 6.0, 4.2), (3, 6.0, 4.2), (0, 18, 3.0), (0, 18, 3.4), 22, 22)
+    cam_move(cam, tgt, 1, N, (-3, 8.6, 4.4), (3, 8.6, 4.4), (0, 18, 3.0), (0, 18, 3.4), 24, 24)
 def j16(N):   # the Mayor writes the hero's name (screen shows name: we reuse 'sunrise' screen pink + mayor points)
     stage_shot(N, "sunrise", "pink", "day", crowd_n=10, cam_y=13); mayor.pose(1, armR=-90, armL=-20)
 def j17(N):   # hero in bed, late for school (alarm-less): sun already up, he sleeps
@@ -572,6 +572,9 @@ for a, b in zip(TIMES, TIMES[1:]):
 os.makedirs(W, exist_ok=True)
 json.dump([(sid, t0, t1, fn.__name__) for sid, t0, t1, fn in TIMES], open(f"{W}/shots_timing.json", "w"), indent=0)
 
+ATTIC_SHOTS = {"h09", "a03", "a04", "a06", "a07", "a08", "a09", "a10", "a11", "a14"}
+ATTIC = [o for o in bpy.data.objects if o.type == "MESH" and abs(o.matrix_world.translation.x - AX) < 14 and o.matrix_world.translation.z > -100]
+sc.cycles.max_bounces = 3; sc.cycles.diffuse_bounces = 1; sc.cycles.glossy_bounces = 1
 if __name__ == "__main__":
     only = [a for a in sys.argv[1:] if a.startswith("s") and a[1:].isdigit()]
     names = [a for a in sys.argv[1:] if not a.startswith("-") and not (a.startswith("s") and a[1:].isdigit())]
@@ -581,6 +584,8 @@ if __name__ == "__main__":
         N = max(2, round((t1 - t0) * FPS)); d = f"{W}/shots/{sid}"
         if not PREV and os.path.exists(f"{d}/done"): continue
         reset(); fn(N)
+        in_attic = fn.__name__ in ATTIC_SHOTS
+        for o in ATTIC: o.hide_render = not in_attic
         if PREV:
             os.makedirs(f"{W}/stills", exist_ok=True)
             sc.frame_set(max(1, int(N * 0.6))); sc.render.filepath = f"{W}/stills/{sid}_{fn.__name__}.png"; bpy.ops.render.render(write_still=True)

@@ -249,7 +249,7 @@ C = [(LS("It started on Sunday"), LS("Day one."), f"SUNDAY  ·  THE JOB"),
      (LS("And the screen stopped."), LS("He walked to the parade"), f"{Y}299{Wt}/300  ·  WHO'S MISSING?"),
      (LS("He walked to the parade"), LS("Should I keep the job?"), f"{Y}300{Wt}/300")]
 for t0, t1, txt in C: T(t0, t1, txt)
-ass += f"Dialogue: 1,{ts(LS('Should I keep the job?'))},{ts(TOTAL)},H,,0,0,0,,{{\\pos(960,90)\\fad(120,0)}}SHOULD I KEEP THE JOB?\n"
+ass += f"Dialogue: 1,{ts(LS('Should I keep the job?'))},{ts(TOTAL)},H,,0,0,0,,{{\\pos(960,70)\\fad(120,0)}}SHOULD I KEEP THE JOB?\n"
 open(f"{W}/caps.ass", "w").write(ass)
 
 # ---------------------------------------------------------------- overlays: history card + Oddwick candle sign-on + A/B candles
@@ -304,8 +304,8 @@ for f in range(n_out):
         a = min(1, max(0, (t - 0.25 * k) / 0.18))
         if a <= 0: continue
         s = int(300 * (0.6 + 0.4 * a)); src = out if t > (TOTAL - t_ab) - 0.55 + 0.08 * k else lit
-        fr.alpha_composite(card(src, s), (cx - s // 2, 470 - s // 2))
-        label(d, (cx, 470 - s // 2 - 55), tag, fbig, (245, 245, 66)); label(d, (cx, 470 + s // 2 + 42), l1, fnt); label(d, (cx, 470 + s // 2 + 98), l2, fnt)
+        fr.alpha_composite(card(src, s), (cx - s // 2, 390 - s // 2))
+        label(d, (cx, 390 - s // 2 - 50), tag, fbig, (245, 245, 66)); label(d, (cx, 390 + s // 2 + 40), l1, fnt); label(d, (cx, 390 + s // 2 + 94), l2, fnt)
     fr.save(f"{OV}/out_{f:03d}.png")
 
 # ---------------------------------------------------------------- final mux
@@ -316,6 +316,6 @@ fc = (f"[1:v]setpts=PTS-STARTPTS[a];[2:v]setpts=PTS-STARTPTS+{t_ab:.3f}/TB[b];"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", film, "-framerate", "30", "-i", f"{OV}/in_%03d.png", "-framerate", "30", "-i", f"{OV}/out_%03d.png",
                 "-loop", "1", "-i", f"{OV}/history.png", "-i", mixf,
                 "-filter_complex", fc, "-map", "[v]", "-map", "4:a", "-t", f"{TOTAL:.2f}", "-r", "30",
-                "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p", "-profile:v", "high",
+                "-c:v", "libx264", "-preset", "medium", "-tune", "animation", "-crf", "25", "-maxrate", "2.6M", "-bufsize", "5M", "-pix_fmt", "yuv420p", "-profile:v", "high",
                 "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", outp], check=True)
 print(outp, round(os.path.getsize(outp) / 1e6, 1), "MB")

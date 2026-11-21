@@ -9,7 +9,8 @@ SLUG = "2026-11-21-nobody-owns-an-alarm-clock"; FPS = 12
 W = f"/home/claude/work/{SLUG}"
 PREV = "--still" in sys.argv
 RES = (480, 270) if PREV else (768, 432)
-sc, cam, tgt = lib.setup(res=RES, samples=4 if PREV else 8, fps=FPS)
+sc, cam, tgt = lib.setup(res=RES, samples=4 if PREV else 6, fps=FPS)
+sc.cycles.adaptive_threshold = 0.03
 G = AS.build_all(sc)
 bg = sc.world.node_tree.nodes["Background"]
 sun = sc.objects["moonlight"]; sc.objects["moon"].hide_render = True
