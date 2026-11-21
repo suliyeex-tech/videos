@@ -4,6 +4,42 @@ Model channel: Ricks Clips (@RicksClips3000). ~150 videos, 430M+ views, ~10M avg
 ~0.8 Shorts/day (15 Shorts in 19 days = 167M views). Lesson: few, excellent, same recognisable format every time.
 Copy the FORMAT and craft, never its stories, titles, characters or drawings.
 
+## OWNER REFERENCE STYLE 2026-11-20 (owner decisions; override every older rule in this repo about volume, hours and style)
+- VOLUME: ONLY ONE Short per day, in ENGLISH, at the best possible quality, published on ALL THREE: YouTube Shorts, Instagram
+  Reels and TikTok (TikTok gets its own _tt file: different first 2 s + re-encode). Spend the whole run on that one video.
+  Better no video than an average one. A separate weekly task makes ONE long-form video (Saturday); don't touch its posts.
+- HOURS (own analytics Oct-Nov 2026; the 4,071-view TikTok was a PAID promotion and is never used in any analysis):
+  Instagram 21:00 Madrid (median 1,328 views, clearly best), YouTube Shorts 20:00 Madrid (median 1,018), TikTok 20:00 Madrid
+  (flat ~260 at any hour; 20:00 slightly best). Winter: 20:00 Madrid = 19:00Z, 21:00 Madrid = 20:00Z (summer: one hour less
+  in UTC). Every Sunday re-check with Zernio analytics (median views per platform and Madrid hour, paid post excluded) and
+  move a slot only if another hour clearly wins with at least 4 posts.
+- LOOK (6 owner reference videos, popular TikTok animated stories; copy technique/format only, never their stories, titles,
+  characters, sets or drawings, never Roblox's name/logo/UI/avatars): chunky toy-like 3D blocky characters (blocky heads, big
+  expressive cartoon eyes + eyebrows, blush cheeks, simple mouths) in bright, sunny, colourful 3D sets (town street, shops,
+  hotel lobby, game-show stage with neon screens, yellow office corridors), soft daylight + lit interiors, slightly low wide
+  camera always gently moving, many face close-ups reacting. Our own fixed cast and town: engine/blocktown (Blender bpy,
+  lib.Char(cartoon=True, blush=True)), episodes/blocktown/. 1080x1920.
+- STORY: a kid / young guy telling HIS OWN story in first person ("In this town...", "I got invited to...", "Day 1 of..."),
+  one absurd premise or challenge with a clear goal and stakes (a number: money, days, hours left), escalation every few
+  seconds, a big town event or showdown as the climax, a final twist that calls back an earlier line. Shapes: "In this town"
+  rule stories, survival challenge with a countdown on a big screen, mystery place to escape, grey world that fills with
+  colour. 70-150 s (TikTok only pays > 60 s); aim 75-110 s.
+- CAPTIONS: ONE word at a time, every spoken word, big bold rounded font (Fredoka Bold), yellow #F5F542 (or white) with a
+  thick black outline, at ~70 % of the frame height.
+- VOICE = BRAND VOICE (fixed 2026-11-20/21): ONE young, energetic, casual male narrator, deadpan-funny, never robotic or slow.
+  engine/blocktown/kidvoice.py: Kokoro am_puck .6 + am_echo .25 + af_heart .15, speed 1.22-1.26, sentence-by-sentence,
+  then FX asetrate x1.1 + rubberband pitch x1.25 (formants preserved). Measured: 205-206 wpm whole track / 218-220 wpm
+  speaking, median F0 186-189 Hz (target 200-230 wpm, 170-230 Hz). Blends tested 2026-11-20 (same script, speed 1.22):
+  am_puck alone 225 wpm / 117 Hz raw; puck+liam 224 / ~166 Hz with FX; puck+liam+nicole 211 / ~173 Hz; the chosen blend
+  219 / 186 Hz. Re-render if < 200 wpm. Small voice changes only for quoted characters.
+- MUSIC: light, bouncy, playful real music (HyperFrames media-use, Kevin MacLeod CC BY with credits, OpenGameArt CC0) cut to
+  the story: curious -> tension -> hit + short silence before the twist -> bright ending; bed ~-22 LUFS, voice clearly
+  dominant, final mix ~-14 LUFS integrated. Clearly audible SFX for every on-screen action (whoosh, pop, crowd, door, cash,
+  crash). Never ticking, clocks, hi-hats, beeps, dings, arpeggios or synth bleeps.
+- BRAND: the Oddwick candle (brand/oddwick_avatar.png, never AI-generated) = small sign-on in the first second, blows itself
+  out on the last frame, plus the A/B two-candles question at the end. Everything else follows the look above.
+- The owner keeps sending example videos and skills: load and follow any new skill or style note added to the repo/account.
+
 ## EXTRA FORMAT (owner 2026-11-18): "In this town..." blocky-town stories — for SOME videos, not all
 Owner: do NOT make every video like this. Use it for about 1 of the 3 daily Shorts (on days when the trend is hot, max 2),
 and keep improving it by watching which "In this town" Shorts are going viral right now. Other slots keep the formats below.
