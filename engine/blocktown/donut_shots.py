@@ -13,7 +13,7 @@ W = f"/home/claude/work/{SLUG}"
 vo = json.load(open(f"{W}/vo.json")); L = [l["start"] for l in vo["lines"]]; END = vo["total"] + 0.5
 PREV = "--still" in sys.argv
 RES = (216, 384) if PREV else (432, 768)
-sc, cam, tgt = lib.setup(res=RES, samples=4 if PREV else 10, fps=FPS)
+sc, cam, tgt = lib.setup(res=RES, samples=4 if PREV else 8, fps=FPS)
 sc.render.threads_mode = "AUTO"
 town = lib.build_town()
 lib.build_bedroom(300)
@@ -45,7 +45,7 @@ rs = random.Random(11); scol = ["#ffffff", "#40f0ff", "#ffe14a", "#5fff7a", "#8a
 for i in range(70):
     a = rs.uniform(0, 2 * math.pi); rr = 2.0 + rs.uniform(-0.55, 0.55)
     cube(f"spr{i}", (rr * math.cos(a), rr * math.sin(a), 0.3 + 0.78 * 0.55 * math.sqrt(max(0, 1 - ((rr - 2) / 0.78) ** 2)) + 0.02),
-         (0.32, 0.08, 0.08), mat(f"spr{i % 5}", scol[i % 5], 0.4, 0.3), 0, donut, (0, 0, rs.uniform(0, 3)))
+         (0.32, 0.08, 0.08), mat(f"spr{i % 5}", scol[i % 5], 0.4), 0, donut, (0, 0, rs.uniform(0, 3)))
 BITE = sphere("bite", (0, 0, -500), (0.75, 0.75, 0.7), mat("bitehole", "#f2e2c0", 0.8))   # pale crumb hollow after Grandma's bite
 def ring(a_deg, R=3.5):
     a = math.radians(a_deg); return (DC[0] + R * math.sin(a), DC[1] - R * math.cos(a), 0.06), a_deg + 180
@@ -204,6 +204,7 @@ CC = [("#3f8fd8", "#6b3f22"), ("#e86fb0", "#1d1310"), ("#57b65a", "#e0c070"), ("
 for i, (top, hair) in enumerate(CC):
     crowd.append(lib.Char(f"cr{i}", skin=["#f3c89a", "#c98d62", "#8d5a3b", "#e9b892"][i % 4], top=top, pants=["#3b3b55", "#c9b48a", "#2f4a7a"][i % 3],
                           hair=hair, hair_style="spiky" if i % 3 == 0 else "flat", kid=i % 2 == 0, **K))
+for _o in RAIN + CONF + crumbs + ZZ + sweat + STEAM + [p for _, _, ps in FW for p in ps]: _o.hide_render = True   # keep unused emitters out of the render
 fill = point("camfill", (0.6, 0.4, 0.2), "#ffe6cc", 160, 1.0, cam)
 OBJ = [o for o in bpy.data.objects]
 BASE = {o.name: (tuple(o.location), tuple(o.rotation_euler), tuple(o.scale), o.hide_render, o.parent) for o in OBJ}
@@ -305,7 +306,7 @@ def pickles_camp(stage):
 def rain(N, cx=0, cy=14, sp=16):
     r = random.Random(9)
     for d in RAIN:
-        x, y = cx + r.uniform(-sp, sp), cy + r.uniform(-sp * 0.8, sp * 0.4); P = 4; ph = r.randrange(P)
+        x, y = cx + r.uniform(-sp, sp), cy + r.uniform(-sp * 0.8, sp * 0.4); P = 4; ph = r.randrange(P); d.hide_render = False
         for f in range(1 - ph, N + P, P):
             d.location = (x, y, 13); d.keyframe_insert("location", frame=f); d.location = (x - 0.4, y, -0.5); d.keyframe_insert("location", frame=f + P - 1)
         if d.animation_data:
@@ -314,7 +315,7 @@ def rain(N, cx=0, cy=14, sp=16):
 def confetti(f0, f1, cx=0, cy=20, spread=10):
     r = random.Random(3)
     for c in CONF:
-        x, y = cx + r.uniform(-spread, spread), cy + r.uniform(-spread * 0.6, spread * 0.4)
+        x, y = cx + r.uniform(-spread, spread), cy + r.uniform(-spread * 0.6, spread * 0.4); c.hide_render = False
         c.location = (x, y, 13 + r.uniform(0, 4)); c.rotation_euler = (r.uniform(0, 6), r.uniform(0, 6), 0); c.keyframe_insert("location", frame=f0); c.keyframe_insert("rotation_euler", frame=f0)
         c.location = (x + r.uniform(-2, 2), y + r.uniform(-1, 1), r.uniform(0.2, 5)); c.rotation_euler = (r.uniform(0, 30), r.uniform(0, 30), r.uniform(0, 6))
         c.keyframe_insert("location", frame=f1); c.keyframe_insert("rotation_euler", frame=f1)
@@ -323,14 +324,14 @@ def fireworks(f0, f1):
     for b, (x, z, parts) in enumerate(FW):
         fb = f0 + b * 4
         for i, p in enumerate(parts):
-            a = 2 * math.pi * i / len(parts); e = r.uniform(-1, 1)
+            a = 2 * math.pi * i / len(parts); e = r.uniform(-1, 1); p.hide_render = False
             p.location = (x, 40, z); p.scale = (0.01, 0.01, 0.01); p.keyframe_insert("location", frame=fb); p.keyframe_insert("scale", frame=fb)
             p.scale = (0.35, 0.35, 0.35); p.keyframe_insert("scale", frame=fb + 4)
             p.location = (x + 6 * math.cos(a) * math.sqrt(1 - e * e), 40 + 2 * e, z + 6 * math.sin(a) * math.sqrt(1 - e * e) - 1.5)
             p.scale = (0.05, 0.05, 0.05); p.keyframe_insert("location", frame=min(f1, fb + 18)); p.keyframe_insert("scale", frame=min(f1, fb + 18))
 def zzz(f0, f1, base):
     for i, z in enumerate(ZZ):
-        s0 = f0 + i * 5
+        s0 = f0 + i * 5; z.hide_render = False
         z.location = base; z.keyframe_insert("location", frame=s0); z.location = (base[0] + 0.6 + 0.3 * i, base[1], base[2] + 1.6 + 0.4 * i); z.keyframe_insert("location", frame=min(f1, s0 + 18))
 def hpos(a, R=3.5, z=0):
     p, _ = ring(a, R); return (p[0], p[1], z)
@@ -451,7 +452,7 @@ def s27(N):  # HOUR 16: hero's arm droops, shaking (close on the hand on the ici
 def s28(N):  # hero close: the stomach growl (shake, sweat)
     night(); touch(hero, A_HERO, "shock"); p = hpos(A_HERO)
     for i, s in enumerate(sweat):
-        f0 = 1 + i * max(2, N // 4); s.location = (p[0] + 0.45, p[1] - 0.52, 3.15); s.keyframe_insert("location", frame=f0)
+        s.hide_render = False; f0 = 1 + i * max(2, N // 4); s.location = (p[0] + 0.45, p[1] - 0.52, 3.15); s.keyframe_insert("location", frame=f0)
         s.location = (p[0] + 0.5, p[1] - 0.55, 2.6); s.keyframe_insert("location", frame=f0 + 6)
     cam_move(cam, tgt, 1, N, (p[0] + 0.4, p[1] - 3.6, 2.7), (p[0] + 0.2, p[1] - 3.0, 2.6), (p[0], p[1], 2.55), (p[0], p[1], 2.6), 40, 46); shake(2, 8, 0.1)
 def s29(N):  # the pigeon slowly turns to look at the hero
@@ -472,7 +473,7 @@ def s31(N):  # ...and takes a big bite. OUT! (screen goes red)
     BITE.location = bp; BITE.hide_render = True; BITE.keyframe_insert("hide_render", frame=fb - 1); BITE.hide_render = False; BITE.keyframe_insert("hide_render", frame=fb)
     r = random.Random(4)
     for c in crumbs:
-        c.location = bp; c.keyframe_insert("location", frame=fb); c.location = (bp[0] + r.uniform(-1.5, 1.5), bp[1] + r.uniform(-1.5, 0.5), 0.1); c.keyframe_insert("location", frame=fb + 8)
+        c.hide_render = False; c.location = bp; c.keyframe_insert("location", frame=fb); c.location = (bp[0] + r.uniform(-1.5, 1.5), bp[1] + r.uniform(-1.5, 0.5), 0.1); c.keyframe_insert("location", frame=fb + 8)
     touch(hero, A_HERO, "shock")
     cam_move(cam, tgt, 1, N, (-6.5, 11.5, 3.5), (-6.0, 12.3, 3.6), (-1.8, 16.5, 2.4), (-1.6, 16.8, 2.6), 28, 30); shake(fb, fb + 3, 0.1)
 def s32(N):  # the Mayor plays dirty: walks in with a tower of pizza boxes, evil grin
@@ -484,14 +485,14 @@ def s33(N):  # open pizza box close, steam
     night(); pizza.location = (-1.2, 13.8, 2.0); pizza.rotation_euler = (0, 0, math.radians(15))
     r = random.Random(2)
     for i, s in enumerate(STEAM):
-        f0 = 1 + i * 3; x, y = -1.2 + r.uniform(-0.4, 0.4), 13.8 + r.uniform(-0.4, 0.4)
+        s.hide_render = False; f0 = 1 + i * 3; x, y = -1.2 + r.uniform(-0.4, 0.4), 13.8 + r.uniform(-0.4, 0.4)
         s.location = (x, y, 2.7); s.scale = (0.1, 0.1, 0.1); s.keyframe_insert("location", frame=f0); s.keyframe_insert("scale", frame=f0)
         s.location = (x + 0.2, y, 4.0); s.scale = (0.4, 0.4, 0.5); s.keyframe_insert("location", frame=f0 + 14); s.keyframe_insert("scale", frame=f0 + 14)
     cam_move(cam, tgt, 1, N, (-1.0, 10.7, 3.3), (-1.1, 11.3, 3.1), (-1.2, 13.8, 2.6), (-1.2, 13.8, 2.6), 34, 40)
 def s34(N):  # hero close: sweating, NOT moving
     night(); touch(hero, A_HERO, "determined"); p = hpos(A_HERO)
     for i, s in enumerate(sweat):
-        f0 = 1 + i * max(2, N // 4); s.location = (p[0] - 0.45, p[1] - 0.52, 3.15); s.keyframe_insert("location", frame=f0)
+        s.hide_render = False; f0 = 1 + i * max(2, N // 4); s.location = (p[0] - 0.45, p[1] - 0.52, 3.15); s.keyframe_insert("location", frame=f0)
         s.location = (p[0] - 0.5, p[1] - 0.55, 2.6); s.keyframe_insert("location", frame=f0 + 6)
     cam_move(cam, tgt, 1, N, (p[0] - 0.2, p[1] - 3.2, 2.62), (p[0] - 0.1, p[1] - 2.8, 2.62), (p[0], p[1], 2.6), (p[0], p[1], 2.62), 44, 50)
 def s35(N):  # Mrs. Pickles under her blanket: perfectly still, TV glowing (the dummy)
