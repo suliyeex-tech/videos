@@ -1,0 +1,29 @@
+{
+ "slug": "2026-11-22-spend-a-million-in-24-hours",
+ "title": "I Had 24 Hours to Spend $1,000,000",
+ "speed": 1.24,
+ "lines": [
+  {"t": "In this town, on your twelfth birthday, the Mayor gives you one million dollars."},
+  {"t": "One rule. Spend every cent in twenty-four hours. No giving it away. One cent left, and you lose it all."},
+  {"t": "Today I turned twelve."},
+  {"t": "Hour one. I bought every candy in the candy shop. The big screen said: nine hundred ninety-nine thousand left."},
+  {"t": "That's when I realised. A million is a lot."},
+  {"t": "Hour three. I bought the ice cream truck. With Mister Frosty still inside. He works for me now."},
+  {"t": "Hour six. I bought my friend Benny a hotel. He asked for a pool on the roof. Done."},
+  {"t": "Hour nine. I bought the game show. Now I'm the host and the winner."},
+  {"t": "Mrs. Pickles sold me a rock for a hundred thousand dollars. She said it was lucky."},
+  {"t": "Hour twenty-three. The screen said: twelve dollars and forty cents left. And every shop was closed."},
+  {"t": "Except one. Mrs. Pickles' lemonade stand. One lemonade: twelve dollars and fifty cents."},
+  {"t": "I was ten cents short. She said rules are rules."},
+  {"t": "One minute left. Benny checked his pockets. Nothing. The whole town started counting down."},
+  {"t": "Then I remembered. Mister Frosty works for me.", "gap": 0.3},
+  {"t": "I paid his salary. Twelve dollars and forty cents. Zero left!"},
+  {"t": "The crowd went wild. The Mayor lifted the golden trophy."},
+  {"t": "And Mister Frosty said: thanks, boss. But my pay is only twelve thirty-nine. Here's your change.", "gap": 0.5},
+  {"t": "One cent.", "gap": 0.6},
+  {"t": "One cent left, and you lose it all."},
+  {"t": "The Mayor took back the candy, the truck, the hotel and the game show."},
+  {"t": "I got to keep the lucky rock. It is not lucky."},
+  {"t": "What would you buy first? A or B?"}
+ ]
+}
