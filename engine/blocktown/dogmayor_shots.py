@@ -455,9 +455,9 @@ def s11(N):  # Biscuit pees on the poster (side view, back leg up, puddle grows)
     p = POSTERS[3]; poster_on_fence(p, FX_)
     bis.place((FX_ - 0.4, 6.0, 0.06), 90); bis.face("smug")
     fu = max(2, N // 4)
-    bis.pose(1); bis.pose(fu, legs_y=(0, 0, 0, -70), headyaw=-35); bis.pose(N, legs_y=(0, 0, 0, -75), headyaw=-40)
+    bis.pose(1); bis.pose(fu, legs_y=(0, 0, 0, -70), headyaw=-35); bis.pose(N, legs_y=(0, 0, 0, -88), headyaw=-40)
     bis.wag(1, N, 25, 4)
-    puddle.location = (FX_ + 0.55, 6.75, 0.08); puddle.scale = (0.01, 0.01, 1); puddle.keyframe_insert("scale", frame=fu)
+    puddle.location = (FX_ + 0.7, 6.15, 0.08); puddle.scale = (0.01, 0.01, 1); puddle.keyframe_insert("scale", frame=fu)
     puddle.scale = (1.3, 1.0, 1); puddle.keyframe_insert("scale", frame=N)
     cam_move(cam, tgt, 1, N, (FX_ - 1.0, 1.0, 2.0), (FX_ - 0.6, 1.8, 1.9), (FX_, 7.0, 1.3), (FX_, 7.0, 1.3), 30, 34)
 def s12(N):  # hero close, horrified, on the sidewalk
@@ -663,8 +663,8 @@ def s49(N):  # "Biscuit's first job as Mayor?" Biscuit trots down Main Street in
 def s50(N):  # "He peed on my poster. Again." leg up on the VOTE ME poster, hero deadpan beside it; pull back
     poster_on_fence(POSTERS[3], FX_)
     bis.place((FX_ - 0.4, 6.0, 0.06), 90); bis.face("smug"); fu = max(2, N // 5)
-    bis.pose(1); bis.pose(fu, legs_y=(0, 0, 0, -70), headyaw=-35); bis.pose(N, legs_y=(0, 0, 0, -75), headyaw=-35); bis.wag(1, N, 25, 4)
-    puddle.location = (FX_ + 0.55, 6.75, 0.08); puddle.scale = (0.01, 0.01, 1); puddle.keyframe_insert("scale", frame=fu)
+    bis.pose(1); bis.pose(fu, legs_y=(0, 0, 0, -70), headyaw=-35); bis.pose(N, legs_y=(0, 0, 0, -88), headyaw=-35); bis.wag(1, N, 25, 4)
+    puddle.location = (FX_ + 0.7, 6.15, 0.08); puddle.scale = (0.01, 0.01, 1); puddle.keyframe_insert("scale", frame=fu)
     puddle.scale = (1.3, 1.0, 1); puddle.keyframe_insert("scale", frame=N)
     hero.place((FX_ + 2.6, 5.4, 0.24), -20); hero.face("neutral"); hero.pose(armL=-10, armR=-10)
     cam_move(cam, tgt, 1, N, (FX_ + 0.8, 2.2, 2.4), (FX_ + 0.8, -0.6, 2.9), (FX_ + 1.0, 6.6, 1.8), (FX_ + 1.0, 6.6, 2.0), 32, 28)
@@ -683,17 +683,17 @@ T = [("s01", 0.0, s01), ("s02", wt(0, 5), s02), ("s03", wt(0, 8), s03), ("s04", 
      ("s08", L[2], s08), ("s09", wt(2, 7), s09),
      ("s10", L[3], s10), ("s11", wt(3, 11), s11), ("s12", wt(3, 14), s12),
      ("s13", L[4], s13), ("s14", wt(4, 8), s14), ("s15", wt(4, 11), s15), ("s16", wt(4, 15), s16),
-     ("s17", L[5], s17), ("s18", wt(5, 6), s18), ("s19", wt(5, 10), s19),
-     ("s20", L[6], s20), ("s21", wt(6, 9), s21), ("s22", wt(6, 12), s22),
+     ("s17", L[5], s17), ("s18", wt(5, 6), s18), ("s19", wt(5, 14), s19),
+     ("s20", L[6], s20), ("s21", wt(6, 10), s21), ("s22", wt(6, 15), s22),
      ("s23", L[7], s23), ("s24", wt(7, 6), s24), ("s25", wt(7, 11), s25),
      ("s26", L[8], s26), ("s27", wt(8, 5), s27), ("s28", wt(8, 13), s28),
      ("s29", L[9], s29), ("s30", wt(9, 2), s30), ("s31", wt(9, 9), s31),
      ("s32", L[10], s32), ("s33", wt(10, 8), s33),
      ("s34", L[11], s34), ("s35", wt(11, 5), s35), ("s36", wt(11, 10), s36),
-     ("s37", L[12], s37), ("s38", wt(12, 4), s38), ("s39", wt(12, 9), s39),
+     ("s37", L[12], s37), ("s38", wt(12, 5), s38), ("s39", wt(12, 9), s39),
      ("s40", L[13], s40), ("s41", wt(13, 2), s41),
      ("s42", L[14], s42), ("s43", wt(14, 8), s43), ("s44", wt(14, 15), s44), ("s45", wt(14, 19), s45),
-     ("s46", L[15], s46), ("s47", wt(15, 6), s47), ("s48", wt(15, 15), s48),
+     ("s46", L[15], s46), ("s47", wt(15, 6), s47), ("s48", wt(15, 17), s48),
      ("s49", L[16], s49), ("s50", wt(16, 5), s50), ("s51", L[17], s51)]
 TIMES = [(sid, t, (T[i + 1][1] if i + 1 < len(T) else END), fn) for i, (sid, t, fn) in enumerate(T)]
 os.makedirs(W, exist_ok=True)
