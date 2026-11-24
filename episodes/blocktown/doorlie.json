@@ -1,0 +1,70 @@
+{
+ "slug": "2026-11-24-every-door-in-this-house-lies",
+ "title": "Every Door in This House Is a Lie",
+ "speed": 1.24,
+ "lines": [
+  {
+   "t": "In this town, there's a house where every door is a lie. And I have one hour to get out."
+  },
+  {
+   "t": "Nobody has ever made it out. Not even the mailman. He went in with one letter, three years ago."
+  },
+  {
+   "t": "The Mayor locked me in himself. If I escape in time, I win five thousand dollars. If I don't, I mow his lawn for a whole year."
+  },
+  {
+   "t": "Minute one. Stairs! I ran up all of them, and hit my head on the ceiling. They just stop."
+  },
+  {
+   "t": "Minute ten. A big red door. I yanked it open. Behind it? A brick wall."
+  },
+  {
+   "t": "Minute twenty. My best friend Benny yelled from outside. Try the window! I opened it. Behind it was another window."
+  },
+  {
+   "t": "And behind that one? Benny's face. Squished on the glass."
+  },
+  {
+   "t": "Minute thirty. A door on the second floor. I stepped through it, and fell straight into the kitchen sink."
+  },
+  {
+   "t": "Minute forty. A tiny door, the size of a shoebox. I squeezed through. Brooms. Just brooms."
+  },
+  {
+   "t": "Minute fifty. The big screen on the square said ten minutes left. The whole town was watching. Mrs. Pickles brought popcorn."
+  },
+  {
+   "t": "Five minutes. Wall. Wall. Closet. Wall."
+  },
+  {
+   "t": "Then I saw one last door. With a sign. Not an exit.",
+   "gap": 0.35
+  },
+  {
+   "t": "Wait. Every door in this house lies. So the door that says no... tells the truth.",
+   "gap": 0.5
+  },
+  {
+   "t": "I opened it. Sunlight! The town square! Three seconds left!",
+   "gap": 0.2
+  },
+  {
+   "t": "I made it! Five thousand dollars!",
+   "gap": 0.35
+  },
+  {
+   "t": "And right behind me? The mailman. Still holding his letter.",
+   "gap": 0.35
+  },
+  {
+   "t": "And this part is real. A mansion in California has stairs that go up into the ceiling, and doors that open onto walls. She kept building it for thirty eight years."
+  },
+  {
+   "t": "Then the Mayor gave me a golden envelope. I opened it. Inside? One more envelope.",
+   "gap": 0.4
+  },
+  {
+   "t": "Would you trust the door that says not an exit?"
+  }
+ ]
+}
